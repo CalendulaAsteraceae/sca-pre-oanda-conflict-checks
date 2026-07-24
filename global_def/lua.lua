@@ -1,0 +1,1 @@
+check_armory = require('check_armory.lua')
