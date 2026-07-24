@@ -20,19 +20,25 @@ Format:
 ]=]
 function p.grouped_armory()
     local max_charge_count = 4
+    local default_primary_numbers = {0, 1, 2, 3, 4}
 
     -- create grouped armory table
     local grouped_armory = {}
     for letter, l in pairs(armory) do
         for _, sub in ipairs(l) do
-            local a_fields = a['field'] or {'NO'}
+            local a_fields = (a['field'] and #a['field'] > 0 and a['field']) or {'NO'}
+
             for __, field in ipairs(a_fields) do
                 grouped_armory[field] = grouped_armory[field] or {}
-                for ___, num in ipairs(sub['primary_number'] or {}) do
+                local primary_numbers = (sub['primary_number'] and #sub['primary_number'] > 0 and sub['primary_number']) or default_primary_numbers
+
+                for ___, num in ipairs(primary_numbers) do
                     local n = math.min(num, max_charge_count)
                     grouped_armory[field][n] = grouped_armory[field][n] or {}
-                    for ____, charge in ipairs(sub['primary_charges'] or {}) do
+                    
+                    for ____, charge in ipairs(sub['primary_charges'] or {'UNKNOWN'}) do
                         grouped_armory[field][n][charge] = grouped_armory[field][n][charge] or {}
+                        
                         table.insert(
                             grouped_armory[field][n][charge],
                             {['letter'] = letter, ['name'] = sub['name'], ['blazon'] = sub['blazon']}
