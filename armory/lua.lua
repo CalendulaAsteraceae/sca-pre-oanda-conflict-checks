@@ -1245,646 +1245,618 @@ return {
 			['name'] = "Julia Frischlin",
 			['blazon'] = "Per pale vert and purpure, all plumetty, a bordure argent semy of roundels per pale purpure and vert",
 			['field'] = {'palewise'},
-			['primary_number'] = {},
-			['primary_charge'] = {}
+			['primary_number'] = {0},
+			['primary_charge'] = {'FP'}
 		},
 		{
 			['name'] = "Kara bjarki kjǫlfari",
 			['blazon'] = "Gyronny azure and argent, a duck naiant to sinister Or within a bordure sable",
 			['field'] = {'gyronny'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Rhodri Longshanks",
 			['blazon'] = "Per pale pean and vair, a bordure gules",
 			['field'] = {'palewise'},
-			['primary_number'] = {},
-			['primary_charge'] = {}
+			['primary_number'] = {0},
+			['primary_charge'] = {'FP'}
 		},
 		{
 			['name'] = "Sedanias maqqas Voenacunas",
 			['blazon'] = "(Fieldless) A cat's pawprint argent ermined vert",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Talia Rose Fox",
 			['blazon'] = "(Fieldless) A sea-fox naiant azure",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Tamsin Muniere",
 			['blazon'] = "Per chevron argent and azure, two pommes and an otter sejant erect contourny reguardant argent",
 			['field'] = {'chevronwise'},
-			['primary_number'] = {},
+			['primary_number'] = {3},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Thea of the Summits",
 			['blazon'] = "Or, three fish bendwise azure",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {3},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Arnóra orðlokarr",
 			['blazon'] = "Azure, on a bend cotised argent a quarter note vert.",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Bianca Antolini",
 			['blazon'] = "Per pale vert and azure, an acorn slipped and leaved inverted counterchanged Or and argent",
 			['field'] = {'palewise'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Penelope Serafim",
 			['blazon'] = "(Fieldless) On a goutte-de-larmes a cross of ermine spots Or",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Biatrichi Canzoniere",
 			['blazon'] = "(Fieldless) An olive sprig bendwise sinister inverted vert fructed sable",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Conrad Küne",
 			['blazon'] = "Argent estencelley sable, a squirrel sejant erect gules",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Faelan Ericsson",
 			['blazon'] = "Vert, on a pale sable fimbriated and cotised, a dragon's wing Or",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Floriano Latini",
 			['blazon'] = "Per saltire arrondi purpure and sable, a sun between in cross four bees Or winged argent",
 			['field'] = {'saltirewise'},
-			['primary_number'] = {},
-			['primary_charge'] = {}
-		},
-		{
-			['name'] = "Vazul Bathori",
-			['blazon'] = "Argent, a doe lodged pierced by three arrows sable and in chief a mullet of ten points, a base gules, and on a chief sable two barrulets argent",
-			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Gabriel Turnbull",
 			['blazon'] = "Per bend vert and azure, a demi spiderweb issuant from the line of division and a bull's head couped argent.",
 			['field'] = {'bendwise'},
-			['primary_number'] = {},
+			['primary_number'] = {2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "James Dunno sunu",
 			['blazon'] = "Per pale argent and sable, a lightning bolt bendwise Or and overall a label azure",
 			['field'] = {'palewise'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Kaitlyn McKenna",
 			['blazon'] = "(Fieldless) A mermaid maintaining a drawn bow with a nocked arrow to sinister tail to dexter argent.",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Kaitlyn McKenna",
 			['blazon'] = "(Fieldless) A mermaid maintaining a drawn bow with a nocked arrow to sinister tail to dexter Or",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Lucy De Stonham",
 			['blazon'] = "Purpure, on a bend between two owls argent, three crosses moline palewise vert",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Magnús Skógr",
 			['blazon'] = "Sable, a fox's mask argent and a chief embattled Or",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Magnús Skógr",
 			['blazon'] = "(Fieldless) On a hide gules a half moon knife in bend sinister proper",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Myfanwy ferch Eifion",
 			['blazon'] = "Gules, an iris bendwise slipped and leaved between two Bowen knots argent and for augmentation in base on a point pointed Or a Star of Ansteorra sable. - Add when base thing was registered",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Penelope Serafim",
 			['blazon'] = "Per fess potenty argent and azure, a goutte des larmes and issuant from base a demi-sun Or",
 			['field'] = {'fesswise'},
-			['primary_number'] = {},
+			['primary_number'] = {1, 2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Phelim Gervase",
 			['blazon'] = "Quarterly Or and argent, a cup and for augmentation in base flames gules",
 			['field'] = {'quarterly'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Ruxandra cea Bună",
 			['blazon'] = "Per bend gules and argent, a decrescent bendwise argent a raven reversed sable",
 			['field'] = {'bendwise'},
-			['primary_number'] = {},
+			['primary_number'] = {2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Sigrún Sveinungsdóttir í Biarká",
 			['blazon'] = "Per fess argent and purpure, a raven sable and a tree blasted argent, a bordure sable",
 			['field'] = {'fesswise'},
-			['primary_number'] = {},
+			['primary_number'] = {2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Bartholomew Hightower of Canterbury",
 			['blazon'] = "Argent, an oak sprig fructed proper",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Diego Tigre",
 			['blazon'] = "Per pale sable and purpure, a panther rampant enflamed gules and chief embattled Or",
 			['field'] = {'palewise'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Sean Silver Rose",
 			['blazon'] = "Argent, on a pile throughout vert between two bears combatant sable, a rose argent",
-			['field'] = {'solid'},
-			['primary_number'] = {},
-			['primary_charge'] = {}
+			['field'] = {'solid', 'chevronwise inverted'},
+			['primary_number'] = {1, 3},
+			['primary_charge'] = {'PILE', 'BEAST-BEAR', 'ROSE'}
 		},
 		{
 			['name'] = "Atenveldt, Barony of",
 			['blazon'] = "Sable, with a heart voided two palm trees in saltire, a bordure rayonny Or",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Atenveldt, Kingdom of",
 			['blazon'] = "(Tinctureless) A sun surmounted by two straight trumpets in saltire bells to chief",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Athena Alexandreis",
 			['blazon'] = "Sable,a daisy proper and a gore argent",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Leofric Hield",
 			['blazon'] = "Per fess sable and vert, in pale a Maltese cross argent and a dog sejant erect with the head of a man argent hooded sable maintaining a candle Or",
 			['field'] = {'fesswise'},
-			['primary_number'] = {},
-			['primary_charge'] = {}
-		},
-		{
-			['name'] = "Bronwyn Skirlagh",
-			['blazon'] = "Argent, on a pile inverted throughout sable five billets in pale argent, in canton a closed book proper spine to dexter and overall a double sided battle axe bendwise purpure",
-			['field'] = {'solid'},
-			['primary_number'] = {},
-			['primary_charge'] = {}
-		},
-		{
-			['name'] = "Bronwyn Skirlagh",
-			['blazon'] = "Argent, on a pile inverted throughout sable five billets in pale argent, in canton a closed book proper spine to dexter and overall a double sided battle axe bendwise purpure, and for an augmentation in base, on a pavilion argent a unicornate natural seahorse erect azure",
-			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Madoc Ironhand",
 			['blazon'] = "Sable, between flaunches ermine a hand maintaining a quill pen issuant from a snail shell opening to chief argent",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1, 2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Madoc Ironhand",
 			['blazon'] = "(Fieldless) A hand argent maintaining a quill pen and issuant from a snail shell opening to chief sable",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1, 2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Mahala of Sully Cove",
 			['blazon'] = "Argent, on bend sable, a needle in bend argent threaded purpure, in base dexter a spindle in bend threaded purpure.",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Rodmarr Donaldson",
 			['blazon'] = "Or, a cross per pale sable and gules between in bend two flames vert and in bend sinister two fish azure.",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Rodmarr Donaldson",
 			['blazon'] = "Or a cross of annulets braced gules, between in bend sinster two fish azure",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1, 6},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Arwyn of Leicester",
 			['blazon'] = "Azure, a semy of ducks naiant Or.",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {6},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Auða Urso",
 			['blazon'] = "Vert, a winged hare courant argent.",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Catarina Conti del Nero",
 			['blazon'] = "Per bend sinister gules and argent, on a bend sinister azure between a duck argent and an increscent purpure, four lozenges argent.",
 			['field'] = {'bendwise sinister'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Éadaoin inghean uí Cruadhlaoich",
 			['blazon'] = "Vair, a wyvern its tail nowed sable",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Eysteinn Erlingsson",
 			['blazon'] = "Per saltire indented sable and gules, a tyger sejant and in chief a rapier fesswise argent.",
 			['field'] = {'saltirewise'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Lucius Blackledge le Scott",
 			['blazon'] = "Azure, in pall inverted three ducks conjoined by their feet Or",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {3},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Mary Dedwydd verch Gwallter",
 			['blazon'] = "(Fieldless) A winged pig courant argent.",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Alexander the Red",
 			['blazon'] = "Gules semy of flames, a phoenix and a bordure, Or",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Ameline de Coity",
 			['blazon'] = "Argent, a brown bear statant erect proper, vested of an apron Or, maintaining a frying pan, three triskellions of spirals azure",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Astrid Arrowbreaker",
 			['blazon'] = "Azure, a unicorn rampant argent, in chief a mullet of four points Or between two mullets of four points argent",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Eoin Ó Nualláin",
 			['blazon'] = "Argent, on a cross between four swords gules, a lion passant between four martlets argent",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Hálfdan á Ullarbólstaði",
 			['blazon'] = "Per pale Or and argent, two rams combattant sable",
 			['field'] = {'palewise'},
-			['primary_number'] = {},
+			['primary_number'] = {2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Jorunna Refsdottir",
 			['blazon'] = "(Fieldless) A winged fox rampant gules winged argent transfixed by a spear fesswise reversed argent",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1, 2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Melkorka viligísl",
 			['blazon'] = "Purpure, a knot of two hearts voided and braced to form a single cord, in chief three forget-me-nots argent",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1, 2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Sigurd Godwinsson",
 			['blazon'] = "Sable, in pale a drakkar and a serpent nowed Or",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Simone de Mares",
 			['blazon'] = "(Fieldless) A natural sea tortoise bendwise sinister vert",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Viktor von Rosswald",
 			['blazon'] = "Potent en pointe, a stag rampant contourny sable, a bordure Or",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Glop Sorgenfri",
 			['blazon'] = "Per pale vert and sable, three lozenges Or.",
 			['field'] = {'palewise'},
-			['primary_number'] = {},
+			['primary_number'] = {3},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Marguerite de Couches",
 			['blazon'] = "Per bend sinister azure and vert, a talbot rampant and on a chief Or, three daisies azure.",
 			['field'] = {'bendwise sinister'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Arcill beg mac Ruadrí big mic Sithig",
 			['blazon'] = "(Fieldless) A dragon's gambe erased gules within and conjoined to an annulet Or.",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Eliayhu al-Talhi",
 			['blazon'] = "Per pale sable and ermine, a pithon in annulo wings displayed and vorant of its own tail gules",
 			['field'] = {'palewise'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Ruantallan, Barony of",
 			['blazon'] = "Argent, on a gonfanon azure two tenterhooks in saltire argent",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Cailin Ó Faoláin",
 			['blazon'] = "Or, in fess, a tree vert between two wolves combattant, in chief a raven displayed and a bordure sable",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1, 3},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Alexandros of Small Gray Bear",
 			['blazon'] = "Per chevron vert and sable, three cicadas Or",
 			['field'] = {'chevronwise'},
-			['primary_number'] = {},
+			['primary_number'] = {3},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Edana Nisbet",
 			['blazon'] = "Per pale argent and gules, a two tailed house cat rampant maintaining a needle sable.",
 			['field'] = {'palewise'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Fáelán Ciotach Ó Ronáin",
 			['blazon'] = "Checky azure and Or, on a fess wavy cotised between two sunflowers argent, a wyvern passant contourny azure",
 			['field'] = {'checky'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Ludovica di Corda",
 			['blazon'] = "(Fieldless) A pantheon salient azure mullety Or",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Rose Green",
 			['blazon'] = "Argent, on a bend vert between two roses gules three dogs passant palewise Or",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Blythe Venell",
 			['blazon'] = "Sable, on a fess azure fimbriated engrailed between three serpents nowed, three roses Or",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Blythe Venell",
 			['blazon'] = "Per chevron inverted sable and azure, a rose and two serpents glissant addorsed in chevron inverted Or",
 			['field'] = {'chevronwise inverted'},
-			['primary_number'] = {},
+			['primary_number'] = {3},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Ealasaid Sionnach",
 			['blazon'] = "Per chevron gules and argent, a crescent pendant azure fimbriated argent and a fox's mask gules maintaining a trefoil knot vert",
 			['field'] = {'chevronwise'},
-			['primary_number'] = {},
+			['primary_number'] = {2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Svanhildr Skaldadóttir",
 			['blazon'] = "Purpure, a goose enraged argent, in a chief Or a kitchen knife proper",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Caer Gwyn, Barony of",
 			['blazon'] = "Per pale argent and sable, a chief vert",
 			['field'] = {'palewise'},
-			['primary_number'] = {},
-			['primary_charge'] = {}
+			['primary_number'] = {0},
+			['primary_charge'] = {'FP'}
 		},
 		{
 			['name'] = "Fujiwara no Murasaki",
 			['blazon'] = "Or, a heart Enflamed to chief purpure",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Goðrekr Eiríksson",
 			['blazon'] = "Sable, a boar statant argent, on a chief argent an oak tree blasted and eradicated sable between two mullets of eight points vert",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Meadhbh Ballach ingen Eochada",
 			['blazon'] = "(Fieldless) a natural demi-leopard Or rampant, maintaining a poppy flower gules slipped and leaved vert",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Margaret Hepburn of Ardgowan",
 			['blazon'] = "(Fieldless) A goat clymant sinister sable maintaining a pomegranate argent, seeded gules, slipped and leaved vert",
 			['field'] = {'NO'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Marinus Kikerts van Breukelen",
 			['blazon'] = "Vert, on a chevron argent cotised Or three frogs palewise vert",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Reinhold Schwenk",
 			['blazon'] = "Sable, three ears of maize slipped and leaved argent",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {3},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Siobhan of Graystone",
 			['blazon'] = "Azure, between a wolf contourny rampant winged argent and a stone proper, on a bend argent, three equal-armed celtic crosses azure",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		}
 	},
 	['2026-06'] = {
-				{
+		{
 			['name'] = "Meinhard Koch",
 			['blazon'] = "Per chevron sable goutty d'eau and azure, in base a cock rising argent",
 			['field'] = {'chevronwise'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Sæthryth de Apeleia",
 			['blazon'] = "Azure, three lotus flowers in profile and a bordure denticulada Or",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {3},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Sarah Wallace",
 			['blazon'] = "Or, a lupin azure slipped and leaved issuant from a mount vert, a bordure engrailed azure",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Tadhgan mac Briain",
 			['blazon'] = "Per chevron throughout ploye sable and argent, six mullets of eight points Or and a cross of Toulouse vert.",
 			['field'] = {'chevronwise'},
-			['primary_number'] = {},
+			['primary_number'] = {7},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Gabriel Orsini",
 			['blazon'] = "Argent, on a pall vert three hunting horns in pall conjoined at the mouthpiece argent",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Orsula Gelso",
 			['blazon'] = "Purpure, a linx mask and a demi-sun issuant from base Or",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1, 2},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Ruadhan Mac Síthigh",
 			['blazon'] = "Or a frog rampant maintaining a cutlass and pistol gules and a bordure rayonny sable",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Siraj Farhadzadeh",
 			['blazon'] = "Azure, an ocelot rampant Or, armed and fanged gules and on base enarched Or goutty de sang",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Ciarán Guthrie",
 			['blazon'] = "Argent, a thistle proper and in base a key fesswise purpure",
 			['field'] = {'solid'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
 			['name'] = "Grimr Treebreaker",
 			['blazon'] = "Per fess engrailed argent and gules, a tree blasted and eradicated and three hawk's bells counterchanged",
 			['field'] = {'fesswise'},
-			['primary_number'] = {},
-			['primary_charge'] = {}
-		},
-		{
-			['name'] = "Iorwerth Bychan",
-			['blazon'] = "Per chevron purpure semy of mullets or and or, in base a ship sable",
-			['field'] = {'chevronwise'},
-			['primary_number'] = {},
+			['primary_number'] = {1},
 			['primary_charge'] = {}
 		},
 		{
