@@ -51,27 +51,58 @@ function p.grouped_armory()
     end
 
     -- put grouped_armory['NO'] in every other grouped_armory[*][n][charge]
-    local fields = {}
-    for field, _ in pairs(grouped_armory) do
-        if field ~= 'NO' then
-            table.insert(fields, field)
+    if grouped_armory['NO'] then
+        local fields = {}
+        for field, _ in pairs(grouped_armory) do
+            if field ~= 'NO' then
+                table.insert(fields, field)
+            end
         end
-    end
-    local fieldless_charges = {}
-    for n = 0, max_charge_count do
-        fieldless_charges[n] = {}
-        for charge, ca in pairs(grouped_armory['NO'][n] or {}) do
-            fieldless_charges[n][charge] = ca
-        end
-    end
-    for i, field in ipairs(fields) do
+        local fieldless_charges = {}
         for n = 0, max_charge_count do
-            if grouped_armory[field][n] then
-                for charge, ca in pairs(fieldless_charges[n]) do
-                    grouped_armory[field][n][charge] = grouped_armory[field][n][charge] or {}
-                    for j, a in ipairs(ca) do
-                        table.insert(grouped_armory[field][n][charge], a)
+            fieldless_charges[n] = {}
+            for charge, ca in pairs(grouped_armory['NO'][n] or {}) do
+                fieldless_charges[n][charge] = ca
+            end
+        end
+        for i, field in ipairs(fields) do
+            for n = 0, max_charge_count do
+                if grouped_armory[field][n] then
+                    for charge, ca in pairs(fieldless_charges[n]) do
+                        if grouped_armory[field][n][charge] then
+                            for j, sub in ipairs(ca) do
+                                table.insert(grouped_armory[field][n][charge], sub)
+                            end
+                        end
                     end
+                end
+            end
+        end
+    end
+
+    -- put armory with unknown primary charges in every other grouped_armory[field][n][*]
+    local unknown_charges = {}
+    local known_charges = {}
+    for field, fa in pairs(grouped_armory) do
+        unknown_charges[field] = {}
+        known_charges[field] = {}
+        for n, na in pairs(fa) do
+            if na['UNKNOWN'] then
+                unknown_charges[field][n] = na['UNKNOWN']
+                known_charges[field][n] = {}
+                for charge, _ in pairs(na) do
+                    if charge ~= 'UNKNOWN' then
+                        table.insert(known_charges[field][n], charge)
+                    end
+                end
+            end
+        end
+    end
+    for field, fa in pairs(unknown_charges) do
+        for n, na in pairs(fa) do
+            for i, sub in ipairs(na) do
+                for j, charge in ipairs(known_charges[field][n]) do
+                    table.insert(grouped_armory[field][n][charge], sub)
                 end
             end
         end
