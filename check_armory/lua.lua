@@ -25,9 +25,9 @@ function p.grouped_armory(args)
 
     local armory_of_interest = {}
     for year, ya in pairs(armory) do
-        if (not_min_date or min_date <= os.time({['year'] = year, ['month'] = 1, ['day'] = 1})) and (not_max_date or max_date >= os.time({['year'] = year, ['month'] = 1, ['day'] = 1})) then
+        if (not min_date or min_date <= os.time({['year'] = year, ['month'] = 1, ['day'] = 1})) and (not max_date or max_date >= os.time({['year'] = year, ['month'] = 1, ['day'] = 1})) then
             for month, ma in pairs(ya) do
-                if (not_min_date or min_date <= os.time({['year'] = year, ['month'] = month, ['day'] = 1})) and (not_max_date or max_date >= os.time({['year'] = year, ['month'] = month, ['day'] = 1})) then
+                if (not min_date or min_date <= os.time({['year'] = year, ['month'] = month, ['day'] = 1})) and (not max_date or max_date >= os.time({['year'] = year, ['month'] = month, ['day'] = 1})) then
                     armory_of_interest[year .. '-' .. month] = ma
                 end
             end
