@@ -6,7 +6,7 @@ This code will systematically check for conflicts between SCA armory submissions
 1. Make sure you have [Lua](https://www.lua.org/) installed.
 2. Download this code.
 3. If needed, add armory data to [armory/lua.lua](armory/lua.lua).
-4. In the command line, start Lua, evaluate `require("global_def.lua")`, and evaluate `check_armory.print_potential_conflicts()`.
+4. In the command line, start Lua, evaluate `require("global_def.lua")`, then evaluate `check_armory.print_potential_conflicts()`.
 
 ## Filling out the armory data
 
