@@ -35,10 +35,11 @@ function p.grouped_armory()
                 for ___, num in ipairs(primary_numbers) do
                     local n = math.min(num, max_charge_count)
                     grouped_armory[field][n] = grouped_armory[field][n] or {}
+                    local primary_charges = (sub['primary_charge'] and #sub['primary_charge'] > 0 and sub['primary_charge']) or {'UNKNOWN'}
                     
-                    for ____, charge in ipairs(sub['primary_charges'] or {'UNKNOWN'}) do
+                    for ____, charge in ipairs(primary_charges) do
                         grouped_armory[field][n][charge] = grouped_armory[field][n][charge] or {}
-                        
+
                         table.insert(
                             grouped_armory[field][n][charge],
                             {['letter'] = letter, ['name'] = sub['name'], ['blazon'] = sub['blazon']}

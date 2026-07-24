@@ -20,8 +20,8 @@ Use regex to format: `([^\n]+)\n([^\n]+)\n` to
 			['name'] = "$1",
 			['blazon'] = "$2",
 			['field'] = {},
-			['primary_charges'] = {},
-			['primary_number'] = {}
+			['primary_number'] = {},
+			['primary_charge'] = {}
 		},
 
 ```
@@ -36,8 +36,8 @@ Add to [armory/lua.lua](armory/lua.lua) with the month as the key, like
 			['name'] = "...",
 			['blazon'] = "...",
 			['field'] = {},
-			['primary_charges'] = {},
-			['primary_number'] = {}
+			['primary_number'] = {},
+			['primary_charge'] = {}
 		},
 		...
 	}
