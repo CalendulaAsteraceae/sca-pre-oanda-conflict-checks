@@ -18,17 +18,32 @@ Format:
     ...
 }
 ]=]
-function p.grouped_armory()
+function p.grouped_armory(args)
+    args = args or {}
+    local min_date = args['min_date'] and #args['min_date'] == 2 and os.time({['year'] = args['min_date'][1], ['month'] = args['min_date'][2], ['day'] = 1})
+    local max_date = args['max_date'] and #args['max_date'] == 2 and os.time({['year'] = args['max_date'][1], ['month'] = args['max_date'][2], ['day'] = 1})
+
+    local armory_of_interest = {}
+    for year, ya in pairs(armory) do
+        if (not_min_date or min_date <= os.time({['year'] = year, ['month'] = 1, ['day'] = 1})) and (not_max_date or max_date >= os.time({['year'] = year, ['month'] = 1, ['day'] = 1})) then
+            for month, ma in pairs(ya) do
+                if (not_min_date or min_date <= os.time({['year'] = year, ['month'] = month, ['day'] = 1})) and (not_max_date or max_date >= os.time({['year'] = year, ['month'] = month, ['day'] = 1})) then
+                    armory_of_interest[year .. '-' .. month] = ma
+                end
+            end
+        end
+    end
+
     local max_charge_count = 4
     local default_primary_numbers = {0, 1, 2, 3, 4}
 
     -- create grouped armory table
     local grouped_armory = {}
-    for letter, l in pairs(armory) do
+    for letter, l in pairs(armory_of_interest) do
         for _, sub in ipairs(l) do
-            local a_fields = (a['field'] and #a['field'] > 0 and a['field']) or {'NO'}
+            local sub_fields = (sub['field'] and #sub['field'] > 0 and sub['field']) or {'NO'}
 
-            for __, field in ipairs(a_fields) do
+            for __, field in ipairs(sub_fields) do
                 grouped_armory[field] = grouped_armory[field] or {}
                 local primary_numbers = (sub['primary_number'] and #sub['primary_number'] > 0 and sub['primary_number']) or default_primary_numbers
 
@@ -144,11 +159,11 @@ function p.print_grouped_table(grouped_armory)
     return table.concat(armory_text, '\n\n')
 end
 
-function p.print_grouped_armory()
-    return p.print_grouped_table(p.grouped_armory())
+function p.print_grouped_armory(args)
+    return p.print_grouped_table(p.grouped_armory(args))
 end
-function p.print_potential_conflicts()
-    return p.print_grouped_table(p.potential_conflicts())
+function p.print_potential_conflicts(args)
+    return p.print_grouped_table(p.potential_conflicts(args))
 end
 
 return p
