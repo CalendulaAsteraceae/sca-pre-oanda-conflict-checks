@@ -946,154 +946,154 @@ return {
 				['blazon'] = "Azure, on a lozenge Or a triskelion of spirals within and conjoined to an annulet azure",
 				['field'] = {'solid', 'other'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'LOZENGE', 'TRISKELION'}
 			},
 			{
 				['name'] = "Bayne de Angelis",
 				['blazon'] = "Per pale sable and vert, in saltire two scimitars inverted Or surmounted by a skull argent, in chief two mullets of fours points Or",
 				['field'] = {'palewise'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'SWORD'}
 			},
 			{
 				['name'] = "Carolus Loke",
 				['blazon'] = "Per bend sinister rayonny argent and gules, a poppy gules seeded sable slipped and leaved vert and a wheel argent",
 				['field'] = {'bendwise sinister'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FLOWER-CUP SHAPE', 'WHEEL'}
 			},
 			{
 				['name'] = "Catalina Diez",
 				['blazon'] = "Argent, a griffon sejant dexter forepaw raised, a bordure denticulada purpure",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'GRIFFIN'}
 			},
 			{
 				['name'] = "Charles Mordacq",
 				['blazon'] = "Gules, a daisy slipped and leaved issuant from base proper, flaunches argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FLOWER-MULTI-PETALED'}
 			},
 			{
 				['name'] = "Eby Jousie",
 				['blazon'] = "Per bend purpure and azure, on a bend argent between two suns in their splendour Or three decrescent moons palewise sable",
 				['field'] = {'bendwise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEND'}
 			},
 			{
 				['name'] = "Delftwood, Barony of",
 				['blazon'] = "(Fieldless) A tulip slipped and leaved argent within and conjoined to an annulet azure",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FLOWER-TRUMPET SHAPE'}
 			},
 			{
 				['name'] = "Isabel de Herrera",
 				['blazon'] = "Per chevron azure and Or, a mullet of four greater and four lesser points argent and a snail sable shelled brown proper",
 				['field'] = {'chevronwise'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'STAR', 'SNAIL'}
 			},
 			{
 				['name'] = "Ghita Rinaldi de Amici",
 				['blazon'] = "Argent, a phoenix gules, on a chief embattled sable three fleur-de-lys argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'MONSTER-PHOENIX'}
 			},
 			{
 				['name'] = "Isabel de Herrera",
 				['blazon'] = "Sable mullety, on a bend sinister Or, in bend sinister a comet and arrow bendwise sinister sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BS'}
 			},
 			{
 				['name'] = "Godfrey de Bayeux",
 				['blazon'] = "Sable, a wolf courant to sinister Or and a demi-sun issuant from chief argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'DOG', 'STAR'}
 			},
 			{
 				['name'] = "Kattera Doplerin",
 				['blazon'] = "Sable, a spiderweb throughout Or, overall a chatloup rampant to sinister argent, a bordure Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'SPIDER WEB'}
 			},
 			{
 				['name'] = "Mathias Feuer Drache",
 				['blazon'] = "(Fieldless) In pale a dragonfly gules conjoined to a fleur de lys Or",
 				['field'] = {'NO'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'INSECT-DRAGONFLY', 'FDL'}
 			},
 			{
 				['name'] = "Kattera Doplerin",
 				['blazon'] = "(Fieldless) A dog's jambe of six toes erased argent maintaining a bezant",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'LEG AND FOOT-BEAST'}
 			},
 			{
 				['name'] = "Michael Langley of Riversmeet",
 				['blazon'] = "(Fieldless) A winged monkey statant erect azure maintaining a straight trumpet Or",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'MONSTER9WINGED', 'BEAST-MONKEY'}
 			},
 			{
 				['name'] = "Mora Donovan",
 				['blazon'] = "Per pale argent and vert, a stag rampant sable and in base three flames proper",
 				['field'] = {'palewise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-DEER AND STAG'}
 			},
 			{
 				['name'] = "Murchadh of the Dal-Cais",
 				['blazon'] = "Argent, a celtic cross within an orle of bull's skulls sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CRAC'}
 			},
 			{
 				['name'] = "Ples le Brus",
 				['blazon'] = "Sable, in pale a bear rampant argent and a barrel palewise Or",
 				['field'] = {'solid'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-BEAR', 'BARREL'}
 			},
 			{
 				['name'] = "Oyama Michiharu",
 				['blazon'] = "Gules, a hawk displayed in rondel and two Yama (\"mountain\") kanji argent one and two",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BIRD', 'LETTERS,RUNES AND SYMBOLS'}
 			},
 			{
 				['name'] = "Valdis of Gotland",
 				['blazon'] = "Per chevron vert and azure, on a chevron argent a wooden round mallet proper and a wood chisel sable handled of wood proper, in base a compass star argen",
 				['field'] = {'chevronwise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CHEVRON'}
 			},
 			{
 				['name'] = "Snorri skyti Bjarnarson",
 				['blazon'] = "Azure, four greyhounds courant in annulo Or, and for augmentation between the greyhounds an escarbuncle argent",
 				['field'] = {'solid'},
 				['primary_number'] = {4},
-				['primary_charge'] = {}
+				['primary_charge'] = {'DOG', 'ESCARB'}
 			},
 			{
 				['name'] = "Theodora Neropoles",
 				['blazon'] = "Per chevron throughout argent and vert, two axes blades outward purpure and a pigeon countourny argent",
 				['field'] = {'chevronwise'},
 				['primary_number'] = {3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'AXE', 'BIRD'}
 			},
 			{
 				['name'] = "Violetta de Valencia",
