@@ -27,7 +27,7 @@ function p.grouped_armory(args)
     for year, ya in pairs(armory) do
         if (not min_date or year >= min_date[1]) and (not max_date or year <= max_date[1])
             for month, ma in pairs(ya) do
-                if (not min_date or year > min_date[1] or month >= min_date[2]) and (not max_date or year < max_date[1] or month <= max_date[2])
+                if (not min_date or year > min_date[1] or month >= min_date[2]) and (not max_date or year < max_date[1] or month <= max_date[2]) then
                     armory_of_interest[month .. '/' .. year] = ma
                 end
             end
