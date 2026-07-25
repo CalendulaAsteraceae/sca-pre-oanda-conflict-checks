@@ -1100,21 +1100,21 @@ return {
 				['blazon'] = "Per bend sinister purpure and Or, a violet purpure, on a chief Or four pallets gules",
 				['field'] = {'bendwise sinister'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'ROSE'}
 			},
 			{
 				['name'] = "An Tir, Kingdom of",
 				['blazon'] = "Per pale Or and argent, a pearled coronet sable accented checky Or and argent",
 				['field'] = {'palewise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CROWN'}
 			},
 			{
 				['name'] = "An Tir, Kingdom of",
 				['blazon'] = "(Fieldless) In pale a lion's jambe fesswise sable sustaining a pheon argent",
 				['field'] = {'NO'},
 				['primary_number'] = {1, 2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'LEG AND FOOT-BEAST'}
 			},
 			{
 				['name'] = "Angela di Francesco Sartore",
