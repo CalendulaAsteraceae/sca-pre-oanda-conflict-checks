@@ -126,21 +126,21 @@ function p.grouped_armory(args)
     return grouped_armory
 end
 
-function p.potential_conflicts()
-    local armory = {}
+function p.potential_conflicts(args)
+    local conflicts = {}
     local grouped_armory = p.grouped_armory()
     for field, fa in pairs(grouped_armory) do
         for n, na in pairs(fa) do
             for charge, ca in pairs(na) do
                 if #ca > 1 then
-                    armory[field] = armory[field] or {}
-                    armory[field][n] = armory[field][n] or {}
-                    armory[field][n][charge] = ca
+                    conflicts[field] = conflicts[field] or {}
+                    conflicts[field][n] = conflicts[field][n] or {}
+                    conflicts[field][n][charge] = ca
                 end
             end
         end
     end
-    return armory
+    return conflicts
 end
 
 function p.print_grouped_table(grouped_armory)
