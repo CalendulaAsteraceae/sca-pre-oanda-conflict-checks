@@ -20,15 +20,15 @@ Format:
 ]=]
 function p.grouped_armory(args)
     args = args or {}
-    local min_date = args['min_date'] and #args['min_date'] == 2 and os.time({['year'] = args['min_date'][1], ['month'] = args['min_date'][2], ['day'] = 1})
-    local max_date = args['max_date'] and #args['max_date'] == 2 and os.time({['year'] = args['max_date'][1], ['month'] = args['max_date'][2], ['day'] = 1})
+    local min_date = args['min_date'] and #(args['min_date']) == 2 and args['min_date']
+    local max_date = args['max_date'] and #(args['max_date']) == 2 and args['max_date']
 
     local armory_of_interest = {}
     for year, ya in pairs(armory) do
-        if (not min_date or min_date <= os.time({['year'] = year, ['month'] = 1, ['day'] = 1})) and (not max_date or max_date >= os.time({['year'] = year, ['month'] = 1, ['day'] = 1})) then
+        if (not min_date or year >= min_date[1]) and (not max_date or year <= max_date[1])
             for month, ma in pairs(ya) do
-                if (not min_date or min_date <= os.time({['year'] = year, ['month'] = month, ['day'] = 1})) and (not max_date or max_date >= os.time({['year'] = year, ['month'] = month, ['day'] = 1})) then
-                    armory_of_interest[year .. '-' .. month] = ma
+                if (not min_date or year > min_date[1] or month >= min_date[2]) and (not max_date or year < max_date[1] or month <= max_date[2])
+                    armory_of_interest[month .. '/' .. year] = ma
                 end
             end
         end
