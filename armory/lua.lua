@@ -2804,7 +2804,7 @@ return {
 				['name'] = "Ekaterina Vagina Bychkova",
 				['blazon'] = "Or semy of bees sable",
 				['field'] = {'solid'},
-				['primary_number'] = {}6,
+				['primary_number'] = {6},
 				['primary_charge'] = {}
 			},
 			{
