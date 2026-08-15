@@ -2075,7 +2075,7 @@ return {
 				['blazon'] = "Azure, on a chief Or a bull gules",
 				['field'] = {'solid'},
 				['primary_number'] = {0},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FP'}
 			},
 			{
 				['name'] = "Redbad Diabolus",
@@ -2532,7 +2532,7 @@ return {
 				['blazon'] = "Per pale offset azure and sable",
 				['field'] = {'palewise'},
 				['primary_number'] = {0},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FP'}
 			},
 			{
 				['name'] = "Vintila Viteazul",
@@ -2546,7 +2546,7 @@ return {
 				['blazon'] = "Per fess Or and paly gules and azure, in chief an oak sprig fructed proper.",
 				['field'] = {'fesswise'},
 				['primary_number'] = {0},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FP'}
 			},
 			{
 				['name'] = "Marie le taverniere",
@@ -2812,7 +2812,7 @@ return {
 				['blazon'] = "Argent ermined purpure, a tierce purpure",
 				['field'] = {'solid'},
 				['primary_number'] = {0},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FP'}
 			},
 			{
 				['name'] = "Margie of Glen More",
