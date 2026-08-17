@@ -12,7 +12,11 @@ This code will systematically check for conflicts between SCA armory submissions
 ### print_potential_conflicts
 Optional arguments: `min_date`, `max_date`
 
-To check with no date limits: `check_armory.print_potential_conflicts()`
+To check with no date limits:
+```
+require("global_def.lua")
+check_armory.print_potential_conflicts()
+```
 
 To check with date limits:
 * `check_armory.print_potential_conflicts({min_date = {2026, 5}})`
