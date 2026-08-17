@@ -69,10 +69,10 @@ Add to [armory/lua.lua](armory/lua.lua) with the year and month as keys, like so
 Fields are `solid`, `NO`, and directions of division which are features of `FIELD` in the OA& (e.g. `bendwise`). Number of primary charges are integers; the code will group submissions into 0, 1, 2, 3, and 4+. Primary charges are based on codes in the O&A, but with more grouping by SCs (e.g. a tyger will just be coded as a `CAT`, a demi-sun or a caltrop as `STAR`, a tree as `TREE`).
 
 All the data should be manually checked, but these replacements will speed things up a bit:
-1. `(\['blazon'\] = "\(Fieldless\)[^\n]+",\n\t\t\t\['field'\] = )\{\}` to `$1{'NO'}`
-2. `(\['blazon'\] = "(Gules|Or|Vert|Azure|Purpure|Sable|Argent|Ermine|Vair),[^\n]+",\n\t\t\t\['field'\] = )\{\}` to `$1{'solid'}`
-3. `(\['blazon'\] = "Per bend sinister[^\n]+",\n\t\t\t\['field'\] = )\{\}` to `$1{'bendwise sinister'}`
-4. `(\['blazon'\] = "Per chevron inverted[^\n]+",\n\t\t\t\['field'\] = )\{\}` to `$1{'chevronwise inverted'}`
-5. `(\['blazon'\] = "Per (bend|pale|fess|saltire|chevron)[^\n]+",\n\t\t\t\['field'\] = )\{\}` to `$1{'$2wise'}`
-6. `(\['blazon'\] = "Quarterly[^\n]+",\n\t\t\t\['field'\] = )\{\}` to `$1{'quarterly'}`
-8. `(\['blazon'\] = "Checky[^\n]+",\n\t\t\t\['field'\] = )\{\}` to `$1{'checky'}`
+1. `(\['blazon'\] = "\(Fieldless\)[^\n]+",\n\t+\['field'\] = )\{\}` to `$1{'NO'}`
+2. `(\['blazon'\] = "(Gules|Or|Vert|Azure|Purpure|Sable|Argent|Ermine|Vair),[^\n]+",\n\t+\['field'\] = )\{\}` to `$1{'solid'}`
+3. `(\['blazon'\] = "Per bend sinister[^\n]+",\n\t+\['field'\] = )\{\}` to `$1{'bendwise sinister'}`
+4. `(\['blazon'\] = "Per chevron inverted[^\n]+",\n\t+\['field'\] = )\{\}` to `$1{'chevronwise inverted'}`
+5. `(\['blazon'\] = "Per (bend|pale|fess|saltire|chevron)[^\n]+",\n\t+\['field'\] = )\{\}` to `$1{'$2wise'}`
+6. `(\['blazon'\] = "Quarterly[^\n]+",\n\t+\['field'\] = )\{\}` to `$1{'quarterly'}`
+8. `(\['blazon'\] = "Checky[^\n]+",\n\t+\['field'\] = )\{\}` to `$1{'checky'}`
