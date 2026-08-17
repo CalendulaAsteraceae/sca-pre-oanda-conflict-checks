@@ -348,7 +348,7 @@ return {
 				['name'] = "Suzanna the Herbalist",
 				['blazon'] = "(Fieldless) Three annulets conjoined one and two, per pale argent and sable",
 				['field'] = {'NO'},
-				['primary_number'] = {1, 3},
+				['primary_number'] = {3},
 				['primary_charge'] = {'ANNULET'}
 			},
 			{
@@ -2398,7 +2398,7 @@ return {
 				['name'] = "Ivan Molotov",
 				['blazon'] = "Per bend sinister azure and argent, a smith's hammer and a Latin cross with the horizontal bar cross-braced in an inverted triangle counterchanged",
 				['field'] = {'bendwise sinister'},
-				['primary_number'] = {1},
+				['primary_number'] = {2},
 				['primary_charge'] = {'HAMMER', 'CRAC'}
 			},
 			{
