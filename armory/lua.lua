@@ -193,9 +193,9 @@ return {
 			{
 				['name'] = "Vercingetorix of the Treveri",
 				['blazon'] = "Per pale and chausse vert and Or, a tree blasted and eradicated counterchanged",
-				['field'] = {'other', 'solid'},
+				['field'] = {'other'},
 				['primary_number'] = {1},
-				['primary_charge'] = {'PILE', 'TREE'}
+				['primary_charge'] = {'TREE'}
 			},
 			{
 				['name'] = "Aarnimetsä, barony of",
@@ -264,7 +264,7 @@ return {
 				['name'] = "Karin Jacobsdotter",
 				['blazon'] = "Per bend Or and gules, an anvil sable and a domestic cat sejant contourny argent",
 				['field'] = {'bendwise'},
-				['primary_number'] = {1},
+				['primary_number'] = {2},
 				['primary_charge'] = {'ANVIL', 'CAT'}
 			},
 			{
@@ -1079,7 +1079,7 @@ return {
 				['blazon'] = "Per pale azure and argent, a linden tree eradicated and counterchanged argent and vert, a bordure embattled and counterchanged argent and azure",
 				['field'] = {'palewise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {'CAT'}
+				['primary_charge'] = {'TREE'}
 			},
 			{
 				['name'] = "Ironimus Summalainen",
@@ -1141,8 +1141,8 @@ return {
 				['name'] = "Bryget Mylneward",
 				['blazon'] = "(Fieldless) A lily gules slipped and leaved vert between and conjoined in fess to two bees in chevron proper",
 				['field'] = {'NO'},
-				['primary_number'] = {1, 3},
-				['primary_charge'] = {'INSECT-BEE AND WASP', 'FLOWER-TRUMPET SHAPE'}
+				['primary_number'] = {1},
+				['primary_charge'] = {'FLOWER-TRUMPET SHAPE'}
 			},
 			{
 				['name'] = "Dessa de Falco",
@@ -1189,7 +1189,7 @@ return {
 			{
 				['name'] = "Itta of Jararvellir",
 				['blazon'] = "Vert, three chevronels argent, and in base a bird volant argent",
-				['field'] = {'solid'},
+				['field'] = {'fesswise'},
 				['primary_number'] = {3},
 				['primary_charge'] = {'CHEVRON'}
 			},
@@ -1317,7 +1317,7 @@ return {
 				['blazon'] = "Per pale Or and argent, between two serpents erect respectant gules marked sable a lotus flower affronty sable",
 				['field'] = {'palewise'},
 				['primary_number'] = {1, 2, 3},
-				['primary_charge'] = {'SNAKE', 'FLOWER-CUP SHAPE'}
+				['primary_charge'] = {'REPTILE-SNAKE', 'FLOWER-CUP SHAPE'}
 			},
 			{
 				['name'] = "Sofia Rares",
@@ -1508,7 +1508,7 @@ return {
 				['blazon'] = "Per pale gules and purpure, a unicorn rampant contourny argent charged on its haunch with a fleur-de-lys azure",
 				['field'] = {'palewise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {'BEAST-HORSE', 'MONSTER-SEA HORSE AND SEA UNICORN', 'BEAST,RAM AND GOAT'}
+				['primary_charge'] = {'BEAST-HORSE', 'UNICORN', 'BEAST,RAM AND GOAT'}
 			},
 			{
 				['name'] = "Berengar Edwinson",
@@ -1704,7 +1704,7 @@ return {
 				['blazon'] = "Argent, a three-footed pot between two tankards and a horseshoe sable.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {'CAULDRON AND COOKING POT', 'CUP', 'HORSESHOE'}
+				['primary_charge'] = {'CAULDRON AND COOKING POT'}
 			},
 			{
 				['name'] = "Þórólfr Blót-Úlfsson",
