@@ -600,8 +600,8 @@ return {
 				['name'] = "Ásbjǫrn rauðskeggr",
 				['blazon'] = "Per fess azure and vert fretty argent, in chief a horse passant",
 				['field'] = {'fesswise'},
-				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_number'] = {1, 4},
+				['primary_charge'] = {'BEAST-HORSE', 'FRET'}
 			},
 			{
 				['name'] = "August of Prussia",
@@ -995,7 +995,7 @@ return {
 				['blazon'] = "Azure, a seahorse and on a chief argent an arrow reversed sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-HORSE', 'MONSTER-SEA HORSE AND SEA UNICORN', 'BEAST,RAM AND GOAT'}
 			},
 			{
 				['name'] = "Padraic the Fierce",
@@ -1268,7 +1268,7 @@ return {
 				['blazon'] = "Argent, a unicorns head couped sable, a bordure gules",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'HEAD-MONSTER,UNICORN', 'HEAD-BEAST,HORSE', 'HEAD-BEAST,RAM AND GOAT'}
 			},
 			{
 				['name'] = "Epona Brodin",
@@ -1508,7 +1508,7 @@ return {
 				['blazon'] = "Per pale gules and purpure, a unicorn rampant contourny argent charged on its haunch with a fleur-de-lys azure",
 				['field'] = {'palewise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-HORSE', 'MONSTER-SEA HORSE AND SEA UNICORN', 'BEAST,RAM AND GOAT'}
 			},
 			{
 				['name'] = "Berengar Edwinson",
@@ -1704,7 +1704,7 @@ return {
 				['blazon'] = "Argent, a three-footed pot between two tankards and a horseshoe sable.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CAULDRON AND COOKING POT', 'CUP', 'HORSESHOE'}
 			},
 			{
 				['name'] = "Þórólfr Blót-Úlfsson",
@@ -1725,14 +1725,14 @@ return {
 				['blazon'] = "Per pale purpure and sable, a unicorn's skull in profile argent",
 				['field'] = {'palewise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'HEAD-MONSTER,UNICORN', 'HEAD-BEAST,HORSE', 'HEAD-BEAST,RAM AND GOAT', 'HEAD-BEAST9SKULL'}
 			},
 			{
 				['name'] = "Unni Tårfuihändä",
 				['blazon'] = "Vert, a penguin proper with feet and troll's tail or, below a dance Or.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BIRD', 'METC'}
 			},
 			{
 				['name'] = "Dubhesa inghean Uí Uilliam",
