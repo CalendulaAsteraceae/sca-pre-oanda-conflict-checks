@@ -152,7 +152,7 @@ function p.print_grouped_table(grouped_armory)
                 for i, a in ipairs(ca) do
                     table.insert(blazons, a.letter .. ', ' .. a.name .. ', ' .. a.blazon)
                 end
-                table.insert(armory_text, field .. ', ' .. n .. ', ' .. charge .. ' (' .. #ca .. '):\n' .. table.concat(blazons, '\n'))
+                table.insert(armory_text, field .. ', ' .. n .. ', ' .. charge .. '\n' .. table.concat(blazons, '\n'))
             end
         end
     end
