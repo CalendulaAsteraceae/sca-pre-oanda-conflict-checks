@@ -2384,7 +2384,7 @@ return {
 				['name'] = "Eupraxia Kytheriata",
 				['blazon'] = "Vert, a rabbit sejant erect regardant argent attired Or within twelve daisies in annulo proper",
 				['field'] = {'solid'},
-				['primary_number'] = {1. 6},
+				['primary_number'] = {1, 6},
 				['primary_charge'] = {}
 			},
 			{
