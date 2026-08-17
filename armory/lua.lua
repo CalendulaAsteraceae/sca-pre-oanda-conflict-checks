@@ -90,7 +90,7 @@ return {
 				['blazon'] = "(Fieldless) A schnecke couped inverted reversed azure and a Greek letter Omega sable interlaced",
 				['field'] = {'NO'},
 				['primary_number'] = {1, 2},
-				['primary_charge'] = {'LETTERS,RUNES AND SYMBOLS', 'GYRON', 'MOLLUSK-SNAIL'}
+				['primary_charge'] = {'LETTERS,RUNES AND SYMBOLS', 'GYRON'}
 			},
 			{
 				['name'] = "Tir-y-Don, Barony of",
@@ -111,7 +111,7 @@ return {
 				['blazon'] = "(Fieldless) Three biscione embowed and fretted vert, each vorant of a light-skinned human",
 				['field'] = {'NO'},
 				['primary_number'] = {1, 3},
-				['primary_charge'] = {'SNAKE'}
+				['primary_charge'] = {'REPTILE-SNAKE'}
 			},
 			{
 				['name'] = "Adonis le Bel",
