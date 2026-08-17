@@ -1009,7 +1009,7 @@ return {
 				['blazon'] = "Purpure, a hare couchant and in chief three garlic plants argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-RABBIT'}
 			},
 			{
 				['name'] = "Wilhelm Wulfstan",
@@ -1030,14 +1030,14 @@ return {
 				['blazon'] = "Sable, a polypus inverted and on a chief wavy argent three amphorae inverted bendwise sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'KRAKEN'}
 			},
 			{
 				['name'] = "Ana Dionisa de Sanabria y Ribero",
 				['blazon'] = "Azure, a hare sejant reguardant and in chief a mullet of six points argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-RABBIT'}
 			},
 			{
 				['name'] = "Attikos Drakontos",
@@ -1051,7 +1051,7 @@ return {
 				['blazon'] = "Per chevron azure and vert, a ram rampant Or",
 				['field'] = {'chevronwise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-GOAT AND SHEEP'}
 			},
 			{
 				['name'] = "Rebekah the Fierce",
@@ -1093,7 +1093,7 @@ return {
 				['blazon'] = "Per fess vair and azure, in base a lymphad proper sailed, oars shipped argent.",
 				['field'] = {'fesswise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'SHIP'}
 			},
 			{
 				['name'] = "Knut Fardason",
@@ -1107,14 +1107,14 @@ return {
 				['blazon'] = "Per fess Or and vert, in fess two thyrsuses argent.",
 				['field'] = {'fesswise'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'STAFF'}
 			},
 			{
 				['name'] = "Henry Foster",
 				['blazon'] = "Azure, a double-arched window frame Or glazed azure mullety of four points enlongated to base argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'ARCHITECTURE'}
 			},
 			{
 				['name'] = "Cathalan Ua Briain",
@@ -1135,7 +1135,7 @@ return {
 				['blazon'] = "Sable, a spear bendwise between in bend sinister two hummingbirds Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'SPEAR AND LANCE'}
 			},
 			{
 				['name'] = "Bryget Mylneward",
@@ -1184,14 +1184,14 @@ return {
 				['blazon'] = "Jaguar fur, in pale a hummingbird rising azure sustaining a chimalli gules charged with an yollotl glyph argent",
 				['field'] = {'solid'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BIRD', 'HEART', 'LETTERS,RUNES AND SYMBOLS'}
 			},
 			{
 				['name'] = "Itta of Jararvellir",
 				['blazon'] = "Vert, three chevronels argent, and in base a bird volant argent",
 				['field'] = {'solid'},
 				['primary_number'] = {3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CHEVRON'}
 			},
 			{
 				['name'] = "Mary Champernowne",
@@ -1212,7 +1212,7 @@ return {
 				['blazon'] = "Sable, a sea-mew and on a chief argent three skulls gules",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BIRD'}
 			},
 			{
 				['name'] = "Alazais Escoffier de Verdun",
@@ -1233,14 +1233,14 @@ return {
 				['blazon'] = "Per chevron throughout gules and argent, in base a double-headed Australian magpie close maintaining in its right beak a sprig of gum blossom proper",
 				['field'] = {'chevronwise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BIRD'}
 			},
 			{
 				['name'] = "Roberto d'Aragona",
 				['blazon'] = "Azure, an otter rampant regardant argent maintaining a fish in its mouth Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-WEASEL AND OTTER'}
 			},
 			{
 				['name'] = "Alexios Hymettios",
@@ -1261,7 +1261,7 @@ return {
 				['blazon'] = "(Fieldless) A hunting horn argent tipped Or, within and maintained by a strap sable to two stags' attires conjoined argent",
 				['field'] = {'NO'},
 				['primary_number'] = {1, 2, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'MUSICAL INSTR-HORN AND TRUMPET'}
 			},
 			{
 				['name'] = "Ellen of the Scholars",
@@ -1310,7 +1310,7 @@ return {
 				['blazon'] = "Argent, two gores purpure and in chief three mullets of eight points sable",
 				['field'] = {'solid'},
 				['primary_number'] = {3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'STAR'}
 			},
 			{
 				['name'] = "Ivar Halftroll Thorgrimsson",
@@ -1354,7 +1354,7 @@ return {
 				['blazon'] = "Purpure, a cloud argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CLOUDS AND WIND'}
 			},
 			{
 				['name'] = "Doghshin Maral",
@@ -1375,21 +1375,21 @@ return {
 				['blazon'] = "(Fieldless) A spur rowel gyronny of six sable and argent.",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'STAR', 'SADDLERY AND TACK'}
 			},
 			{
 				['name'] = "Stargate, Barony of",
 				['blazon'] = "Per fess embattled argent and sable, a caltrom inverted gules.",
 				['field'] = {'fesswise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'STAR'}
 			},
 			{
 				['name'] = "James Cooke Grenehod",
 				['blazon'] = "Per pale azure and vert, a talbot rampant and in chief an unstrung hunting horn Or, a bordure argent",
 				['field'] = {'palewise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'DOG'}
 			},
 			{
 				['name'] = "Alana Renard",
@@ -1466,7 +1466,7 @@ return {
 				['blazon'] = "Per chevron argent and azure, a centaur salient contourny maintaining in its hands a spear to sinister Or",
 				['field'] = {'chevronwise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'MONSTER-CENTAUR'}
 			},
 			{
 				['name'] = "Seaxburg Yelland",
