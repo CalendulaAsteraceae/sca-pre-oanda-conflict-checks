@@ -127,15 +127,29 @@ function p.grouped_armory(args)
 end
 
 function p.potential_conflicts(args)
+    local letter_date = args['letter_date'] and #(args['letter_date']) == 2 and args['letter_date']
+    local letter = letter_date and letter_date[2] .. '/' .. letter_date[1]
+
     local conflicts = {}
     local grouped_armory = p.grouped_armory()
     for field, fa in pairs(grouped_armory) do
         for n, na in pairs(fa) do
             for charge, ca in pairs(na) do
                 if #ca > 1 then
-                    conflicts[field] = conflicts[field] or {}
-                    conflicts[field][n] = conflicts[field][n] or {}
-                    conflicts[field][n][charge] = ca
+                    local has_letter = true
+                    if letter then
+                        has_letter = false
+                        for i, sub in ipairs(ca) do
+                            if sub['letter'] == letter then
+                                has_letter = true
+                            end
+                        end
+                    end
+                    if has_letter then
+                        conflicts[field] = conflicts[field] or {}
+                        conflicts[field][n] = conflicts[field][n] or {}
+                        conflicts[field][n][charge] = ca
+                    end
                 end
             end
         end
