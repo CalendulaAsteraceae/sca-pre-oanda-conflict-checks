@@ -153,7 +153,7 @@ return {
 				['blazon'] = "Per fess argent and paly purpure and Or, a rainbow proper clouded Or and a bicorporate lion argent",
 				['field'] = {'fesswise'},
 				['primary_number'] = {2, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'RAINBOW', 'CAT'}
 			},
 			{
 				['name'] = "Paulus Vitruvius",
@@ -174,7 +174,7 @@ return {
 				['blazon'] = "(Fieldless) A winged seal erect contourny vert",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-SEAL AND SEA LION'}
 			},
 			{
 				['name'] = "Epodacus of Villa Frumentaria",
@@ -188,7 +188,7 @@ return {
 				['blazon'] = "Azure, a mullet Or, on a chief argent three lions passant gules",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'STAR'}
 			},
 			{
 				['name'] = "Vercingetorix of the Treveri",
@@ -202,14 +202,14 @@ return {
 				['blazon'] = "Sable, a trumpet bendwise and a base embattled argent.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'MUSICAL INSTR-HORN AND TRUMPET'}
 			},
 			{
 				['name'] = "Aarnimetsä, barony of",
 				['blazon'] = "Sable, a trumpet bendwise and a base embattled Or.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'MUSICAL INSTR-HORN AND TRUMPET'}
 			},
 			{
 				['name'] = "Anna Egilsdotter Humble",
@@ -552,14 +552,14 @@ return {
 				['blazon'] = "(Fieldless) On a cross pointed sable a mullet of eight points throughout argent",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CRAC'}
 			},
 			{
 				['name'] = "James de Beaumont",
 				['blazon'] = "Gules, a chevron inverted sable fimbriated between a bag Or and swords crossed in saltire argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CHEVRON*7'}
 			},
 			{
 				['name'] = "Jararvellir, Barony of",
@@ -622,14 +622,14 @@ return {
 				['blazon'] = "Or, an ivy leaf inverted and on a chief vert two arrows in saltire Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'LEAF'}
 			},
 			{
 				['name'] = "Dante Celestino de San Vincenzo",
 				['blazon'] = "Per chevron azure and argent, on a sun Or, a rabbit rampant attired sable, and in base in pale three chili peppers gules",
 				['field'] = {'chevronwise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'STAR'}
 			},
 			{
 				['name'] = "Kristofer hárfagri",
@@ -650,7 +650,7 @@ return {
 				['blazon'] = "Azure, a pug dog sejant guardant argent, on a base Or a fret azure.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'DOG'}
 			},
 			{
 				['name'] = "Cernach Hrørecsson",
@@ -664,7 +664,7 @@ return {
 				['blazon'] = "(Fieldless) A ginkgo leaf vert surmounted by a rapier inverted Or.",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'LEAF'}
 			},
 			{
 				['name'] = "Rhiceneth ferch Rosamund Delwyddelyn",
@@ -890,7 +890,7 @@ return {
 				['blazon'] = "Sable, a chevron argent, overall a serpent in annulo vorant of its own tail Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CHEVRON'}
 			},
 			{
 				['name'] = "Cordelia Tofane",
@@ -981,7 +981,7 @@ return {
 				['blazon'] = "Or, a mullet of six points, on a chief gules three wheat sheaves Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'STAR'}
 			},
 			{
 				['name'] = "Rónán mac Ímair",
@@ -1044,7 +1044,7 @@ return {
 				['blazon'] = "Gules, a chevron Or surmounted by a scythe blade argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CHEVRON'}
 			},
 			{
 				['name'] = "Magdolna Biała",
@@ -1205,7 +1205,7 @@ return {
 				['blazon'] = "(Fieldless) On a cross pointed vert a mullet of eight points throughout argent",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CRAC'}
 			},
 			{
 				['name'] = "Olivia Grace",
@@ -1247,7 +1247,7 @@ return {
 				['blazon'] = "Argent, a chevron embattled on the upper edge purpure between two Olive branches vert fructed purpure and a sea-bear sable.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CHEVRON'}
 			},
 			{
 				['name'] = "Kallisto Halopolis",
@@ -1634,7 +1634,7 @@ return {
 				['blazon'] = "Argent, a chevron vert between two crescents gules and a stag trippant sable.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CHEVRON'}
 			},
 			{
 				['name'] = "Ludke von Darmstadt",
@@ -1648,7 +1648,7 @@ return {
 				['blazon'] = "Sable mullety, a tree eradicated Or and a bordure quarterly Or and gules.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'TREE'}
 			},
 			{
 				['name'] = "Antonia Stefani",
@@ -1774,7 +1774,7 @@ return {
 				['blazon'] = "Purpure, a mullet between in fess two stag's attires inverted argent, a chief vairy sable and argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'STAR', 'HORN AND ATTIRES'}
 			},
 			{
 				['name'] = "Katla in mikla kǫttr",
@@ -1886,7 +1886,7 @@ return {
 				['blazon'] = "Sable, a chevron inverted and in chief a fleur-de-lis argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CHEVRON*7'}
 			},
 			{
 				['name'] = "Owen Alun",
@@ -2096,7 +2096,7 @@ return {
 				['blazon'] = "Checky Or and sable, in fess a tower and a domestic cat salient argent, on a chief gules in chevron seven mullets of six points argent",
 				['field'] = {'checky'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CASTLE', 'CAT'}
 			},
 			{
 				['name'] = "Caleb of Castel Rouge",
