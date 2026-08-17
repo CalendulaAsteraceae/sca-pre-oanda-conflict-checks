@@ -1696,8 +1696,8 @@ return {
 				['name'] = "Johanna von dem Eychorn",
 				['blazon'] = "Per fess Or and paly gules and azure, in chief an oak sprig fructed proper.",
 				['field'] = {'fesswise'},
-				['primary_number'] = {0},
-				['primary_charge'] = {'FP'}
+				['primary_number'] = {1, 2, 3},
+				['primary_charge'] = {'LEAF', 'FRUIT-NUT,ACORN', 'PLANT-SPRIG'}
 			},
 			{
 				['name'] = "Marie le taverniere",
