@@ -18,6 +18,12 @@ require("global_def.lua")
 check_armory.print_potential_conflicts()
 ```
 
+To check a particular month:
+```
+require("global_def.lua")
+check_armory.print_potential_conflicts({letter_date = {2026, 8}})
+```
+
 To check with date limits:
 * `check_armory.print_potential_conflicts({min_date = {2026, 5}})`
 * `check_armory.print_potential_conflicts({max_date = {2026, 5}})`
