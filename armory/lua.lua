@@ -293,7 +293,7 @@ return {
 				['blazon'] = "Per saltire purpure and sable, in saltire a quill pen and a shofar Or",
 				['field'] = {'saltirewise'},
 				['primary_number'] = {2},
-				['primary_charge'] = {'FEATHER', 'MUSICAL INSTR-HORN AND TRUMPET'}
+				['primary_charge'] = {'FEATHER', 'MUSICAL INSTR-HORN AND TRUMPET', 'DRINKING HORN'}
 			},
 			{
 				['name'] = "Músa-Rannveig Kaðalsdóttir",
@@ -1261,7 +1261,7 @@ return {
 				['blazon'] = "(Fieldless) A hunting horn argent tipped Or, within and maintained by a strap sable to two stags' attires conjoined argent",
 				['field'] = {'NO'},
 				['primary_number'] = {1, 2, 3},
-				['primary_charge'] = {'MUSICAL INSTR-HORN AND TRUMPET'}
+				['primary_charge'] = {'HORN AND ATTIRES', 'MUSICAL INSTR-HORN AND TRUMPET', 'DRINKING HORN'}
 			},
 			{
 				['name'] = "Ellen of the Scholars",
@@ -1578,7 +1578,7 @@ return {
 				['blazon'] = "Or, on a pawprint azure within an orle of ivy proper an arrow inverted Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {'PAW PRING'}
+				['primary_charge'] = {'PAW PRINT'}
 			},
 			{
 				['name'] = "Adelheit Schwarzenkatze",
