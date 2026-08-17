@@ -37,30 +37,32 @@ Copy all the emblazons and blazons into a text file, like [armory_replacements.m
 
 Use regex to format: `([^\n]+)\n([^\n]+)\n` to
 ```
-		{
-			['name'] = "$1",
-			['blazon'] = "$2",
-			['field'] = {},
-			['primary_number'] = {},
-			['primary_charge'] = {}
-		},
+			{
+				['name'] = "$1",
+				['blazon'] = "$2",
+				['field'] = {},
+				['primary_number'] = {},
+				['primary_charge'] = {}
+			},
 
 ```
 Check if any of the blazons have quotation marks which need to be escaped.
 
-Add to [armory/lua.lua](armory/lua.lua) with the month as the key, like
+Add to [armory/lua.lua](armory/lua.lua) with the year and month as keys, like so:
 ```
 {
-	...
-	['2026-05] = {
-		{
-			['name'] = "...",
-			['blazon'] = "...",
-			['field'] = {},
-			['primary_number'] = {},
-			['primary_charge'] = {}
-		},
+	[2026] = {
 		...
+		[05] = {
+			{
+				['name'] = "...",
+				['blazon'] = "...",
+				['field'] = {},
+				['primary_number'] = {},
+				['primary_charge'] = {}
+			},
+			...
+		}
 	}
 }
 
