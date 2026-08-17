@@ -6,28 +6,28 @@ return {
 				['blazon'] = "Per chevron sable goutty d'eau and azure, in base a cock rising argent",
 				['field'] = {'chevronwise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BIRD'}
 			},
 			{
 				['name'] = "Sæthryth de Apeleia",
 				['blazon'] = "Azure, three lotus flowers in profile and a bordure denticulada Or",
 				['field'] = {'solid'},
 				['primary_number'] = {3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FLOWER-CUP SHAPE'}
 			},
 			{
 				['name'] = "Sarah Wallace",
 				['blazon'] = "Or, a lupin azure slipped and leaved issuant from a mount vert, a bordure engrailed azure",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FLOWER-TRUMPET SHAPE'}
 			},
 			{
 				['name'] = "Tadhgan mac Briain",
 				['blazon'] = "Per chevron throughout ploye sable and argent, six mullets of eight points Or and a cross of Toulouse vert.",
 				['field'] = {'chevronwise'},
 				['primary_number'] = {7},
-				['primary_charge'] = {}
+				['primary_charge'] = {'STAR', 'CRAC'}
 			},
 			{
 				['name'] = "Gabriel Orsini",
@@ -41,42 +41,42 @@ return {
 				['blazon'] = "Purpure, a linx mask and a demi-sun issuant from base Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'HEAD-BEAST,CAT AND LION'}
 			},
 			{
 				['name'] = "Ruadhan Mac Síthigh",
 				['blazon'] = "Or a frog rampant maintaining a cutlass and pistol gules and a bordure rayonny sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FROG'}
 			},
 			{
 				['name'] = "Siraj Farhadzadeh",
 				['blazon'] = "Azure, an ocelot rampant Or, armed and fanged gules and on base enarched Or goutty de sang",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CAT'}
 			},
 			{
 				['name'] = "Ciarán Guthrie",
 				['blazon'] = "Argent, a thistle proper and in base a key fesswise purpure",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FLOWER-THISTLE'}
 			},
 			{
 				['name'] = "Grimr Treebreaker",
 				['blazon'] = "Per fess engrailed argent and gules, a tree blasted and eradicated and three hawk's bells counterchanged",
 				['field'] = {'fesswise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'TREE', 'BELL'}
 			},
 			{
 				['name'] = "Margot le Clerc",
 				['blazon'] = "Argent, a goat salient and a gore sable semy of hawk's bells Or.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-GOAT AND SHEEP'}
 			},
 			{
 				['name'] = "Owen Caerleon",
@@ -90,35 +90,35 @@ return {
 				['blazon'] = "(Fieldless) A schnecke couped inverted reversed azure and a Greek letter Omega sable interlaced",
 				['field'] = {'NO'},
 				['primary_number'] = {1, 2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'LETTERS,RUNES AND SYMBOLS', 'GYRON', 'MOLLUSK-SNAIL'}
 			},
 			{
 				['name'] = "Tir-y-Don, Barony of",
 				['blazon'] = "(Fieldless) A seahorse erect vert, saddled and bridled Or",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'MONSTER-SEA HORSE AND SEA UNICORN'}
 			},
 			{
 				['name'] = "Windmasters' Hill, Barony of",
 				['blazon'] = "(Fieldless) A winged cat passant, forepaw extended, wings elevated and addorsed azure, maintaining a ladle Or",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CAT', 'GRIFFIN'}
 			},
 			{
 				['name'] = "Runa Vaderskona",
 				['blazon'] = "(Fieldless) Three biscione embowed and fretted vert, each vorant of a light-skinned human",
 				['field'] = {'NO'},
 				['primary_number'] = {1, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'SNAKE'}
 			},
 			{
 				['name'] = "Adonis le Bel",
 				['blazon'] = "Barry bendy argent and azure, in saltire two swords inverted Or overall a rabbit couchant proper.",
 				['field'] = {'gridlike not checky'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'SWORD'}
 			},
 			{
 				['name'] = "Alia la rousse",
@@ -139,14 +139,14 @@ return {
 				['blazon'] = "(Fieldless) A rose proper within and conjoined to the hoop of an ankh Or",
 				['field'] = {'NO'},
 				['primary_number'] = {1, 2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'ROSE'}
 			},
 			{
 				['name'] = "Kalia Janówna",
 				['blazon'] = "Purpure, three dragonflies in pale between two pallets argent",
 				['field'] = {'solid'},
 				['primary_number'] = {3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'INSECT-DRAGONFLY'}
 			},
 			{
 				['name'] = "Ovrynka Gaylis and Lucius Blackledge le Scott",
