@@ -216,21 +216,21 @@ return {
 				['blazon'] = "Vert, a sprig of hops Or and in chief three bees proper.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FRUIT-PINECONE', 'PLANT-SPRIG'}
 			},
 			{
 				['name'] = "Fritz Chesaux",
 				['blazon'] = "(Fieldless) a winged seal sejant argent.",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-SEAL AND SEA LION'}
 			},
 			{
 				['name'] = "Kuroda Jūbei",
 				['blazon'] = "Sable, a cinquefoil within a crescent, a bordure argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'ROSE'}
 			},
 			{
 				['name'] = "Álfr of Tiveden",
@@ -244,21 +244,21 @@ return {
 				['blazon'] = "(Fieldless) A lemon Or slipped and leaved argent",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FRUIT9AND VEGETABLE-OTHER'}
 			},
 			{
 				['name'] = "Faolan Mac Cairteain",
 				['blazon'] = "Ermine, two lions passant counter-passant gules",
 				['field'] = {'solid'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CAT'}
 			},
 			{
 				['name'] = "Haraldr Ívarsson",
 				['blazon'] = "Vert, three bears rampant contourny argent",
 				['field'] = {'solid'},
 				['primary_number'] = {3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST,BEAR'}
 			},
 			{
 				['name'] = "Karin Jacobsdotter",
@@ -377,7 +377,7 @@ return {
 				['blazon'] = "Per chevron vert and azure, two birch leaves and a bear's head erased argent",
 				['field'] = {'chevronwise'},
 				['primary_number'] = {3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'LEAF', 'HEAD-BEAST,BEAR'}
 			},
 			{
 				['name'] = "Elisabeta Fischer",
@@ -391,7 +391,7 @@ return {
 				['blazon'] = "Argent, a bear passant purpure between three oak trees proper, all within a bordure sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST,BEAR'}
 			},
 			{
 				['name'] = "Fyvie Ohe",
@@ -1487,14 +1487,14 @@ return {
 				['blazon'] = "Per pale embattled argent and gules a bear sable and a bull Or combatant",
 				['field'] = {'palewise'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST,BEAR', 'BEAST,BULL AND BISON'}
 			},
 			{
 				['name'] = "Yàn Zhìyì",
 				['blazon'] = "(Fieldless) In fess an acorn between and conjoined at the tails of two squirrels statant addorsed purpure",
 				['field'] = {'NO'},
 				['primary_number'] = {1, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'ACORN', 'BEAST-SQUIRREL AND SKUNK'}
 			},
 			{
 				['name'] = "Yàn Zhìyì",
@@ -1515,7 +1515,7 @@ return {
 				['blazon'] = "Purpure, mullety of seven points inverted Or, a polar bear statant argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST,BEAR'}
 			},
 			{
 				['name'] = "Claude Bertrand",
@@ -1536,7 +1536,7 @@ return {
 				['blazon'] = "Gules, two bears combattant, a chief argent and for augmentation on the chief in dexter an Arabian lamp Or",
 				['field'] = {'solid'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST,BEAR'}
 			},
 			{
 				['name'] = "Eldrid inn Smiðr",
@@ -1830,14 +1830,14 @@ return {
 				['blazon'] = "Per pale vert and argent, a bear rampant sable armed and langued gules overall; on a chief gules three escallops Or.",
 				['field'] = {'palewise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST,BEAR'}
 			},
 			{
 				['name'] = "William de Bures",
 				['blazon'] = "Argent, a bear rampant sable, armed and langued gules.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST,BEAR'}
 			},
 			{
 				['name'] = "Tripier Toller van Heemskerck",
@@ -1851,7 +1851,7 @@ return {
 				['blazon'] = "(Fieldless) In fess a pennant purpure staved sable sustained by a bear rampant argent",
 				['field'] = {'NO'},
 				['primary_number'] = {1, 2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST,BEAR', 'FLAG'}
 			},
 			{
 				['name'] = "Baka Valdimar Durakov",
@@ -2012,14 +2012,14 @@ return {
 				['blazon'] = "Argent, a brown bear statant proper, on a chief indented azure three fetterlocks argent.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST,BEAR'}
 			},
 			{
 				['name'] = "Alexander MacGregor",
 				['blazon'] = "(Fieldless) A brown bear statant proper maintaining in its mouth a fetterlock argent.",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST,BEAR'}
 			},
 			{
 				['name'] = "Astra Korinthia",
