@@ -1508,7 +1508,7 @@ return {
 				['blazon'] = "Per pale gules and purpure, a unicorn rampant contourny argent charged on its haunch with a fleur-de-lys azure",
 				['field'] = {'palewise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {'BEAST-HORSE', 'UNICORN', 'BEAST,RAM AND GOAT'}
+				['primary_charge'] = {'BEAST-HORSE', 'MONSTER-UNICORN', 'BEAST,RAM AND GOAT'}
 			},
 			{
 				['name'] = "Berengar Edwinson",
