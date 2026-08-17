@@ -127,7 +127,9 @@ function p.grouped_armory(args)
 end
 
 function p.potential_conflicts(args)
+    args = args or {}
     local letter_date = args['letter_date'] and #(args['letter_date']) == 2 and args['letter_date']
+    args['max_date'] = args['letter_date']
     local letter = letter_date and letter_date[2] .. '/' .. letter_date[1]
 
     local conflicts = {}
