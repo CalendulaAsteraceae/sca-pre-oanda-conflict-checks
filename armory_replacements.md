@@ -564,7 +564,7 @@
 				['blazon'] = "Per bend sinister purpure and sable, a reremouse Or",
 				['field'] = {'bendwise sinister'},
 				['primary_number'] = {1},
-				['primary_charge'] = {'BAT"}
+				['primary_charge'] = {'BAT'}
 			},
 			{
 				['name'] = "Alric Ælfwulf",
@@ -620,7 +620,7 @@
 				['blazon'] = "Vert, a snowy owl proper striking maintaining in his talons a baguette bendwise Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {'BIRD"}
+				['primary_charge'] = {'BIRD'}
 			},
 			{
 				['name'] = "Brigida Montoya de Castilla",
@@ -711,7 +711,7 @@
 				['blazon'] = "(Fieldless) A sheaf of boar spears gules surmounted by a boar statant proper",
 				['field'] = {'NO'},
 				['primary_number'] = {3},
-				['primary_charge'] = {'SPEAR AND LANCE}
+				['primary_charge'] = {'SPEAR AND LANCE'}
 			},
 			{
 				['name'] = "Ylffwa Vígdisardóttir",
