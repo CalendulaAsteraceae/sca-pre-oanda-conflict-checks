@@ -995,7 +995,7 @@ return {
 				['blazon'] = "Azure, a seahorse and on a chief argent an arrow reversed sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {'BEAST-HORSE', 'MONSTER-SEA HORSE AND SEA UNICORN', 'BEAST,RAM AND GOAT'}
+				['primary_charge'] = {'BEAST-HORSE', 'MONSTER-SEA HORSE AND SEA UNICORN'}
 			},
 			{
 				['name'] = "Padraic the Fierce",
@@ -1802,7 +1802,7 @@ return {
 				['blazon'] = "Azure, on a bend sinister argent three apples palewise vert",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {'BEND'}
+				['primary_charge'] = {'BS'}
 			},
 			{
 				['name'] = "William the Younger of Eoforwic",
