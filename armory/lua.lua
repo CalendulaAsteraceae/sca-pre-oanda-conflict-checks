@@ -3094,7 +3094,7 @@ return {
 				['blazon'] = "Or, on a wolf's head couped contourny sable between three pheons inverted gules a decrescent argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'HEADDOG'}
 			},
 			{
 				['name'] = "Gwir verch Kynnith",
@@ -3241,7 +3241,7 @@ return {
 				['blazon'] = "Purpure, on a bend sinister wavy argent three natural dolphins haurient azure.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BS'}
 			},
 			{
 				['name'] = "Chandra Mosahary",
@@ -3372,7 +3372,7 @@ return {
 			{
 				['name'] = "Aurora of Dragonship Haven",
 				['blazon'] = "Per pall inverted sable, purpure, and argent, two willow trees Or and a bear's head caboshed sable",
-				['field'] = {},
+				['field'] = {'pallwise inverted'},
 				['primary_number'] = {3},
 				['primary_charge'] = {'TREE', 'HEAD-BEAST,BEAR'}
 			},
@@ -3521,7 +3521,7 @@ return {
 				['blazon'] = "(Fieldless) A monster composed of the upper half of a wolf and the lower half of a man, tailed, statant erect sable",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'DOG', 'HUMAN FIGURE', 'MONSTER-HUMANOID'}
 			},
 			{
 				['name'] = "Hakim ibn As'ad",
@@ -3556,7 +3556,7 @@ return {
 				['blazon'] = "Sable, on a bend gules fimbriated Or a wolf courant argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEND'}
 			},
 			{
 				['name'] = "Marcella Richetta Stornello da Vinceza",
@@ -3598,7 +3598,7 @@ return {
 				['blazon'] = "Or, on a willow tree vert a forget-me-not argent and in chief four forget-me-nots azure",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'TREE'}
 			},
 			{
 				['name'] = "Silvana di Ravenna",
@@ -3731,7 +3731,7 @@ return {
 				['blazon'] = "Argent, a bend sinister gules betwen two trees proper.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BS'}
 			},
 			{
 				['name'] = "Ezra de Barcelona",
@@ -3976,7 +3976,7 @@ return {
 				['blazon'] = "Vert, a wolf passant argent and a bordure argent semy of triskelions of spirals sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'DOG'}
 			},
 			{
 				['name'] = "Charlotte Annunziata da Firenze",
@@ -3990,7 +3990,7 @@ return {
 				['blazon'] = "Vert, a wolf's head cabossed argent and on a chief embattled Or four axes sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'HEADDOG'}
 			},
 			{
 				['name'] = "Theadora Perplexa",
@@ -4025,7 +4025,7 @@ return {
 				['blazon'] = "Per fess engrailed argent and sable, an annulet Or fimbriated gules.",
 				['field'] = {'fesswise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'ANNULET'}
 			},
 			{
 				['name'] = "Alexander von Schwetzingen",
@@ -4088,14 +4088,14 @@ return {
 				['blazon'] = "Per fess azure and sable, a tree blasted and eradicated and in chief a roundel between a crescent bendwise sinister and a crescent bendwise argent.",
 				['field'] = {'fesswise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'TREE'}
 			},
 			{
 				['name'] = "Magnus inn rauði",
 				['blazon'] = "Or, a lemon tree eradicated fructed proper, in base a hand, a double tressure sable.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'TREE'}
 			},
 			{
 				['name'] = "Onguen of Oertha",
