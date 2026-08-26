@@ -3505,7 +3505,7 @@ return {
 			{
 				['name'] = "Dobrogneva Einarsdottir",
 				['blazon'] = "Pily bendy azure and Or, a pear tree fructed proper and issuant from base a demi-sun gules",
-				['field'] = {'other'}
+				['field'] = {'other'},
 				['primary_number'] = {1, 2},
 				['primary_charge'] = {}
 			},
