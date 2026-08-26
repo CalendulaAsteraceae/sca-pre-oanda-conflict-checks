@@ -3101,21 +3101,21 @@ return {
 				['blazon'] = "Vert, between a pair of attires Or a decrescent argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 2, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'HORN AND ATTIRES', 'CRESCENT'}
 			},
 			{
 				['name'] = "Keira O Brian",
 				['blazon'] = "Gules, between three crescents one and two, horns to center, a snake erect and on a chief argent a crescent sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 3, 4},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CRESCENT', 'REPTILE-SNAKE'}
 			},
 			{
 				['name'] = "Magnus Bjarnylr Siggarsson",
 				['blazon'] = "Argent, in pale a cauldron between a stag's massacre sable, on a chief enarched vert three pine trees argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 2, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CAULDRON AND COOKING POT', 'HORN AND ATTIRES'}
 			},
 			{
 				['name'] = "Marie del Mare",
@@ -3178,7 +3178,7 @@ return {
 				['blazon'] = "(Fieldless) A drakkar reversed and a drakkar conjoined in fess sable",
 				['field'] = {'NO'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'SHIP'}
 			},
 			{
 				['name'] = "Gwenllian verch Hyewll",
@@ -3283,7 +3283,7 @@ return {
 				['blazon'] = "Purpure, an arrow between in fess a longbow reversed and a longbow Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BOW', 'ARROW'}
 			},
 			{
 				['name'] = "Lawrence Withers",
@@ -3332,7 +3332,7 @@ return {
 				['blazon'] = "(Fieldless) Issuant from a coronet Or a pair of owl's legs inverted vert armed gules.",
 				['field'] = {'NO'},
 				['primary_number'] = {1, 2, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CROWN', 'LEG AND FOOT-BIRD', 'BIRD'}
 			},
 			{
 				['name'] = "Felicitas de Cantebrigia",
@@ -3507,7 +3507,7 @@ return {
 				['blazon'] = "Pily bendy azure and Or, a pear tree fructed proper and issuant from base a demi-sun gules",
 				['field'] = {'other'},
 				['primary_number'] = {1, 2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'TREE', 'STAR'}
 			},
 			{
 				['name'] = "Fáelán Macraith",
@@ -3549,7 +3549,7 @@ return {
 				['blazon'] = "Purpure, two squirrels respectant argent maintaining between them an acorn slipped and leaved Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 2, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-SQUIRREL AND SKUNK', 'ACORN'}
 			},
 			{
 				['name'] = "Lupo Massimo Scipio",
@@ -3661,7 +3661,7 @@ return {
 				['blazon'] = "Purpure, two foxes salient regardant and in base a heart enflamed to chief Or",
 				['field'] = {'solid'},
 				['primary_number'] = {2, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'DOG', 'HEART'}
 			},
 			{
 				['name'] = "Sigrun Ulfsdottir",
@@ -3836,7 +3836,7 @@ return {
 				['blazon'] = "Azure, in pale a riven star and a foi argent.",
 				['field'] = {'solid'},
 				['primary_number'] = {2, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'STAR', 'HAND AND GAUNTLET'}
 			},
 			{
 				['name'] = "Ambrose Myryman",
@@ -3983,7 +3983,7 @@ return {
 				['blazon'] = "Argent, a seraph's eye gules winged of six displayed, each wing charged with an eye argent.",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 7},
-				['primary_charge'] = {}
+				['primary_charge'] = {'EYE', 'WING', 'WINGED OBJECT'}
 			},
 			{
 				['name'] = "Matthew O'Nolan",
@@ -3997,7 +3997,7 @@ return {
 				['blazon'] = "(Fieldless) On a dance couped azure a bird-blunt Or",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FESS'}
 			},
 			{
 				['name'] = "Sven inn Hávi",
@@ -4011,7 +4011,7 @@ return {
 				['blazon'] = "Or, a butterfly passant between two arrows in chevron gules",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'INSECT-BUTTERFLY AND MOTH', 'ARROW'}
 			},
 			{
 				['name'] = "Aiden Haak",
@@ -4032,7 +4032,7 @@ return {
 				['blazon'] = "Quarterly sable and argent, heart gules winged Or.",
 				['field'] = {'quarterly'},
 				['primary_number'] = {1, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'HEART', 'WINGED OBJECT'}
 			},
 			{
 				['name'] = "Bróðir Bondar",
@@ -4081,7 +4081,7 @@ return {
 				['blazon'] = "Sable, a mascle knot between two pallets cooped Or.",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'KNOT', 'PALE', 'BILLET AND DELF'}
 			},
 			{
 				['name'] = "Lora de Estwode",
@@ -4102,7 +4102,7 @@ return {
 				['blazon'] = "Azure, a cattail between two geese respectant regaurdant argent.",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 3},
-				['primary_charge'] = {}
+				['primary_charge'] = {'PLANT-REED', 'BIRD'}
 			},
 			{
 				['name'] = "Roland des Tournesol",
