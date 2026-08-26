@@ -3024,7 +3024,7 @@ return {
 				['blazon'] = "Argent, a rabbit courant between three crescents sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-RABBIT'}
 			},
 			{
 				['name'] = "Aine ingen Odhar",
@@ -3038,7 +3038,7 @@ return {
 				['blazon'] = "(Fieldless) A pawprint within and conjoined to an annulet argent",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'PAW PRINT'}
 			},
 			{
 				['name'] = "Aquaterra, Barony of",
@@ -3052,7 +3052,7 @@ return {
 				['blazon'] = "Azure, a bear rampant, in canton a [bound rune that is a combination of raido and nauthiz] a bordure, Or.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-BEAR'}
 			},
 			{
 				['name'] = "Ciarán Ó Briain",
@@ -3080,7 +3080,7 @@ return {
 				['blazon'] = "Vert, a pie Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FOODSTUFF'}
 			},
 			{
 				['name'] = "Gwenllian Caredig",
@@ -3122,14 +3122,14 @@ return {
 				['blazon'] = "Barry wavy azure and argent, an otter statant erect coward purpure maintaining a fish, Or",
 				['field'] = {'fesswise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-WEASEL AND OTTER'}
 			},
 			{
 				['name'] = "Sinech inigena Totavali",
 				['blazon'] = "Azure, an apple and on a chief argent three spiders sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FRUIT-APPLE'}
 			},
 			{
 				['name'] = "Siobhán an tSionnaigh Ruaidh",
@@ -3150,7 +3150,7 @@ return {
 				['blazon'] = "Argent, a serpent in annulo vorant of its own tail gules, an orle sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'REPTILE-SNAKE'}
 			},
 			{
 				['name'] = "Caitilin Shay",
@@ -3164,14 +3164,14 @@ return {
 				['blazon'] = "Azure, a lion, on a chief Or three mullets gules.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = 'CAT'
 			},
 			{
 				['name'] = "Sentinels' Keep, Barony of",
 				['blazon'] = "Azure, a pheon argent, a chief embattled Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'PHEON AND ARROWHEAD', 'HEAD-WEAPON'}
 			},
 			{
 				['name'] = "Víga-Brandr",
@@ -3185,7 +3185,7 @@ return {
 				['blazon'] = "(Fieldless) A raccoon's face argent marked sable within and conjoined to an annulet sable.",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'HEAD-BEAST,BADGER'}
 			},
 			{
 				['name'] = "Justin of Atenveldt",
@@ -3255,7 +3255,7 @@ return {
 				['blazon'] = "Azure, on a pale between two mastiffs statant addorsed Or a cross of Jerusalem and a sword inverted sable",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'PALE'}
 			},
 			{
 				['name'] = "Hakon mac Broccain",
@@ -3318,7 +3318,7 @@ return {
 				['blazon'] = "Argent, a lion sable, on a chief gules three fleurs-de-lis argent",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CAT'}
 			},
 			{
 				['name'] = "Birittha Wf",
@@ -3381,7 +3381,7 @@ return {
 				['blazon'] = "Vert, a raccoon statant guardant Or marked sable and in base a fleur-de-lys inverted, on a chief Or a crescent between two acorns inverted vert",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-BADGER'}
 			},
 			{
 				['name'] = "Decimus Maximus",
@@ -3423,7 +3423,7 @@ return {
 				['blazon'] = "(Fieldless) A raccoon's head cabossed azure marked argent",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'HEAD-BEAST,BADGER'}
 			},
 			{
 				['name'] = "Nikomedes Stephanou",
@@ -3528,14 +3528,14 @@ return {
 				['blazon'] = "Gules, on a pale Or a raven rising sable all within a bordure embattled counterchanged",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'PALE'}
 			},
 			{
 				['name'] = "Hester Strackbein",
 				['blazon'] = "Vert, a rabbit sejant erect reguardant maintaining an axe, a bordure Or",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-RABBIT'}
 			},
 			{
 				['name'] = "Isolda le Cler",
@@ -3605,21 +3605,21 @@ return {
 				['blazon'] = "Per pale argent and vert, a raven displayed sable within and conjoined to an annulet semy of triskelions of spirals all counterchanged",
 				['field'] = {'palewise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BIRD'}
 			},
 			{
 				['name'] = "Silvana di Ravenna",
 				['blazon'] = "(Fieldless) A raven displayed argent within and conjoined to an annulet argent semy of triskelions of spirals sable",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BIRD'}
 			},
 			{
 				['name'] = "Silvana di Ravenna",
 				['blazon'] = "(Fieldless) A raven displayed sable within and conjoined to an annulet sable semy of triskelions of spirals argent",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BIRD'}
 			},
 			{
 				['name'] = "Tanigawa no Norimitsu",
@@ -3710,7 +3710,7 @@ return {
 				['blazon'] = "Argent, a mastiff's head erased sable collared and langued purpure within a serpent in orle vorant of its tail gules",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'HEADDOG'}
 			},
 			{
 				['name'] = "Ysabel de Saincte Croix",
@@ -3871,7 +3871,7 @@ return {
 				['blazon'] = "Per fess Or and bendy argent and gules, on a fess gules below in chief a lion passant azure three estoiles Or",
 				['field'] = {'fesswise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FESS'}
 			},
 			{
 				['name'] = "Revna Jørgennson",
@@ -3927,14 +3927,14 @@ return {
 				['blazon'] = "Vert, a comet between in fess two bells Or, on a chief argent three dandelion plants proper",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'COMET'}
 			},
 			{
 				['name'] = "Douglass Elspeth MacKintosh",
 				['blazon'] = "Or, a rabbit rampant azure and in base a three-headed thistle proper, a label azure",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-RABBIT'}
 			},
 			{
 				['name'] = "Gerbrand Uchtredson",
@@ -4004,7 +4004,7 @@ return {
 				['blazon'] = "Argent, a winged sea-lion sejant-erect azure langued gules and eyed Or, and in base four barrulets wavy vert.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'CAT', 'MONSTER-SEA LION', 'MONSTER9WINGED'}
 			},
 			{
 				['name'] = "Taira Itome",
@@ -4039,7 +4039,7 @@ return {
 				['blazon'] = "Azure, a winged bull segreant, on a chief embattled argent a cross crosslet azure.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'MONSTER9WINGED', 'BEAST-BULL AND BISON'}
 			},
 			{
 				['name'] = "Henry Luton",
@@ -4067,14 +4067,14 @@ return {
 				['blazon'] = "Vert, an opossum rampant argent maintaining in its forepaws a bundle of wooden sticks Or, a bordure parted bordurewise Or and purpure.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-MOUSE AND RAT'}
 			},
 			{
 				['name'] = "Josef Yosef",
 				['blazon'] = "(Fieldless) An opossum rampant argent maintaining in its forepaws a bundle of sticks Or.",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BEAST-MOUSE AND RAT'}
 			},
 			{
 				['name'] = "Kursik the Hun",
@@ -4109,7 +4109,7 @@ return {
 				['blazon'] = "Sable, a horse rampant argent maintaining in its mouth a rapier, in base a sunflower, within an orle, and a bordure Or.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'HORSE'}
 			},
 			{
 				['name'] = "Ronan mac Coluimb",
@@ -4130,7 +4130,7 @@ return {
 				['blazon'] = "(Fieldless) A turnip bendwise sinister gules leaved vert.",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FRUIT9AND VEGETABLE-OTHER'}
 			}
 		}
 	}
