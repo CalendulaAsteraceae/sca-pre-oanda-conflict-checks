@@ -84,5 +84,5 @@ All the data should be manually checked, but these replacements will speed thing
 
 1. `\n[^\n\t]*\t[^\n\t]*\t[^\n\tAaBbDdGgGgSs]+[\n]*\t[^\n]*(\n)` to `$1`
 2. `\n[^\n\t]*\t[^\n\t]*\t[^\n\t]*\t[^\n\t]*\t[^\n\t]*(\n)` to `$1`
-3. `([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)(\t[^\n]*)(\n)` to `{["name"] = "$1", ["datekingdom"] = "$2", ["type"] = "$3", ["blazon"] = "$4", ["notes"] = "$5", ["armory"] = {$6}},$7`
-   1. `\n(A[^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)(\t[^\n]*)(\n)` to `$7{["name"] = "$1", ["datekingdom"] = "$2", ["type"] = "$3", ["blazon"] = "$4", ["notes"] = "$5", ["armory"] = {$6}},$7`
+3. `([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n]*)(\n)` to `{["name"] = "$1", ["datekingdom"] = "$2", ["type"] = "$3", ["blazon"] = "$4", ["notes"] = "$5", ["armory"] = {$6}},$7`
+   1. `\n(A[^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n]*)(\n)` to `$7{["name"] = "$1", ["datekingdom"] = "$2", ["type"] = "$3", ["blazon"] = "$4", ["notes"] = "$5", ["armory"] = {$6}},$7`
