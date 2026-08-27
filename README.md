@@ -79,3 +79,7 @@ All the data should be manually checked, but these replacements will speed thing
 9. `(\['blazon'\] = "[^\n,]+, a[^\n]+",\n\t+\['field'\] = \{[^\n]+\},\n\t+\['primary_number'\] = )\{\}` to `$1{1}`
 10. `(\['blazon'\] = "[^\n,]+, two[^\n]+",\n\t+\['field'\] = \{[^\n]+\},\n\t+\['primary_number'\] = )\{\}` to `$1{2}`
 11. `(\['blazon'\] = "\(Fieldless\) a[^\n]+",\n\t+\['field'\] = \{[^\n]+\},\n\t+\['primary_number'\] = )\{\}` to `$1{1}`
+
+## O&A filtering
+
+1. `\n[^\n\t]*\t[^\n\t]*\t[^\n\tAaBbDdGgGgSs]+[\?]?\t[^\n]*(\n)` to `$1`
