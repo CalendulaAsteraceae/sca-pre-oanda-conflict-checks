@@ -2,6 +2,32 @@ local p = {}
 
 local armory = require('oanda.lua')
 
+local function date_leq(date1, date2)
+    if not date1 or not date2 or not date1["year"] or not date2["year"] then
+        return nil
+    end
+    if date1["year"] ~= date2["year"] then
+        return date1["year"] < date2["year"]
+    end
+    if not date1["month"] or not date2["month"] then
+        return true
+    end
+    return date1["month"] <= date2["month"]
+end
+
+local function ungrouped_armory(args)
+    args = args or {}
+    local min_date = args['min_date'] and #(args['min_date']) == 2 and {["year"] = args['min_date'][1], ["month"] = args['min_date'][2]}
+    local max_date = args['max_date'] and #(args['max_date']) == 2 and {["year"] = args['max_date'][1], ["month"] = args['max_date'][2]}
+
+    local armory_of_interest = {}
+    for i, record in ipairs(armory) do
+        if date_leq(min_date, record["date"]) ~= false and date_leq(record["date"], max_date) ~= false then
+            table.insert(armory_of_interest, record)
+        end
+    end
+end
+
 --[=[
 Format:
 {
