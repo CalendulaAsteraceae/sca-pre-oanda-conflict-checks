@@ -83,6 +83,13 @@ local function ungrouped_armory(args)
     local armory_of_interest = {}
     for i, record in ipairs(armory) do
         if date_leq(min_date, record["date"]) ~= false and date_leq(record["date"], max_date) ~= false then
+            local record_info = {}
+            for j, heading in ipairs(record["armory"] or {}) do
+                if heading == "NO" then
+                    record_info["field"] = record_info["field"] or {}
+                    table.insert(record_info["field"], "NO")
+                end
+            end
             local new_record = {
                 ["name"] = record["name"],
                 ["date"] = record["date"] and table.concat(record["date"], "-"),
