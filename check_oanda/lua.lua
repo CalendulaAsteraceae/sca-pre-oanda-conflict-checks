@@ -15,14 +15,82 @@ local function date_leq(date1, date2)
     return date1["month"] <= date2["month"]
 end
 
+local kindgom_lookup = {
+    ["A"] = "Atenveldt",
+	["C"] = "Caid",
+	["D"] = "Drachenwald",
+	["E"] = "East",
+	["G"] = "Gleann Abhann",
+	["H"] = "AEthelmearc",
+	["K"] = "Calontir",
+	["L"] = "Laurel",
+	["M"] = "Middle",
+	["m"] = "Ealdormere",
+	["N"] = "An Tir",
+	["n"] = "Northshield",
+	["O"] = "Outlands",
+	["Q"] = "Atlantia",
+	["R"] = "Artemisia",
+	["S"] = "Meridies",
+	["T"] = "Trimaris",
+	["V"] = "Avacal",
+	["W"] = "West",
+	["w"] = "Lochac",
+	["X"] = "Ansteorra"
+}
+
+local type_lookup = {
+    ["a"] = "augmentation of arms",
+	["ABN"] = "ancient branch name",
+	["AN"] = "alternate name",
+	["ANC"] = "alternate name change",
+	["b"] = "badge",
+	["B"] = "personal name and badge",
+	["BN"] = "branch name",
+	["BD"] = "branch name and device",
+	["BNC"] = "branch name change",
+	["BNc"] = "branch name correction",
+	["Bv"] = "branch name variant without correction",
+	["Bvc"] = "branch name variant with correction",
+	["C"] = "comment",
+	["d"] = "device",
+	["D"] = "personal name and device",
+	["D?"] = "uncertain type of armory",
+	["g"] = "regalia",
+	["HN"] = "household name",
+	["HNC"] = "household name change",
+	["j"] = "joint badge cross-reference",
+	["N"] = "primary personal name",
+	["NC"] = "personal name change",
+	["Nc"] = "personal name correction",
+	["O"] = "award name or order name",
+	["OC"] = "award name change or order name change",
+	["r"] = "reserved/generic word/phrase",
+	["R"] = "cross-reference",
+	["s"] = "seal",
+	["t"] = "heraldic title",
+	["u"] = "branch designator update",
+	["v"] = "personal name variant without correction",
+	["vc"] = "personal name variant with correction",
+	["W"] = "heraldic will"
+}
+
 local function ungrouped_armory(args)
     args = args or {}
-    local min_date = args['min_date'] and #(args['min_date']) == 2 and {["year"] = args['min_date'][1], ["month"] = args['min_date'][2]}
-    local max_date = args['max_date'] and #(args['max_date']) == 2 and {["year"] = args['max_date'][1], ["month"] = args['max_date'][2]}
+    local min_date = args["min_date"] and #(args["min_date"]) == 2 and {["year"] = args["min_date"][1], ["month"] = args["min_date"][2]}
+    local max_date = args["max_date"] and #(args["max_date"]) == 2 and {["year"] = args["max_date"][1], ["month"] = args["max_date"][2]}
 
     local armory_of_interest = {}
     for i, record in ipairs(armory) do
         if date_leq(min_date, record["date"]) ~= false and date_leq(record["date"], max_date) ~= false then
+            local new_record = {
+                ["name"] = record["name"],
+                ["date"] = record["date"] and table.concat(record["date"], "-"),
+                ["kingdom"] = record["kingdom"] and kindgom_lookup[record["kingdom"]],
+                ["type"] = record["type"] and type_lookup[record["type"]],
+                ["blazon"] = record["blazon"],
+                ["notes"] = record["notes"]
+            }
             table.insert(armory_of_interest, record)
         end
     end
@@ -46,8 +114,8 @@ Format:
 ]=]
 function p.grouped_armory(args)
     args = args or {}
-    local min_date = args['min_date'] and #(args['min_date']) == 2 and args['min_date']
-    local max_date = args['max_date'] and #(args['max_date']) == 2 and args['max_date']
+    local min_date = args["min_date"] and #(args["min_date"]) == 2 and args["min_date"]
+    local max_date = args["max_date"] and #(args["max_date"]) == 2 and args["max_date"]
 
     local armory_of_interest = {}
     for year, ya in pairs(armory) do
@@ -155,7 +223,7 @@ end
 function p.potential_conflicts(args)
     args = args or {}
     local letter_date = args['letter_date'] and #(args['letter_date']) == 2 and args['letter_date']
-    args['max_date'] = args['letter_date']
+    args["max_date"] = args['letter_date']
     local letter = letter_date and letter_date[2] .. '/' .. letter_date[1]
 
     local conflicts = {}
