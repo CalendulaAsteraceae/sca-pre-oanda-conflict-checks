@@ -82,4 +82,4 @@ All the data should be manually checked, but these replacements will speed thing
 
 ## O&A filtering
 
-1. `\n[^\n\t]*\t[^\n\t]*\t[^\n\tAaBbDdGgGgSs]+[\?]?\t[^\n]*(\n)` to `$1`
+1. `\n[^\n\t]*\t[^\n\t]*\t[^\n\tAaBbDdGgGgSs]+[\n]*\t[^\n]*(\n)` to `$1`
