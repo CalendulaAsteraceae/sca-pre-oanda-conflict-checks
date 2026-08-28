@@ -395,4 +395,21 @@ function p.print_potential_conflicts(args)
     return p.print_grouped_table(p.potential_conflicts(args))
 end
 
+function p.print_heading_list(args)
+    local headings = {}
+    local exists = {}
+    for i, record in ipairs(oanda) do
+        for j, fh in ipairs(record["armory"] or {}) do
+            if type(fh) == "string" then
+                local heading = string.match(fh, "^([^:]+):") or fh
+                if not exists[heading] then
+                    table.insert(headings, heading)
+                    exists[heading] = true
+                end
+            end
+        end
+    end
+    return table.concat(headings, "\n")
+end
+
 return p
