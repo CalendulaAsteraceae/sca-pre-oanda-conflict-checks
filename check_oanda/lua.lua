@@ -85,9 +85,12 @@ local function ungrouped_armory(args)
         if date_leq(min_date, record["date"]) ~= false and date_leq(record["date"], max_date) ~= false then
             local record_info = {}
             for j, heading in ipairs(record["armory"] or {}) do
+                record_info["field"] = record_info["field"] or {}
                 if heading == "NO" then
-                    record_info["field"] = record_info["field"] or {}
                     table.insert(record_info["field"], "NO")
+                elseif string.match(heading, "^FIELD:") then
+                    local division = string.match(heading, ":(divided[^:]*):")
+                    table.insert(record_info["field"], division)
                 end
             end
             local new_record = {
