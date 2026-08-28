@@ -141,7 +141,8 @@ local arrangement_lookup = {
 }
 
 local charge_lookup = {
-
+    ["FO"] = "FP",
+    ["PO"] = "FP"
 }
 
 function p.process_oanda(args)
