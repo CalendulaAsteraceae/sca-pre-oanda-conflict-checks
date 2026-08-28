@@ -92,3 +92,4 @@ All the data should be manually checked, but these replacements will speed thing
 7. `\["datekingdom"\] = "(\d\d\d\d)(\d\d)"` to `["date"] = {["year"] = $1, ["month"] = $2}`
 8. `\["datekingdom"\] = "(\d\d\d\d)(\d\d)(\w)"` to `["date"] = {["year"] = $1, ["month"] = $2}, ["kingdom"] = "$3"`
    1. `\["datekingdom"\] = "(200\d)(\d\d)(\w)"` to `["date"] = {["year"] = $1, ["month"] = $2}, ["kingdom"] = "$3"`
+9. `(\["blazon"\] = ".*)"(.*)"(.*", \["notes"\] = )` to `$1\"$2\"$3`
