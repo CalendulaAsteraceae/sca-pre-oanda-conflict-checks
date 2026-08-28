@@ -2,14 +2,13 @@
 
 This code will systematically check for conflicts between SCA armory submissions which aren't in the [O&A](https://oanda.sca.org/) yet. The UI isn't great, and it requires a lot of manual data entry, but it does work.
 
-## How to use this code
+### How to use this code
 1. Make sure you have [Lua](https://www.lua.org/) installed.
 2. Download this code.
 3. If needed, add armory data to [armory/lua.lua](armory/lua.lua).
 4. In the command line, start Lua and evaluate `require("global_def.lua")`.
-5. To check armory, evaluate `check_armory.print_potential_conflicts(...)`.
 
-### print_potential_conflicts
+#### print_potential_conflicts
 Optional arguments: `min_date`, `max_date`
 
 To check with no date limits:
@@ -29,7 +28,7 @@ To check with date limits:
 * `check_armory.print_potential_conflicts({max_date = {2026, 5}})`
 * `check_armory.print_potential_conflicts({min_date = {2026, 5}, max_date = {2026, 8}})`
 
-## Filling out the armory data
+### Filling out the armory data
 
 Go to the appropriate tracking month, like [https://oscar.sca.org/index.php?action=213&id=251](https://oscar.sca.org/index.php?action=213&id=251)
 
@@ -65,6 +64,7 @@ Add to [armory/lua.lua](armory/lua.lua) with the year and month as keys, like so
 		}
 	}
 }
+```
 
 Fields are `solid`, `NO`, and directions of division which are features of `FIELD` in the OA& (e.g. `bendwise`). Number of primary charges are integers; the code will group submissions into 0, 1, 2, 3, and 4+. Primary charges are based on codes in the O&A, but with more grouping by SCs (e.g. a tyger will just be coded as a `CAT`, a demi-sun or a caltrop as `STAR`, a tree as `TREE`).
 
@@ -82,12 +82,9 @@ All the data should be manually checked, but these replacements will speed thing
 
 ## O&A filtering
 
-```
-require("global_def.lua")
-check_oanda.write_processed_oanda()
-```
 
-## Formatting the O&A
+
+### Formatting the O&A
 
 1. `\n[^\n\t]*\t[^\n\t]*\t[^\n\tAaBbDdGgGgSs]+[\n]*\t[^\n]*(\n)` to `$1`
 2. `\n[^\n\t]*\t[^\n\t]*\t[^\n\t]*\t[^\n\t]*\t[^\n\t]*(\n)` to `$1`
@@ -102,3 +99,10 @@ check_oanda.write_processed_oanda()
 9. `(\["blazon"\] = ".*)"(.*)"(.*", \["notes"\] = )` to `$1\"$2\"$3`
 10. `(\["blazon"\] = "[^\\]*)"([^\\]*", \["notes"\] = )` to `$1\"$2`
 11. `\w"[^,\}\]]`
+
+### Processing the O&A
+
+```
+require("global_def.lua")
+check_oanda.write_processed_oanda()
+```
