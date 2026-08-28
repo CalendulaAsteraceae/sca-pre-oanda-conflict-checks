@@ -138,9 +138,11 @@ function p.process_oanda(args)
                 end
             end
 
+            local date = record["date"] and record["date"]["year"] and table.concat({record["date"]["year"], record["date"]["month"]}, "-")
+
             local new_record = {
                 ["name"] = record["name"],
-                ["date"] = record["date"] and table.concat(record["date"], "-"),
+                ["date"] = date,
                 ["kingdom"] = record["kingdom"] and kindgom_lookup[record["kingdom"]],
                 ["type"] = record["type"] and type_lookup[record["type"]],
                 ["blazon"] = record["blazon"],
@@ -171,7 +173,7 @@ local function write_table(record, tabs)
         else
             io.write(v)
         end
-        io.write(string.rep("\t", tabs + 1), ",\n")
+        io.write(",", string.rep("\t", tabs + 1), "\n")
     end
     io.write(string.rep("\t", tabs), "},\n")
 end
