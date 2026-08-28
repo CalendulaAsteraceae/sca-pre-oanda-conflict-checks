@@ -77,6 +77,45 @@ local type_lookup = {
 	["W"] = "heraldic will"
 }
 
+local field_lookup = {
+    ["AR"] = true,
+    ["AZ"] = true,
+    ["BC"] = true,
+    ["BR"] = true,
+    ["CEN"] = true,
+    ["CE"] = true,
+    ["ER"] = true,
+    ["ES"] = true,
+    ["GU"] = true,
+    ["KH"] = true,
+    ["OR"] = true,
+    ["PE"] = true,
+    ["PU"] = true,
+    ["SA"] = true,
+    ["TE"] = true,
+    ["VT"] = true
+}
+
+local arrangement_lookup = {
+    ["ARRANGEMENT-IN ANNULO"]  true,
+    ["ARRANGEMENT-IN ARCH"]  true,
+    ["ARRANGEMENT-IN BEND"]  true,
+    ["ARRANGEMENT-IN BEND*3"]  true,
+    ["ARRANGEMENT-IN CHEVRON"]  true,
+    ["ARRANGEMENT-IN CHEVRON*7"]  true,
+    ["ARRANGEMENT-IN CROSS"]  true,
+    ["ARRANGEMENT-IN ESTOILE"]  true,
+    ["ARRANGEMENT-IN FESS"]  true,
+    ["ARRANGEMENT-IN MASCLE"]  true,
+    ["ARRANGEMENT-IN ORLE"]  true,
+    ["INPALE"]  true,
+    ["ARRANGEMENT-IN PALL"]  true,
+    ["ARRANGEMENT-IN PALL*7"]  true,
+    ["ARRANGEMENT-IN PILE"]  true,
+    ["INSA"]  true,
+    ["ARRANGEMENT-IN TRIQUETRA"]  true
+}
+
 function p.process_oanda(args)
     args = args or {}
     local min_date = args["min_date"] and #(args["min_date"]) == 2 and {["year"] = args["min_date"][1], ["month"] = args["min_date"][2]}
@@ -85,11 +124,6 @@ function p.process_oanda(args)
     local armory_of_interest = {}
     for i, record in ipairs(armory) do
         if date_leq(min_date, record["date"]) ~= false and date_leq(record["date"], max_date) ~= false and record["armory"] and #(record["armory"]) > 0 then
-            local record_info = {
-                ["field"] = {},
-                ["primary_charges"] = {},
-                ["primary_number"] = {}
-            }
             local record_fields = {}
             local record_primary_charges = {}
             local record_primary_numbers = {}
@@ -104,15 +138,18 @@ function p.process_oanda(args)
                     table.insert(record_primary_numbers, "FP")
                     table.insert(record_primary_numbers, 0)
                 else
-                    local primary_info = string.match(heading, ":(spn?a|g%d*pn?a|primary|%w+ primary):") or string.match(heading, ":(spa|spna|g%d*pna|primary|%w+ primary)$")
+                    local primary_info = string.match(heading, ":(spn?a):") or string.match(heading, ":(spn?a)$") or string.match(heading, ":(g%d*pn?a):") or string.match(heading, ":(g%d*pn?a)$") or string.match(heading, ":(primary):") or string.match(heading, ":(primary)$") or string.match(heading, ":(%w+ primary):") or string.match(heading, ":(%w+ primary)$")
                     if primary_info then
                         local charge = string.match(heading, "^([^:]+):")
-                        table.insert(record_primary_charges, charge)
+                        if not field_lookup[charge] and not arrangement_lookup[charge] then
+                            table.insert(record_primary_charges, charge)
+                        end
 
                         local group_n = string.match(primary_info, "g(%d+)pn?a")
                         group_n = tonumber(group_n)
                         local charge_n = string.match(heading, ":%d+:") or string.match(heading, ":%d+$")
                         charge_n = tonumber(charge_n)
+
                         if primary_info == "spa" or primary_info == "spna" or primary_info == "sole primary" then
                             table.insert(record_primary_numbers, 1)
                         elseif group_n then
@@ -166,7 +203,6 @@ local function write_table(record, tabs)
     for k, v in pairs(record) do
         io.write(string.rep("\t", tabs + 1), "[\"", k, "\"] = ")
         if type(v) == "table" then
-            io.write("\n")
             write_table(v, tabs + 1)
         elseif type(v) == "string" then
             io.write("\"", v, "\"")
