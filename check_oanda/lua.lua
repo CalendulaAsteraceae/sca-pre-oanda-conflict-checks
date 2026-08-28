@@ -15,6 +15,23 @@ local function date_leq(date1, date2)
     return date1["month"] <= date2["month"]
 end
 
+local function remove_duplicates(array)
+    if not array or type(array) ~= "table" then
+        return array
+    end
+    local deduped_array = {}
+    local exists = {}
+    for i, v in ipairs(array) do
+        if type(v) == 'number' and v ~= v then
+            table.insert(deduped_array, v)
+        elseif not exists[v] then
+            table.insert(deduped_array, v)
+            exists[v] = true
+        end
+    end
+    return deduped_array
+end
+
 local max_charge_count = 4
 
 local kindgom_lookup = {
@@ -190,9 +207,9 @@ function p.process_oanda(args)
                 ["blazon"] = record["blazon"],
                 ["notes"] = record["notes"],
                 ["armory"] = {
-                    ["fields"] = record_fields,
-                    ["primary_charges"] = record_primary_charges,
-                    ["primary_numbers"] = record_primary_numbers
+                    ["fields"] = remove_duplicates(record_fields),
+                    ["primary_charges"] = remove_duplicates(record_primary_charges),
+                    ["primary_numbers"] = remove_duplicates(record_primary_numbers)
                 }
             }
             table.insert(armory_of_interest, new_record)
