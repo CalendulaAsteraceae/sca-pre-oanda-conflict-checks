@@ -132,7 +132,7 @@ function p.process_oanda(args)
                 if heading == "NO" then
                     table.insert(record_fields, "NO")
                 elseif string.match(heading, "^FIELD:") then
-                    local division = string.match(heading, ":(divided[^:]*):")
+                    local division = string.match(heading, ":(divided[^:]*):") or string.match(heading, ":(divided[^:]*)$") or string.match(heading, ":(solid):") or string.match(heading, ":(solid)$")
                     table.insert(record_fields, division)
                 elseif heading == "FO" or heading == "PO" then
                     table.insert(record_primary_numbers, "FP")
