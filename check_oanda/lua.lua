@@ -97,23 +97,23 @@ local field_lookup = {
 }
 
 local arrangement_lookup = {
-    ["ARRANGEMENT-IN ANNULO"]  true,
-    ["ARRANGEMENT-IN ARCH"]  true,
-    ["ARRANGEMENT-IN BEND"]  true,
-    ["ARRANGEMENT-IN BEND*3"]  true,
-    ["ARRANGEMENT-IN CHEVRON"]  true,
-    ["ARRANGEMENT-IN CHEVRON*7"]  true,
-    ["ARRANGEMENT-IN CROSS"]  true,
-    ["ARRANGEMENT-IN ESTOILE"]  true,
-    ["ARRANGEMENT-IN FESS"]  true,
-    ["ARRANGEMENT-IN MASCLE"]  true,
-    ["ARRANGEMENT-IN ORLE"]  true,
-    ["INPALE"]  true,
-    ["ARRANGEMENT-IN PALL"]  true,
-    ["ARRANGEMENT-IN PALL*7"]  true,
-    ["ARRANGEMENT-IN PILE"]  true,
-    ["INSA"]  true,
-    ["ARRANGEMENT-IN TRIQUETRA"]  true
+    ["ARRANGEMENT-IN ANNULO"] = true,
+    ["ARRANGEMENT-IN ARCH"] = true,
+    ["ARRANGEMENT-IN BEND"] = true,
+    ["ARRANGEMENT-IN BEND*3"] = true,
+    ["ARRANGEMENT-IN CHEVRON"] = true,
+    ["ARRANGEMENT-IN CHEVRON*7"] = true,
+    ["ARRANGEMENT-IN CROSS"] = true,
+    ["ARRANGEMENT-IN ESTOILE"] = true,
+    ["ARRANGEMENT-IN FESS"] = true,
+    ["ARRANGEMENT-IN MASCLE"] = true,
+    ["ARRANGEMENT-IN ORLE"] = true,
+    ["INPALE"] = true,
+    ["ARRANGEMENT-IN PALL"] = true,
+    ["ARRANGEMENT-IN PALL*7"] = true,
+    ["ARRANGEMENT-IN PILE"] = true,
+    ["INSA"] = true,
+    ["ARRANGEMENT-IN TRIQUETRA"] = true
 }
 
 function p.process_oanda(args)
