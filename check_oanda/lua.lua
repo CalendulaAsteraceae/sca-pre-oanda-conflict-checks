@@ -166,7 +166,7 @@ local function write_table(record, tabs)
         if type(v) == "table" then
             write_table(v, tabs + 1)
         elseif type(v) == "string" then
-            io.write("\", v, "\"")
+            io.write("\"", v, "\"")
         else
             io.write(v)
         end
