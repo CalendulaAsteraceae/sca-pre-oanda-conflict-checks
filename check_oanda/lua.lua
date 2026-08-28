@@ -15,6 +15,8 @@ local function date_leq(date1, date2)
     return date1["month"] <= date2["month"]
 end
 
+local max_charge_count = 4
+
 local kindgom_lookup = {
     ["A"] = "Atenveldt",
 	["C"] = "Caid",
@@ -75,7 +77,7 @@ local type_lookup = {
 	["W"] = "heraldic will"
 }
 
-local function ungrouped_armory(args)
+function p.process_oanda(args)
     args = args or {}
     local min_date = args["min_date"] and #(args["min_date"]) == 2 and {["year"] = args["min_date"][1], ["month"] = args["min_date"][2]}
     local max_date = args["max_date"] and #(args["max_date"]) == 2 and {["year"] = args["max_date"][1], ["month"] = args["max_date"][2]}
@@ -96,6 +98,39 @@ local function ungrouped_armory(args)
                     table.insert(record_info["field"], division)
                 elseif heading == "FO" or heading == "PO" then
                     table.insert(record_info["primary_number"], "FP")
+                    table.insert(record_info["primary_number"], 0)
+                else
+                    local primary_info = string.match(heading, ":(spn?a|g%d*pn?a|primary|%w+ primary):") or string.match(heading, ":(spa|spna|g%d*pna|primary|%w+ primary)$")
+                    if primary_info then
+                        local charge = string.match(heading, "^([^:]+):")
+                        table.insert(record_info["primary_charges"], charge)
+
+                        local group_n = string.match(primary_info, "g(%d+)pn?a")
+                        group_n = tonumber(group_n)
+                        local charge_n = string.match(heading, ":%d+:") or string.match(heading, ":%d+$")
+                        charge_n = tonumber(charge_n)
+                        if primary_info == "spa" or primary_info == "spna" or primary_info == "sole primary" then
+                            table.insert(record_info["primary_number"], 1)
+                        elseif group_n then
+                            table.insert(record_info["primary_number"], math.min(group_n, max_charge_count))
+                        elseif primary_info == "gpa" or primary_info == "gpna" or primary_info == "group primary" then
+                            if charge_n and charge_n >= max_charge_count then
+                                table.insert(record_info["primary_number"], max_charge_count)
+                            elseif charge_n then
+                                for k = math.max(2, charge_n), max_charge_count, 1 do
+                                    table.insert(record_info["primary_number"], k)
+                                end
+                            end
+                        elseif primary_info then
+                            if charge_n and charge_n >= max_charge_count then
+                                table.insert(record_info["primary_number"], max_charge_count)
+                            elseif charge_n then
+                                for k = math.max(1, charge_n), max_charge_count, 1 do
+                                    table.insert(record_info["primary_number"], k)
+                                end
+                            end
+                        end
+                    end
                 end
             end
 
@@ -111,6 +146,8 @@ local function ungrouped_armory(args)
             table.insert(armory_of_interest, record)
         end
     end
+
+    return armory_of_interest
 end
 
 --[=[
@@ -145,7 +182,6 @@ function p.grouped_armory(args)
         end
     end
 
-    local max_charge_count = 4
     local default_primary_numbers = {0, 1, 2, 3, 4}
 
     -- create grouped armory table
