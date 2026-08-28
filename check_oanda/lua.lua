@@ -395,7 +395,7 @@ function p.print_potential_conflicts(args)
     return p.print_grouped_table(p.potential_conflicts(args))
 end
 
-function p.print_heading_list(args)
+function p.print_heading_list()
     local headings = {}
     local exists = {}
     for i, record in ipairs(oanda) do
