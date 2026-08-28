@@ -90,43 +90,47 @@ function p.process_oanda(args)
                 ["primary_charges"] = {},
                 ["primary_number"] = {}
             }
+            local record_fields = {}
+            local record_primary_charges = {}
+            local record_primary_numbers = {}
+            
             for j, heading in ipairs(record["armory"]) do
                 if heading == "NO" then
-                    table.insert(record_info["field"], "NO")
+                    table.insert(record_fields, "NO")
                 elseif string.match(heading, "^FIELD:") then
                     local division = string.match(heading, ":(divided[^:]*):")
-                    table.insert(record_info["field"], division)
+                    table.insert(record_fields, division)
                 elseif heading == "FO" or heading == "PO" then
-                    table.insert(record_info["primary_number"], "FP")
-                    table.insert(record_info["primary_number"], 0)
+                    table.insert(record_primary_numbers, "FP")
+                    table.insert(record_primary_numbers, 0)
                 else
                     local primary_info = string.match(heading, ":(spn?a|g%d*pn?a|primary|%w+ primary):") or string.match(heading, ":(spa|spna|g%d*pna|primary|%w+ primary)$")
                     if primary_info then
                         local charge = string.match(heading, "^([^:]+):")
-                        table.insert(record_info["primary_charges"], charge)
+                        table.insert(record_primary_charges, charge)
 
                         local group_n = string.match(primary_info, "g(%d+)pn?a")
                         group_n = tonumber(group_n)
                         local charge_n = string.match(heading, ":%d+:") or string.match(heading, ":%d+$")
                         charge_n = tonumber(charge_n)
                         if primary_info == "spa" or primary_info == "spna" or primary_info == "sole primary" then
-                            table.insert(record_info["primary_number"], 1)
+                            table.insert(record_primary_numbers, 1)
                         elseif group_n then
-                            table.insert(record_info["primary_number"], math.min(group_n, max_charge_count))
+                            table.insert(record_primary_numbers, math.min(group_n, max_charge_count))
                         elseif primary_info == "gpa" or primary_info == "gpna" or primary_info == "group primary" then
                             if charge_n and charge_n >= max_charge_count then
-                                table.insert(record_info["primary_number"], max_charge_count)
+                                table.insert(record_primary_numbers, max_charge_count)
                             elseif charge_n then
                                 for k = math.max(2, charge_n), max_charge_count, 1 do
-                                    table.insert(record_info["primary_number"], k)
+                                    table.insert(record_primary_numbers, k)
                                 end
                             end
                         elseif primary_info then
                             if charge_n and charge_n >= max_charge_count then
-                                table.insert(record_info["primary_number"], max_charge_count)
+                                table.insert(record_primary_numbers, max_charge_count)
                             elseif charge_n then
                                 for k = math.max(1, charge_n), max_charge_count, 1 do
-                                    table.insert(record_info["primary_number"], k)
+                                    table.insert(record_primary_numbers, k)
                                 end
                             end
                         end
@@ -141,13 +145,43 @@ function p.process_oanda(args)
                 ["type"] = record["type"] and type_lookup[record["type"]],
                 ["blazon"] = record["blazon"],
                 ["notes"] = record["notes"],
-                ["armory"] = record_info
+                ["armory"] = {
+                    ["fields"] = record_fields,
+                    ["primary_charges"] = record_primary_charges,
+                    ["primary_numbers"] = record_primary_numbers
+                }
             }
             table.insert(armory_of_interest, record)
         end
     end
 
     return armory_of_interest
+end
+
+local function write_table(record, tabs)
+    tabs = tabs or 0
+    io.write(string.rep("\t", tabs), "{\n")
+    for k, v in pairs(record) do
+        io.write(string.rep("\t", tabs + 1), "[\"", k, "\"] = {\n")
+        if type(v) == "table" then
+            write_table(v, tabs + 1)
+        elseif type(v) == "string" then
+            io.write("\", v, "\"")
+        else
+            io.write(v)
+        end
+        io.write(string.rep("\t", tabs + 1), "},\n")
+    end
+    io.write(string.rep("\t", tabs), "},\n")
+end
+
+function p.write_processed_oanda(args)
+    local processed_oanda = p.process_oanda(args)
+    io.write("{\n")
+    for i, record in ipairs(processed_oanda) do
+        write_table(record, 1)
+    end
+    io.write("\n}")
 end
 
 --[=[
