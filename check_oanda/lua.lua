@@ -151,7 +151,7 @@ function p.process_oanda(args)
                     ["primary_numbers"] = record_primary_numbers
                 }
             }
-            table.insert(armory_of_interest, record)
+            table.insert(armory_of_interest, new_record)
         end
     end
 
