@@ -367,8 +367,19 @@ function p.print_grouped_table(grouped_armory)
         for n, na in pairs(fa) do
             for charge, ca in pairs(na) do
                 local blazons = {}
-                for i, a in ipairs(ca) do
-                    table.insert(blazons, a.letter .. ', ' .. a.name .. ', ' .. a.blazon)
+                for i, record in ipairs(ca) do
+                    table.insert(
+                        blazons,
+                        table.concat(
+                            {
+                                record["name"],
+                                record["date"] and record["date"]["month"] .. "/" .. record["date"]["year"],
+                                record["kingdom"],
+                                record["type"]
+                            },
+                            ", "
+                        ) .. ": " .. record["blazon"]
+                    )
                 end
                 table.insert(armory_text, field .. ', ' .. n .. ', ' .. charge .. ':\n' .. table.concat(blazons, '\n'))
             end
