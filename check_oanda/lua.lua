@@ -34,6 +34,7 @@ local function remove_duplicates(array)
 end
 
 local max_charge_count = 4
+local default_primary_numbers = {0, 1, 2, 3, 4}
 
 local kindgom_lookup = {
     ["A"] = "Atenveldt",
@@ -139,14 +140,16 @@ local arrangement_lookup = {
     ["ARRANGEMENT-IN TRIQUETRA"] = true
 }
 
+local charge_lookup = {
+
+}
+
 function p.process_oanda(args)
     args = args or {}
-    local min_date = args["min_date"] and #(args["min_date"]) == 2 and {["year"] = args["min_date"][1], ["month"] = args["min_date"][2]}
-    local max_date = args["max_date"] and #(args["max_date"]) == 2 and {["year"] = args["max_date"][1], ["month"] = args["max_date"][2]}
 
     local armory_of_interest = {}
     for i, record in ipairs(oanda) do
-        if date_leq(min_date, record["date"]) ~= false and date_leq(record["date"], max_date) ~= false and record["armory"] and #(record["armory"]) > 0 then
+        if record["armory"] and #(record["armory"]) > 0 then
             local record_fields = {}
             local record_primary_charges = {}
             local record_primary_numbers = {}
@@ -165,7 +168,13 @@ function p.process_oanda(args)
                     if primary_info then
                         local charge = string.match(heading, "^([^:]+):")
                         if not field_lookup[charge] and not arrangement_lookup[charge] then
-                            table.insert(record_primary_charges, charge)
+                            if charge_lookup[charge] then
+                                for k, c in ipairs(charge_lookup[charge]) do
+                                    table.insert(record_primary_charges, c)
+                                end
+                            else
+                                table.insert(record_primary_charges, charge)
+                            end
                         end
 
                         local group_n = string.match(primary_info, "g(%d+)pn?a")
@@ -265,62 +274,41 @@ Format:
 ]=]
 function p.grouped_armory(args)
     args = args or {}
-    local min_date = args["min_date"] and #(args["min_date"]) == 2 and args["min_date"]
-    local max_date = args["max_date"] and #(args["max_date"]) == 2 and args["max_date"]
-
-    local armory_of_interest = {}
-    for year, ya in pairs(armory) do
-        if (not min_date or year >= min_date[1]) and (not max_date or year <= max_date[1]) then
-            for month, ma in pairs(ya) do
-                if (not min_date or year > min_date[1] or month >= min_date[2]) and (not max_date or year < max_date[1] or month <= max_date[2]) then
-                    armory_of_interest[month .. '/' .. year] = ma
-                end
-            end
-        end
-    end
-
-    local default_primary_numbers = {0, 1, 2, 3, 4}
 
     -- create grouped armory table
     local grouped_armory = {}
-    for letter, l in pairs(armory_of_interest) do
-        for _, sub in ipairs(l) do
-            local sub_fields = (sub['field'] and #sub['field'] > 0 and sub['field']) or {'NO'}
-
-            for __, field in ipairs(sub_fields) do
-                grouped_armory[field] = grouped_armory[field] or {}
-                local primary_numbers = (sub['primary_number'] and #sub['primary_number'] > 0 and sub['primary_number']) or default_primary_numbers
-
-                for ___, num in ipairs(primary_numbers) do
-                    local n = math.min(num, max_charge_count)
-                    grouped_armory[field][n] = grouped_armory[field][n] or {}
-                    local primary_charges = (sub['primary_charge'] and #sub['primary_charge'] > 0 and sub['primary_charge']) or {'UNKNOWN'}
-                    
-                    for ____, charge in ipairs(primary_charges) do
-                        grouped_armory[field][n][charge] = grouped_armory[field][n][charge] or {}
-
-                        table.insert(
-                            grouped_armory[field][n][charge],
-                            {['letter'] = letter, ['name'] = sub['name'], ['blazon'] = sub['blazon']}
-                        )
-                    end
+    for i, record in ipairs(processed_oanda) do
+        local record_fields = record["fields"] and #(record["fields"]) > 0 and record["fields"] or {"NO"}
+        for j, field in ipairs(record_fields) do
+            grouped_armory[field] = grouped_armory[field] or {}
+            local primary_numbers = record["primary_numbers"] and #(record["primary_numbers"]) > 0 and record["primary_numbers"] or default_primary_numbers
+            for k, num in ipairs(primary_numbers) do
+                local n = math.min(num, max_charge_count)
+                grouped_armory[field][n] = grouped_armory[field][n] or {}
+                local primary_charges = record["primary_charges"] and #(record["primary_charges"]) > 0 and record["primary_charges"] or {"UNKNOWN"}
+                for l, charge in ipairs(primary_charges) do
+                    grouped_armory[field][n][charge] = grouped_armory[field][n][charge] or {}
+                    table.insert(
+                        grouped_armory[field][n][charge],
+                        record
+                    )
                 end
             end
         end
     end
 
     -- put grouped_armory['NO'] in every other grouped_armory[*][n][charge]
-    if grouped_armory['NO'] then
+    if grouped_armory["NO"] then
         local fields = {}
         for field, _ in pairs(grouped_armory) do
-            if field ~= 'NO' then
+            if field ~= "NO" then
                 table.insert(fields, field)
             end
         end
         local fieldless_charges = {}
         for n = 0, max_charge_count do
             fieldless_charges[n] = {}
-            for charge, ca in pairs(grouped_armory['NO'][n] or {}) do
+            for charge, ca in pairs(grouped_armory["NO"][n] or {}) do
                 fieldless_charges[n][charge] = ca
             end
         end
@@ -329,39 +317,11 @@ function p.grouped_armory(args)
                 if grouped_armory[field][n] then
                     for charge, ca in pairs(fieldless_charges[n]) do
                         if grouped_armory[field][n][charge] then
-                            for j, sub in ipairs(ca) do
-                                table.insert(grouped_armory[field][n][charge], sub)
+                            for j, record in ipairs(ca) do
+                                table.insert(grouped_armory[field][n][charge], record)
                             end
                         end
                     end
-                end
-            end
-        end
-    end
-
-    -- put armory with unknown primary charges in every other grouped_armory[field][n][*]
-    local unknown_charges = {}
-    local known_charges = {}
-    for field, fa in pairs(grouped_armory) do
-        unknown_charges[field] = {}
-        known_charges[field] = {}
-        for n, na in pairs(fa) do
-            if na['UNKNOWN'] then
-                unknown_charges[field][n] = na['UNKNOWN']
-                known_charges[field][n] = {}
-                for charge, _ in pairs(na) do
-                    if charge ~= 'UNKNOWN' then
-                        table.insert(known_charges[field][n], charge)
-                    end
-                end
-            end
-        end
-    end
-    for field, fa in pairs(unknown_charges) do
-        for n, na in pairs(fa) do
-            for i, sub in ipairs(na) do
-                for j, charge in ipairs(known_charges[field][n]) do
-                    table.insert(grouped_armory[field][n][charge], sub)
                 end
             end
         end
@@ -372,9 +332,7 @@ end
 
 function p.potential_conflicts(args)
     args = args or {}
-    local letter_date = args['letter_date'] and #(args['letter_date']) == 2 and args['letter_date']
-    args["max_date"] = args['letter_date']
-    local letter = letter_date and letter_date[2] .. '/' .. letter_date[1]
+    local letter_date = args["letter_date"] and args["letter_date"]["year"] and args["letter_date"]["month"] and args["letter_date"]
 
     local conflicts = {}
     local grouped_armory = p.grouped_armory()
@@ -383,10 +341,10 @@ function p.potential_conflicts(args)
             for charge, ca in pairs(na) do
                 if #ca > 1 then
                     local has_letter = true
-                    if letter then
+                    if letter_date then
                         has_letter = false
-                        for i, sub in ipairs(ca) do
-                            if sub['letter'] == letter then
+                        for i, record in ipairs(ca) do
+                            if record["date"] and record["date"]["year"] == letter_date["year"] and record["date"]["month"] == letter_date["month"] then
                                 has_letter = true
                             end
                         end
