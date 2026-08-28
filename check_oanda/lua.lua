@@ -162,15 +162,16 @@ local function write_table(record, tabs)
     tabs = tabs or 0
     io.write(string.rep("\t", tabs), "{\n")
     for k, v in pairs(record) do
-        io.write(string.rep("\t", tabs + 1), "[\"", k, "\"] = {\n")
+        io.write(string.rep("\t", tabs + 1), "[\"", k, "\"] = ")
         if type(v) == "table" then
+            io.write("\n")
             write_table(v, tabs + 1)
         elseif type(v) == "string" then
             io.write("\"", v, "\"")
         else
             io.write(v)
         end
-        io.write(string.rep("\t", tabs + 1), "},\n")
+        io.write(string.rep("\t", tabs + 1), ",\n")
     end
     io.write(string.rep("\t", tabs), "},\n")
 end
