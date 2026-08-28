@@ -1,6 +1,7 @@
 local p = {}
 
-local armory = require('oanda.lua')
+local oanda = require('oanda.lua')
+local processed_oanda = require('processed_oanda.lua')
 
 local function date_leq(date1, date2)
     if not date1 or not date2 or not date1["year"] or not date2["year"] then
@@ -144,7 +145,7 @@ function p.process_oanda(args)
     local max_date = args["max_date"] and #(args["max_date"]) == 2 and {["year"] = args["max_date"][1], ["month"] = args["max_date"][2]}
 
     local armory_of_interest = {}
-    for i, record in ipairs(armory) do
+    for i, record in ipairs(oanda) do
         if date_leq(min_date, record["date"]) ~= false and date_leq(record["date"], max_date) ~= false and record["armory"] and #(record["armory"]) > 0 then
             local record_fields = {}
             local record_primary_charges = {}
@@ -197,11 +198,9 @@ function p.process_oanda(args)
                 end
             end
 
-            local date = record["date"] and record["date"]["year"] and table.concat({record["date"]["year"], record["date"]["month"]}, "-")
-
             local new_record = {
                 ["name"] = record["name"],
-                ["date"] = date,
+                ["date"] = record["date"],
                 ["kingdom"] = record["kingdom"] and kindgom_lookup[record["kingdom"]],
                 ["type"] = record["type"] and type_lookup[record["type"]],
                 ["blazon"] = record["blazon"],
@@ -240,9 +239,9 @@ local function write_table(record, tabs)
 end
 
 function p.write_processed_oanda(args)
-    local processed_oanda = p.process_oanda(args)
+    local processed = p.process_oanda(args)
     io.write("{\n")
-    for i, record in ipairs(processed_oanda) do
+    for i, record in ipairs(processed) do
         write_table(record, 1)
     end
     io.write("\n}")
