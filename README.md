@@ -82,6 +82,13 @@ All the data should be manually checked, but these replacements will speed thing
 
 ## O&A filtering
 
+```
+require("global_def.lua")
+check_oanda.write_processed_oanda()
+```
+
+## Formatting the O&A
+
 1. `\n[^\n\t]*\t[^\n\t]*\t[^\n\tAaBbDdGgGgSs]+[\n]*\t[^\n]*(\n)` to `$1`
 2. `\n[^\n\t]*\t[^\n\t]*\t[^\n\t]*\t[^\n\t]*\t[^\n\t]*(\n)` to `$1`
 3. `([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n\t]*)\t([^\n]*)(\n)` to `{["name"] = "$1", ["datekingdom"] = "$2", ["type"] = "$3", ["blazon"] = "$4", ["notes"] = "$5", ["armory"] = {$6}},$7`
@@ -93,3 +100,5 @@ All the data should be manually checked, but these replacements will speed thing
 8. `\["datekingdom"\] = "(\d\d\d\d)(\d\d)(\w)"` to `["date"] = {["year"] = $1, ["month"] = $2}, ["kingdom"] = "$3"`
    1. `\["datekingdom"\] = "(200\d)(\d\d)(\w)"` to `["date"] = {["year"] = $1, ["month"] = $2}, ["kingdom"] = "$3"`
 9. `(\["blazon"\] = ".*)"(.*)"(.*", \["notes"\] = )` to `$1\"$2\"$3`
+10. `(\["blazon"\] = "[^\\]*)"([^\\]*", \["notes"\] = )` to `$1\"$2`
+11. `\w"[^,\}\]]`
