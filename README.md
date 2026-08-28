@@ -109,5 +109,5 @@ check_oanda.write_processed_oanda()
 
 1. `(,\n),\t*\n` to `$1`
 2. `,\t*(\n\t*\})` to `$1`
-3. `= \t+\{` to `= {`
-4. `\t+(\n)` to `$1`
+3. `\t+(\n)` to `$1`
+4. `= \t+\{` to `= {`
