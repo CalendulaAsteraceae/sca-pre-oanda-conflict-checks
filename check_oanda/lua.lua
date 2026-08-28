@@ -82,24 +82,31 @@ local function ungrouped_armory(args)
 
     local armory_of_interest = {}
     for i, record in ipairs(armory) do
-        if date_leq(min_date, record["date"]) ~= false and date_leq(record["date"], max_date) ~= false then
-            local record_info = {}
-            for j, heading in ipairs(record["armory"] or {}) do
-                record_info["field"] = record_info["field"] or {}
+        if date_leq(min_date, record["date"]) ~= false and date_leq(record["date"], max_date) ~= false and record["armory"] and #(record["armory"]) > 0 then
+            local record_info = {
+                ["field"] = {},
+                ["primary_charges"] = {},
+                ["primary_number"] = {}
+            }
+            for j, heading in ipairs(record["armory"]) do
                 if heading == "NO" then
                     table.insert(record_info["field"], "NO")
                 elseif string.match(heading, "^FIELD:") then
                     local division = string.match(heading, ":(divided[^:]*):")
                     table.insert(record_info["field"], division)
+                elseif heading == "FO" or heading == "PO" then
+                    table.insert(record_info["primary_number"], "FP")
                 end
             end
+
             local new_record = {
                 ["name"] = record["name"],
                 ["date"] = record["date"] and table.concat(record["date"], "-"),
                 ["kingdom"] = record["kingdom"] and kindgom_lookup[record["kingdom"]],
                 ["type"] = record["type"] and type_lookup[record["type"]],
                 ["blazon"] = record["blazon"],
-                ["notes"] = record["notes"]
+                ["notes"] = record["notes"],
+                ["armory"] = record_info
             }
             table.insert(armory_of_interest, record)
         end
