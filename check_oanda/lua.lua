@@ -97,6 +97,11 @@ local field_lookup = {
 }
 
 local arrangement_lookup = {
+    ["ARRANGEMENT9BEAST&MONSTER,ADDORSED"] = true,
+    ["COMBAT"] = true,
+    ["ARRANGEMENT9BEAST&MONSTER,RESPECTANT"] = true,
+    ["ARRANGEMENT9HEAD,ADDORSED"] = true,
+    ["ARRANGEMENT9HEAD,RESPECTANT"] = true,
     ["ARRANGEMENT-IN ANNULO"] = true,
     ["ARRANGEMENT-IN ARCH"] = true,
     ["ARRANGEMENT-IN BEND"] = true,
@@ -201,13 +206,10 @@ local function write_table(record, tabs)
     tabs = tabs or 0
     io.write(string.rep("\t", tabs), "{\n")
     for k, v in pairs(record) do
-        io.write(string.rep("\t", tabs + 1), "[")
+        io.write(string.rep("\t", tabs + 1))
         if type(k) == "string" then
-            io.write("\"", k, "\"")
-        else
-            io.write(k)
+            io.write("[\"", k, "\"] = ")
         end
-        io.write("] = ")
         if type(v) == "table" then
             write_table(v, tabs + 1)
         elseif type(v) == "string" then
