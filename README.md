@@ -82,7 +82,10 @@ All the data should be manually checked, but these replacements will speed thing
 
 ## O&A filtering
 
-
+```
+require("global_def.lua")
+check_oanda.print_potential_conflicts()
+```
 
 ### Formatting the O&A
 
