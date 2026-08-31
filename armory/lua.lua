@@ -792,7 +792,7 @@ return {
 				['blazon'] = "Or, within a wingless dragon in annulo vorant of its own tail purpure a valknut bendwise vert",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 2},
-				['primary_charge'] = {'DRAGON'}
+				['primary_charge'] = {'DRAGON', 'KNOT AND ROPE', 'TRIANGLE'}
 			},
 			{
 				['name'] = "Seraphina Ferris",
