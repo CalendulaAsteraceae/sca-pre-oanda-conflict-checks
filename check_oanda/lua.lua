@@ -143,15 +143,15 @@ local field_lookup = {
     ["SA"] = {["tincture"] = {"sable"}, ["division"] = "solid"},
     ["TE"] = {["tincture"] = {"or", "gules", "brown"}, ["division"] = "solid"},
     ["VT"] = {["tincture"] = {"vert"}, ["division"] = "solid"},
-    ["FIELD TREATMENT-SEME (ERMINED)"] = {["tincture"] = {"fur"}},
-	["FIELD TREATMENT-HONEYCOMBED"] = {["tincture"] = {"field treatment"}},
-	["FIELD TREATMENT-MAILED"] = {["tincture"] = {"field treatment"}},
-	["FIELD TREATMENT-MASONED"] = {["tincture"] = {"field treatment"}},
-	["FIELD TREATMENT-PAPELONNY"] = {["tincture"] = {"field treatment", "fur"}},
-	["FIELD TREATMENT-PLUMMETTY"] = {["tincture"] = {"fur"}},
-	["FIELD TREATMENT-POTENTY"] = {["tincture"] = {"fur"}},
-	["FIELD TREATMENT-SCALY"] = {["tincture"] = {"field treatment"}},
-	["FIELD TREATMENT-VAIRY"] = {["tincture"] = {"fur"}},
+    ["FIELD TREATMENT-SEME (ERMINED)"] = {["tincture"] = {"fur"}, ["division"] = {"solid", "divided"}},
+	["FIELD TREATMENT-HONEYCOMBED"] = {["tincture"] = {"field treatment"}, ["division"] = {"solid", "divided"}},
+	["FIELD TREATMENT-MAILED"] = {["tincture"] = {"field treatment"}, ["division"] = {"solid", "divided"}},
+	["FIELD TREATMENT-MASONED"] = {["tincture"] = {"field treatment"}, ["division"] = {"solid", "divided"}},
+	["FIELD TREATMENT-PAPELONNY"] = {["tincture"] = {"field treatment", "fur"}, ["division"] = {"solid", "divided"}},
+	["FIELD TREATMENT-PLUMMETTY"] = {["tincture"] = {"fur"}, ["division"] = {"solid", "divided"}},
+	["FIELD TREATMENT-POTENTY"] = {["tincture"] = {"fur"}, ["division"] = {"solid", "divided"}},
+	["FIELD TREATMENT-SCALY"] = {["tincture"] = {"field treatment"}, ["division"] = {"solid", "divided"}},
+	["FIELD TREATMENT-VAIRY"] = {["tincture"] = {"fur"}, ["division"] = {"solid", "divided"}},
     ["FIELD DIV.-BARRY"] = {["division"] = "divided fesswise"},
 	["FIELD DIV.-BENDY"] = {["division"] = "divided bendwise"},
 	["FIELD DIV.-BENDY*3"] = {["division"] = "divided bendwise sinister"},
@@ -261,7 +261,6 @@ function p.process_oanda(args)
             local record_primary_charges = {}
             local record_primary_numbers = {}
             
-            -- TODO: handle "FIELD:divided"
             for j, heading in ipairs(record["armory"]) do
                 local item_code = string.match(heading, "^([^:]+):")
                 if item_code == "NO" then
@@ -373,12 +372,27 @@ function p.process_oanda(args)
                 ["blazon"] = record["blazon"],
                 ["notes"] = record["notes"],
                 ["armory"] = {
-                    ["field_divisions"] = remove_duplicates(record_field_divisions),
+                    ["field_divisions"] = {},
                     ["field_tinctures"] = remove_duplicates(record_field_tinctures),
                     ["primary_charges"] = remove_duplicates(record_primary_charges),
                     ["primary_numbers"] = remove_duplicates(record_primary_numbers)
                 }
             }
+            if record_field_divisions["division"] then
+                for division, tinctures in pairs(record_field_divisions) do
+                    if division ~= "division" then
+                        local division_tinctures = tinctures
+                        for j, tincture in ipairs(record_field_divisions["division"]) do
+                            table.insert(division_tinctures, tincture)
+                        end
+                        new_record["armory"]["field_divisions"][division] = remove_duplicates(division_tinctures)
+                    end
+                end
+            else
+                for division, tinctures in pairs(record_field_divisions) do
+                    new_record["armory"]["field_divisions"][division] = remove_duplicates(tinctures)
+                end
+            end
             table.insert(armory_of_interest, new_record)
         end
     end
