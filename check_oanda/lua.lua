@@ -228,16 +228,21 @@ local charge_lookup = {
     ["ROUNDEL-DEMI"] = {["charges"] = "ROUNDEL"},
     ["BIRD9DEMI"] = {["charges"] = "BIRD"},
     ["MONSTER-UNICORN"] = {["charges"] = {"BEAST-HORSE", "BEAST-GOAT AND SHEEP"}},
-    ["MONSTER-SEA HORSE AND SEA UNICORN"] = {["charges"] = ""},
-    ["MONSTER-ANTELOPE AND YALE"] = {["charges"] = ""},
-    ["MONSTER-PANTHEON"] = {["charges"] = ""},
-    ["MONSTER-PANTHER"] = {["charges"] = ""},
-    ["MONSTER-PHOENIX"] = {["charges"] = ""},
-    ["MONSTER-PITHON"] = {["charges"] = ""},
-    ["MONSTER-SEA LION"] = {["charges"] = ""},
-    ["MONSTER-SEA SERPENT"] = {["charges"] = ""},
-    ["MONSTER-SEA9BEAST,OTHER"] = {["charges"] = ""},
-    ["LEG AND FOOT-MONSTER"] = {["charges"] = {"LEG AND FOOT-BEAST", "LEG AND FOOT-BIRD", "LEG AND FOOT-HUMAN"}}
+    ["MONSTER-SEA HORSE AND SEA UNICORN"] = {["charges"] = "BEAST-HORSE", "BEAST-GOAT AND SHEEP", "MONSTER-SEA9BEAST"},
+    ["MONSTER-ANTELOPE AND YALE"] = {["charges"] = "BEAST-DEER AND STAG"},
+    ["MONSTER-PANTHEON"] = {["charges"] = "BEAST-DEER AND STAG"},
+    ["MONSTER-PANTHER"] = {["charges"] = "CAT"},
+    ["MONSTER-TYGER"] = {["charges"] = "CAT"},
+    ["MONSTER-PHOENIX"] = {["charges"] = "BIRD"},
+    ["MONSTER-PITHON"] = {["charges"] = "REPTILE-SNAKE", "MONSTER9WINGED"},
+    ["MONSTER-SEA LION"] = {["charges"] = "MONSTER-SEA9BEAST", "CAT"},
+    ["MONSTER-SEA SERPENT"] = {["charges"] = "MONSTER-SEA9BEAST", "REPTILE-SNAKE"},
+    ["MONSTER-SEA9BEAST,OTHER"] = {["charges"] = "MONSTER-SEA9BEAST"},
+    ["LEG AND FOOT-MONSTER"] = {["charges"] = {"LEG AND FOOT-BEAST", "LEG AND FOOT-BIRD", "LEG AND FOOT-HUMAN"}},
+    ["HEAD-HUMAN SKULL"] = {["charges"] = "HEAD-HUMAN"},
+    ["HEAD-MONSTER,GRIFFIN"] = {["charges"] = "HEAD-BIRD"},
+    ["HEAD-MONSTER,TYGER"] = {["charges"] = "HEAD-BEAST,CAT AND LION"},
+    ["HEAD-MONSTER,UNICORN"] = {["charges"] = "HEAD-BEAST,HORSE", "HEAD-BEAST,RAM AND GOAT"}
 }
 
 local charge_tincture_lookup = {
