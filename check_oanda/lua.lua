@@ -112,7 +112,7 @@ local tincture_class_lookup = {
     ["proper"] = {"light", "dark", "neutral", "multicolor", "fur"},
     ["purpure"] = {"dark"},
     ["sable"] = {"dark"},
-    ["tinctureless"] = ["proper"] = {"light", "dark", "neutral", "multicolor", "fur"},
+    ["tinctureless"] = {"light", "dark", "neutral", "multicolor", "fur"},
     ["vair"] = {"fur", "multicolor", "neutral"},
     ["vert"] = {"dark"}
 }
@@ -202,6 +202,7 @@ function p.process_oanda(args)
     for i, record in ipairs(oanda) do
         if record["armory"] and #(record["armory"]) > 0 then
             local record_field_divisions = {}
+            local record_field_tinctures = {}
             local record_primary_charges = {}
             local record_primary_numbers = {}
             
@@ -222,6 +223,14 @@ function p.process_oanda(args)
                         end
                     elseif field_lookup[item_code]["division"] then
                         table.insert(record_field_divisions, field_lookup[item_code]["division"])
+                    end
+
+                    if field_lookup["item_code"]["tincture"] then
+                        for i, tincture in ipairs(field_lookup["item_code"]["tincture"]) do
+                            for j, tincture_class in ipairs(tincture_class_lookup[tincture]) do
+                                table.insert(record_field_tinctures, tincture_class)
+                            end
+                        end
                     end
                 elseif arrangement_lookup[item_code] then
                     --
@@ -280,6 +289,7 @@ function p.process_oanda(args)
                 ["notes"] = record["notes"],
                 ["armory"] = {
                     ["field_divisions"] = remove_duplicates(record_field_divisions),
+                    ["field_tinctures"] = remove_duplicates(record_field_tinctures),
                     ["primary_charges"] = remove_duplicates(record_primary_charges),
                     ["primary_numbers"] = remove_duplicates(record_primary_numbers)
                 }
