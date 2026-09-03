@@ -84,7 +84,7 @@ All the data should be manually checked, but these replacements will speed thing
 
 ```
 require("global_def.lua")
-check_oanda.print_potential_conflicts()
+check_oanda.print_potential_conflicts({["letter_date"] = {["year"] = 2026, ["month"] = 5}})
 ```
 
 ### Formatting the O&A
