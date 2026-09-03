@@ -96,24 +96,32 @@ local type_lookup = {
 	["W"] = "heraldic will"
 }
 
+local tincture_class = {
+    ["light"] = true,
+    ["dark"] = true,
+    ["neutral"] = true,
+    ["multicolor"] = true
+}
+
 local tincture_class_lookup = {
     ["argent"] = {"light"},
     ["azure"] = {"dark"},
     ["brown"] = {"dark"},
-    ["counterermine"] = {"fur", "dark"},
-    ["ermine"] = {"fur", "light"},
-    ["erminois"] = {"fur", "light"},
+    ["counterermine"] = {"dark"},
+    ["ermine"] = {"light"},
+    ["erminois"] = {"light"},
+    ["fur"] = {"light", "dark", "neutral", "multicolor"},
     ["gules"] = {"dark"},
     ["multicolor dark"] = {"multicolor", "dark"},
     ["multicolor light"] = {"multicolor", "light"},
     ["multicolor neutral"] = {"mutlicolor", "neutral"},
     ["or"] = {"light"},
-    ["pean"] = {"fur", "dark"},
-    ["proper"] = {"light", "dark", "neutral", "multicolor", "fur"},
+    ["pean"] = {"dark"},
+    ["proper"] = {"light", "dark", "neutral", "multicolor"},
     ["purpure"] = {"dark"},
     ["sable"] = {"dark"},
-    ["tinctureless"] = {"light", "dark", "neutral", "multicolor", "fur"},
-    ["vair"] = {"fur", "multicolor", "neutral"},
+    ["tinctureless"] = {"light", "dark", "neutral", "multicolor"},
+    ["vair"] = {"multicolor", "neutral"},
     ["vert"] = {"dark"}
 }
 
@@ -216,6 +224,24 @@ function p.process_oanda(args)
                 elseif item_code == "FIELD" then
                     local division = string.match(heading, ":(divided[^:]*):") or string.match(heading, ":(divided[^:]*)$") or string.match(heading, ":(solid):") or string.match(heading, ":(solid)$")
                     table.insert(record_field_divisions, division)
+
+                    local tincture1 = string.match(heading, ":~ ([^:]*):") or string.match(heading, ":~ ([^:]*)$")
+                    if tincture_class[tincture1] then
+                        table.insert(record_field_tinctures, tincture1)
+                    elseif tincture_class_lookup[tincture1] then
+                        for j, tincture_class in ipairs(tincture_class_lookup[tincture1]) do
+                            table.insert(record_field_tinctures, tincture_class)
+                        end
+                    end
+
+                    local tincture2 = string.match(heading, ":~and ([^:]*):") or string.match(heading, ":~and ([^:]*)$")
+                    if tincture_class[tincture2] then
+                        table.insert(record_field_tinctures, tincture2)
+                    elseif tincture_class_lookup[tincture2] then
+                        for j, tincture_class in ipairs(tincture_class_lookup[tincture2]) do
+                            table.insert(record_field_tinctures, tincture_class)
+                        end
+                    end
                 elseif field_lookup[item_code] then
                     if field_lookup[item_code]["division"] and type(field_lookup[item_code]["division"]) == "table" then
                         for i, division in ipairs(field_lookup[item_code]["division"]) do
