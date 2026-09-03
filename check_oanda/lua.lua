@@ -96,7 +96,7 @@ local type_lookup = {
 	["W"] = "heraldic will"
 }
 
-local field_lookup = {
+local field_tincture_lookup = {
     ["AR"] = true,
     ["AZ"] = true,
     ["BC"] = true,
@@ -112,7 +112,16 @@ local field_lookup = {
     ["PU"] = true,
     ["SA"] = true,
     ["TE"] = true,
-    ["VT"] = true
+    ["VT"] = true,
+    ["FIELD TREATMENT-SEME (ERMINED)"] = true,
+	["FIELD TREATMENT-HONEYCOMBED"] = true,
+	["FIELD TREATMENT-MAILED"] = true,
+	["FIELD TREATMENT-MASONED"] = true,
+	["FIELD TREATMENT-PAPELONNY"] = true,
+	["FIELD TREATMENT-PLUMMETTY"] = true,
+	["FIELD TREATMENT-POTENTY"] = true,
+	["FIELD TREATMENT-SCALY"] = true,
+	["FIELD TREATMENT-VAIRY"] = true
 }
 
 local arrangement_lookup = {
@@ -141,8 +150,8 @@ local arrangement_lookup = {
 }
 
 local charge_lookup = {
-    ["FO"] = "FP",
-    ["PO"] = "FP"
+    ["FO"] = {"FP"},
+    ["PO"] = {"FP"}
 }
 
 function p.process_oanda(args)
@@ -166,9 +175,14 @@ function p.process_oanda(args)
                     table.insert(record_primary_numbers, 0)
                 else
                     local primary_info = string.match(heading, ":(spn?a):") or string.match(heading, ":(spn?a)$") or string.match(heading, ":(g%d*pn?a):") or string.match(heading, ":(g%d*pn?a)$") or string.match(heading, ":(primary):") or string.match(heading, ":(primary)$") or string.match(heading, ":(%w+ primary):") or string.match(heading, ":(%w+ primary)$")
+                    if not primary_info then
+                        if not (string.match(heading, ":(second):") or string.match(heading, ":(second)$") or string.match(heading, ":(held):") or string.match(heading, ":(held)$") or string.match(heading, ":(maintained):") or string.match(heading, ":(maintained)$") or string.match(heading, ":(sustained):") or string.match(heading, ":(sustained)$") or string.match(heading, ":(seme on field):") or string.match(heading, ":(seme on field)$") or string.match(heading, ":(tertiary):") or string.match(heading, ":(tertiary)$") or string.match(heading, ":(debruising):") or string.match(heading, ":(debruising)$") or string.match(heading, ":(overall):") or string.match(heading, ":(overall)$")) then
+                            primary_info = "primary"
+                        end
+                    end
                     if primary_info then
                         local charge = string.match(heading, "^([^:]+):")
-                        if not field_lookup[charge] and not arrangement_lookup[charge] then
+                        if not field_tincture_lookup[charge] and not arrangement_lookup[charge] then
                             if charge_lookup[charge] then
                                 for k, c in ipairs(charge_lookup[charge]) do
                                     table.insert(record_primary_charges, c)
