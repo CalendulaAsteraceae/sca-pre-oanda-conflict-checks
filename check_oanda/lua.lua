@@ -165,14 +165,19 @@ function p.process_oanda(args)
             local record_primary_numbers = {}
             
             for j, heading in ipairs(record["armory"]) do
-                if heading == "NO" then
+                local item_code = string.match(heading, "^([^:]+):")
+                if item_code == "NO" then
                     table.insert(record_fields, "NO")
-                elseif string.match(heading, "^FIELD:") then
+                elseif item_code == "FIELD" then
                     local division = string.match(heading, ":(divided[^:]*):") or string.match(heading, ":(divided[^:]*)$") or string.match(heading, ":(solid):") or string.match(heading, ":(solid)$")
                     table.insert(record_fields, division)
-                elseif heading == "FO" or heading == "PO" then
+                elseif item_code == "FO" or item_code == "PO" then
                     table.insert(record_primary_numbers, "FP")
                     table.insert(record_primary_numbers, 0)
+                elseif field_tincture_lookup[item_code] then
+                    --
+                elseif arrangement_lookup[item_code] then
+                    --
                 else
                     local primary_info = string.match(heading, ":(spn?a):") or string.match(heading, ":(spn?a)$") or string.match(heading, ":(g%d*pn?a):") or string.match(heading, ":(g%d*pn?a)$") or string.match(heading, ":(primary):") or string.match(heading, ":(primary)$") or string.match(heading, ":(%w+ primary):") or string.match(heading, ":(%w+ primary)$")
                     if not primary_info then
@@ -181,15 +186,12 @@ function p.process_oanda(args)
                         end
                     end
                     if primary_info then
-                        local charge = string.match(heading, "^([^:]+):")
-                        if not field_tincture_lookup[charge] and not arrangement_lookup[charge] then
-                            if charge_lookup[charge] then
-                                for k, c in ipairs(charge_lookup[charge]) do
-                                    table.insert(record_primary_charges, c)
-                                end
-                            else
-                                table.insert(record_primary_charges, charge)
+                        if charge_lookup[item_code] then
+                            for k, c in ipairs(charge_lookup[item_code]) do
+                                table.insert(record_primary_charges, c)
                             end
+                        else
+                            table.insert(record_primary_charges, item_code)
                         end
 
                         local group_n = string.match(primary_info, "g(%d+)pn?a")
