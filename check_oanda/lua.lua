@@ -261,6 +261,7 @@ function p.process_oanda(args)
             local record_primary_charges = {}
             local record_primary_numbers = {}
             
+            -- TODO: handle "FIELD:divided"
             for j, heading in ipairs(record["armory"]) do
                 local item_code = string.match(heading, "^([^:]+):")
                 if item_code == "NO" then
@@ -283,25 +284,27 @@ function p.process_oanda(args)
                         if tincture_class[tincturen] then
                             for tincture, classes in pairs(tincture_class_lookup) do
                                 if classes[tincturen] then
-                                    table.insert(record_field_tinctures, tincture)
+                                    record_field_tinctures[division] = record_field_tinctures[division] or {}
+                                    table.insert(record_field_tinctures[division], tincture)
                                 end
                             end
                         elseif tincture_class_lookup[tincturen] then
-                            table.insert(record_field_tinctures, tincturen)
+                            record_field_tinctures[division] = record_field_tinctures[division] or {}
+                            table.insert(record_field_tinctures[division], tincturen)
                         end
                     end
                 elseif field_lookup[item_code] then
-                    if field_lookup[item_code]["division"] and type(field_lookup[item_code]["division"]) == "table" then
-                        for k, division in ipairs(field_lookup[item_code]["division"]) do
-                            table.insert(record_field_divisions, division)
-                        end
-                    elseif field_lookup[item_code]["division"] then
-                        table.insert(record_field_divisions, field_lookup[item_code]["division"])
+                    local divisions = type(field_lookup[item_code]["division"]) == "table" and field_lookup[item_code]["division"] or {field_lookup[item_code]["division"]}
+                    for k, division in ipairs(divisions) do
+                        table.insert(record_field_divisions, division)
                     end
 
                     if field_lookup["item_code"]["tincture"] then
                         for i, tincture in ipairs(field_lookup["item_code"]["tincture"]) do
-                            table.insert(record_field_tinctures, tincture)
+                            for k, division in ipairs(divisions) do
+                                record_field_tinctures[division] = record_field_tinctures[division] or {}
+                                table.insert(record_field_tinctures[division], tincture)
+                            end
                         end
                     end
                 elseif arrangement_lookup[item_code] then
