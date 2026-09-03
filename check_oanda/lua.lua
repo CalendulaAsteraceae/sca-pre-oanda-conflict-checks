@@ -103,27 +103,27 @@ local tincture_class = {
 }
 
 local tincture_class_lookup = {
-    ["argent"] = {"light"},
-    ["azure"] = {"dark"},
-    ["brown"] = {"dark"},
-    ["counterermine"] = {"dark"},
-    ["ermine"] = {"light"},
-    ["erminois"] = {"light"},
-    ["field treatment"] = {"light", "dark", "neutral"},
-    ["fur"] = {"light", "dark", "neutral"},
-    ["gules"] = {"dark"},
-    ["multicolor"] = {"light", "dark", "neutral"},
-    ["multicolor dark"] = {"dark"},
-    ["multicolor light"] = {"light"},
-    ["multicolor neutral"] = {"neutral"},
-    ["or"] = {"light"},
-    ["pean"] = {"dark"},
-    ["proper"] = {"light", "dark", "neutral", "multicolor"},
-    ["purpure"] = {"dark"},
-    ["sable"] = {"dark"},
-    ["tinctureless"] = {"light", "dark", "neutral", "multicolor"},
-    ["vair"] = {"multicolor", "neutral"},
-    ["vert"] = {"dark"}
+    ["argent"] = {["light"] = true},
+    ["azure"] = {["dark"] = true},
+    ["brown"] = {["dark"] = true},
+    ["counterermine"] = {["dark"] = true},
+    ["ermine"] = {["light"] = true},
+    ["erminois"] = {["light"] = true},
+    ["field treatment"] = {["light"] = true, ["dark"] = true, ["neutral"] = true},
+    ["fur"] = {["light"] = true, ["dark"] = true, ["neutral"] = true},
+    ["gules"] = {["dark"] = true},
+    ["multicolor"] = {["light"] = true, ["dark"] = true, ["neutral"] = true},
+    ["multicolor dark"] = {["dark"] = true},
+    ["multicolor light"] = {["light"] = true},
+    ["multicolor neutral"] = {["neutral"] = true},
+    ["or"] = {["light"] = true},
+    ["pean"] = {["dark"] = true},
+    ["proper"] = {["light"] = true, ["dark"] = true, ["neutral"] = true},
+    ["purpure"] = {["dark"] = true},
+    ["sable"] = {["dark"] = true},
+    ["tinctureless"] = {["light"] = true, ["dark"] = true, ["neutral"] = true},
+    ["vair"] = {["neutral"] = true},
+    ["vert"] = {["dark"] = true}
 }
 
 local field_lookup = {
@@ -278,21 +278,21 @@ function p.process_oanda(args)
                     end
 
                     local tincture1 = string.match(heading, ":~ ([^:]*):") or string.match(heading, ":~ ([^:]*)$")
-                    if tincture_class[tincture1] then
-                        table.insert(record_field_tinctures, tincture1)
-                    elseif tincture_class_lookup[tincture1] then
-                        table.insert(record_field_tinctures, tincture_class_lookup[tincture1])
-                    end
-
                     local tincture2 = string.match(heading, ":~and ([^:]*):") or string.match(heading, ":~and ([^:]*)$")
-                    if tincture_class[tincture2] then
-                        table.insert(record_field_tinctures, tincture2)
-                    elseif tincture_class_lookup[tincture2] then
-                        table.insert(record_field_tinctures, tincture_class_lookup[tincture2])
+                    for k, tincturen in ipairs({tincture1, tincture2}) do
+                        if tincture_class[tincturen] then
+                            for tincture, classes in pairs(tincture_class_lookup) do
+                                if classes[tincturen] then
+                                    table.insert(record_field_tinctures, tincture)
+                                end
+                            end
+                        elseif tincture_class_lookup[tincturen] then
+                            table.insert(record_field_tinctures, tincturen)
+                        end
                     end
                 elseif field_lookup[item_code] then
                     if field_lookup[item_code]["division"] and type(field_lookup[item_code]["division"]) == "table" then
-                        for i, division in ipairs(field_lookup[item_code]["division"]) do
+                        for k, division in ipairs(field_lookup[item_code]["division"]) do
                             table.insert(record_field_divisions, division)
                         end
                     elseif field_lookup[item_code]["division"] then
