@@ -210,8 +210,34 @@ local charge_lookup = {
 	["FIELD TREATMENT-SEME (GOUTTY)"] = {["charges"] = "GOUTE", ["count"] = max_charge_count},
 	["FIELD TREATMENT-SEME (MULLETTY)"] = {["charges"] = "STAR", ["count"] = max_charge_count},
 	["FIELD TREATMENT-SEME (ROUNDELS)"] = {["charges"] = "ROUNDEL", ["count"] = max_charge_count},
+    ["CHARGE TREATMENT-SEME (9OTHER)"] = {["count"] = max_charge_count},
+	["CHARGE TREATMENT-SEME (DE-LYS)"] = {["charges"] = "FDL", ["count"] = max_charge_count},
+	["CHARGE TREATMENT-SEME (GOUTTY)"] = {["charges"] = "GOUTE", ["count"] = max_charge_count},
+	["CHARGE TREATMENT-SEME (MULLETTY)"] = {["charges"] = "STAR", ["count"] = max_charge_count},
+	["CHARGE TREATMENT-SEME (ROUNDELS)"] = {["charges"] = "ROUNDEL", ["count"] = max_charge_count},
     ["SUN-DEMI"] = {["charges"] = "STAR"},
-    ["CALTRAP"] = {["charges"] = "STAR"}
+    ["CALTRAP"] = {["charges"] = "STAR"},
+    ["MONSTER-ENFIELD"] = {["charges"] = "DOG"},
+    ["SEAWOLF"] = {["charges"] = "DOG"},
+    ["PEGASUS"] = {["charges"] = {"BEAST-HORSE", "MONSTER9WINGED"}},
+    ["LW"] = {["charges"] = "WREATH"},
+    ["WREATH,OTHER"] = {["charges"] = "WREATH"},
+    ["SALTIRE*9"] = {["charges"] = "SALTIRE"},
+    ["TREE-PINE TREE SHAPE"] = {["charges"] = "TREE"},
+    ["TREE-ROUNDED SHAPE"] = {["charges"] = "TREE"},
+    ["ROUNDEL-DEMI"] = {["charges"] = "ROUNDEL"},
+    ["BIRD9DEMI"] = {["charges"] = "BIRD"},
+    ["MONSTER-UNICORN"] = {["charges"] = {"BEAST-HORSE", "BEAST-GOAT AND SHEEP"}},
+    ["MONSTER-SEA HORSE AND SEA UNICORN"] = {["charges"] = ""},
+    ["MONSTER-ANTELOPE AND YALE"] = {["charges"] = ""},
+    ["MONSTER-PANTHEON"] = {["charges"] = ""},
+    ["MONSTER-PANTHER"] = {["charges"] = ""},
+    ["MONSTER-PHOENIX"] = {["charges"] = ""},
+    ["MONSTER-PITHON"] = {["charges"] = ""},
+    ["MONSTER-SEA LION"] = {["charges"] = ""},
+    ["MONSTER-SEA SERPENT"] = {["charges"] = ""},
+    ["MONSTER-SEA9BEAST,OTHER"] = {["charges"] = ""},
+    ["LEG AND FOOT-MONSTER"] = {["charges"] = {"LEG AND FOOT-BEAST", "LEG AND FOOT-BIRD", "LEG AND FOOT-HUMAN"}}
 }
 
 local charge_tincture_lookup = {
@@ -290,9 +316,12 @@ function p.process_oanda(args)
                     end
                     if primary_info then
                         if charge_lookup[item_code] and charge_lookup[item_code]["charges"] then
-                            local charge_list = type(charge_lookup[item_code]["charges"]) == "table" and charge_lookup[item_code]["charges"] or {charge_lookup[item_code]["charges"]}
-                            for k, c in ipairs(charge_list) do
-                                table.insert(record_primary_charges, c)
+                            if type(charge_lookup[item_code]["charges"]) == "table" then
+                                for k, c in ipairs(charge_list) do
+                                    table.insert(record_primary_charges, c)
+                                end
+                            else
+                                table.insert(record_primary_charges, charge_lookup[item_code]["charges"])
                             end
                         else
                             table.insert(record_primary_charges, item_code)
