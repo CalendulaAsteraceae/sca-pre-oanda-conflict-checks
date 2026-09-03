@@ -99,8 +99,7 @@ local type_lookup = {
 local tincture_class = {
     ["light"] = true,
     ["dark"] = true,
-    ["neutral"] = true,
-    ["multicolor"] = true
+    ["neutral"] = true
 }
 
 local tincture_class_lookup = {
@@ -110,12 +109,13 @@ local tincture_class_lookup = {
     ["counterermine"] = {"dark"},
     ["ermine"] = {"light"},
     ["erminois"] = {"light"},
-    ["field treatment"] = {"light", "dark", "neutral", "multicolor"},
-    ["fur"] = {"light", "dark", "neutral", "multicolor"},
+    ["field treatment"] = {"light", "dark", "neutral"},
+    ["fur"] = {"light", "dark", "neutral"},
     ["gules"] = {"dark"},
-    ["multicolor dark"] = {"multicolor", "dark"},
-    ["multicolor light"] = {"multicolor", "light"},
-    ["multicolor neutral"] = {"mutlicolor", "neutral"},
+    ["multicolor"] = {"light", "dark", "neutral"},
+    ["multicolor dark"] = {"dark"},
+    ["multicolor light"] = {"light"},
+    ["multicolor neutral"] = {"neutral"},
     ["or"] = {"light"},
     ["pean"] = {"dark"},
     ["proper"] = {"light", "dark", "neutral", "multicolor"},
@@ -281,18 +281,14 @@ function p.process_oanda(args)
                     if tincture_class[tincture1] then
                         table.insert(record_field_tinctures, tincture1)
                     elseif tincture_class_lookup[tincture1] then
-                        for j, tincture_class in ipairs(tincture_class_lookup[tincture1]) do
-                            table.insert(record_field_tinctures, tincture_class)
-                        end
+                        table.insert(record_field_tinctures, tincture_class_lookup[tincture1])
                     end
 
                     local tincture2 = string.match(heading, ":~and ([^:]*):") or string.match(heading, ":~and ([^:]*)$")
                     if tincture_class[tincture2] then
                         table.insert(record_field_tinctures, tincture2)
                     elseif tincture_class_lookup[tincture2] then
-                        for j, tincture_class in ipairs(tincture_class_lookup[tincture2]) do
-                            table.insert(record_field_tinctures, tincture_class)
-                        end
+                        table.insert(record_field_tinctures, tincture_class_lookup[tincture2])
                     end
                 elseif field_lookup[item_code] then
                     if field_lookup[item_code]["division"] and type(field_lookup[item_code]["division"]) == "table" then
@@ -305,9 +301,7 @@ function p.process_oanda(args)
 
                     if field_lookup["item_code"]["tincture"] then
                         for i, tincture in ipairs(field_lookup["item_code"]["tincture"]) do
-                            for j, tincture_class in ipairs(tincture_class_lookup[tincture]) do
-                                table.insert(record_field_tinctures, tincture_class)
-                            end
+                            table.insert(record_field_tinctures, tincture)
                         end
                     end
                 elseif arrangement_lookup[item_code] then
