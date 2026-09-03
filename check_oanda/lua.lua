@@ -96,55 +96,52 @@ local type_lookup = {
 	["W"] = "heraldic will"
 }
 
-local field_tincture_lookup = {
-    ["AR"] = true,
-    ["AZ"] = true,
-    ["BC"] = true,
-    ["BR"] = true,
-    ["CEN"] = true,
-    ["CE"] = true,
-    ["ER"] = true,
-    ["ES"] = true,
-    ["GU"] = true,
-    ["KH"] = true,
-    ["OR"] = true,
-    ["PE"] = true,
-    ["PU"] = true,
-    ["SA"] = true,
-    ["TE"] = true,
-    ["VT"] = true,
-    ["FIELD TREATMENT-SEME (ERMINED)"] = true,
-	["FIELD TREATMENT-HONEYCOMBED"] = true,
-	["FIELD TREATMENT-MAILED"] = true,
-	["FIELD TREATMENT-MASONED"] = true,
-	["FIELD TREATMENT-PAPELONNY"] = true,
-	["FIELD TREATMENT-PLUMMETTY"] = true,
-	["FIELD TREATMENT-POTENTY"] = true,
-	["FIELD TREATMENT-SCALY"] = true,
-	["FIELD TREATMENT-VAIRY"] = true
-}
-
-local field_division_lookup = {
-    ["FIELD DIV.-BARRY"] = true,
-	["FIELD DIV.-BENDY"] = true,
-	["FIELD DIV.-BENDY*3"] = true,
-	["FIELD DIV.-CHECKY"] = true,
-	["FIELD DIV.-CHEVRONELLY"] = true,
-	["GYRONNY"] = true,
-	["FIELD DIV.-LOZENGY OR FUSILY"] = true,
-	["FIELD DIV.9OTHER"] = true,
-	["FIELD DIV.-PALY"] = true,
-	["PB"] = true,
-	["PBS"] = true,
-	["PC"] = true,
-	["PCI"] = true,
-	["PFESS"] = true,
-	["PPALE"] = true,
-	["FIELD DIV.-PER PALL"] = true,
-	["FIELD DIV.-PER PALL*7"] = true,
-	["PSALT"] = true,
-	["QLY"] = true,
-	["FIELD DIV.-VETU"] = true
+local field_lookup = {
+    ["AR"] = {["tincture"] = {"argent"}, ["division"] = "solid"},
+    ["AZ"] = {["tincture"] = {"azure"}, ["division"] = "solid"},
+    ["BC"] = {["tincture"] = {"bleu celeste"}, ["division"] = "solid"},
+    ["BR"] = {["tincture"] = {"brunatre"}, ["division"] = "solid"},
+    ["CEN"] = {["tincture"] = {"cendree"}, ["division"] = "solid"},
+    ["CE"] = {["tincture"] = {"fur"}, ["division"] = "solid"},
+    ["ER"] = {["tincture"] = {"fur"}, ["division"] = "solid"},
+    ["ES"] = {["tincture"] = {"fur"}, ["division"] = "solid"},
+    ["GU"] = {["tincture"] = {"gules"}, ["division"] = "solid"},
+    ["KH"] = {["tincture"] = {"khaki"}, ["division"] = "solid"},
+    ["OR"] = {["tincture"] = {"or"}, ["division"] = "solid"},
+    ["PE"] = {["tincture"] = {"fur"}, ["division"] = "solid"},
+    ["PU"] = {["tincture"] = {"purpure"}, ["division"] = "solid"},
+    ["SA"] = {["tincture"] = {"sable"}, ["division"] = "solid"},
+    ["TE"] = {["tincture"] = {"tenne"}, ["division"] = "solid"},
+    ["VT"] = {["tincture"] = {"vert"}, ["division"] = "solid"},
+    ["FIELD TREATMENT-SEME (ERMINED)"] = {["tincture"] = {"fur"}},
+	["FIELD TREATMENT-HONEYCOMBED"] = {["tincture"] = {"honeycombed"}},
+	["FIELD TREATMENT-MAILED"] = {["tincture"] = {"mailed"}},
+	["FIELD TREATMENT-MASONED"] = {["tincture"] = {"masoned"}},
+	["FIELD TREATMENT-PAPELONNY"] = {["tincture"] = {"scaly", "fur"}},
+	["FIELD TREATMENT-PLUMMETTY"] = {["tincture"] = {"plummetty", "fur"}},
+	["FIELD TREATMENT-POTENTY"] = {["tincture"] = {"fur"}},
+	["FIELD TREATMENT-SCALY"] = {["tincture"] = {"scaly"}},
+	["FIELD TREATMENT-VAIRY"] = {["tincture"] = {"fur"}},
+    ["FIELD DIV.-BARRY"] = {["division"] = "divided fesswise"},
+	["FIELD DIV.-BENDY"] = {["division"] = "divided bendwise"},
+	["FIELD DIV.-BENDY*3"] = {["division"] = "divided bendwise sinister"},
+	["FIELD DIV.-CHECKY"] = {["division"] = "divided checky"},
+	["FIELD DIV.-CHEVRONELLY"] = {["division"] = {"divided chevronwise", "divided chevronwise inverted"}},
+	["GYRONNY"] = {["division"] = "divided gyronny"},
+	["FIELD DIV.-LOZENGY OR FUSILY"] = {["division"] = "divided gridlike not checky"},
+	["FIELD DIV.9OTHER"] = {["division"] = "divided other"},
+	["FIELD DIV.-PALY"] = {["division"] = "divided palewise"},
+	["PB"] = {["division"] = "divided bendwise"},
+	["PBS"] = {["division"] = "divided bendwise sinister"},
+	["PC"] = {["division"] = "divided chevronwise"},
+	["PCI"] = {["division"] = "divided chevronwise inverted"},
+	["PFESS"] = {["division"] = "divided fesswise"},
+	["PPALE"] = {["division"] = "divided palewise"},
+	["FIELD DIV.-PER PALL"] = {["division"] = "divided pallwise"},
+	["FIELD DIV.-PER PALL*7"] = {["division"] = "divided pallwise inverted"},
+	["PSALT"] = {["division"] = "divided saltirewise"},
+	["QLY"] = {["division"] = "divided quarterly"},
+	["FIELD DIV.-VETU"] = {["division"] = "divided other"}
 }
 
 local arrangement_lookup = {
@@ -191,16 +188,20 @@ function p.process_oanda(args)
                 local item_code = string.match(heading, "^([^:]+):")
                 if item_code == "NO" then
                     table.insert(record_fields, "NO")
-                elseif item_code == "FIELD" then
-                    local division = string.match(heading, ":(divided[^:]*):") or string.match(heading, ":(divided[^:]*)$") or string.match(heading, ":(solid):") or string.match(heading, ":(solid)$")
-                    table.insert(record_fields, division)
                 elseif item_code == "FO" or item_code == "PO" then
                     table.insert(record_primary_numbers, "FP")
                     table.insert(record_primary_numbers, 0)
-                elseif field_tincture_lookup[item_code] then
-                    --
-                elseif field_division_lookup[item_code] then
-                    --
+                elseif item_code == "FIELD" then
+                    local division = string.match(heading, ":(divided[^:]*):") or string.match(heading, ":(divided[^:]*)$") or string.match(heading, ":(solid):") or string.match(heading, ":(solid)$")
+                    table.insert(record_fields, division)
+                elseif field_lookup[item_code] then
+                    if field_lookup[item_code]["division"] and type(field_lookup[item_code]["division"]) == "table" then
+                        for i, division in ipairs(field_lookup[item_code]["division"]) do
+                            table.insert(record_fields, division)
+                        end
+                    elseif field_lookup[item_code]["division"] then
+                        table.insert(record_fields, field_lookup[item_code]["division"])
+                    end
                 elseif arrangement_lookup[item_code] then
                     --
                 else
