@@ -110,6 +110,7 @@ local tincture_class_lookup = {
     ["counterermine"] = {"dark"},
     ["ermine"] = {"light"},
     ["erminois"] = {"light"},
+    ["field treatment"] = {"light", "dark", "neutral", "multicolor"},
     ["fur"] = {"light", "dark", "neutral", "multicolor"},
     ["gules"] = {"dark"},
     ["multicolor dark"] = {"multicolor", "dark"},
@@ -143,14 +144,14 @@ local field_lookup = {
     ["TE"] = {["tincture"] = {"or", "gules", "brown"}, ["division"] = "solid"},
     ["VT"] = {["tincture"] = {"vert"}, ["division"] = "solid"},
     ["FIELD TREATMENT-SEME (ERMINED)"] = {["tincture"] = {"fur"}},
-	["FIELD TREATMENT-HONEYCOMBED"] = {["tincture"] = {"honeycombed"}},
-	["FIELD TREATMENT-MAILED"] = {["tincture"] = {"mailed"}},
-	["FIELD TREATMENT-MASONED"] = {["tincture"] = {"masoned"}},
-	["FIELD TREATMENT-PAPELONNY"] = {["tincture"] = {"scaly", "fur"}},
-	["FIELD TREATMENT-PLUMMETTY"] = {["tincture"] = {"plummetty", "fur"}},
+	["FIELD TREATMENT-HONEYCOMBED"] = {["tincture"] = {"field treatment"}},
+	["FIELD TREATMENT-MAILED"] = {["tincture"] = {"field treatment"}},
+	["FIELD TREATMENT-MASONED"] = {["tincture"] = {"field treatment"}},
+	["FIELD TREATMENT-PAPELONNY"] = {["tincture"] = {"field treatment", "fur"}},
+	["FIELD TREATMENT-PLUMMETTY"] = {["tincture"] = {"fur"}},
 	["FIELD TREATMENT-POTENTY"] = {["tincture"] = {"fur"}},
-	["FIELD TREATMENT-SCALY"] = {["tincture"] = {"scaly"}},
-	["FIELD TREATMENT-VAIRY"] = {["tincture"] = {"vair"}},
+	["FIELD TREATMENT-SCALY"] = {["tincture"] = {"field treatment"}},
+	["FIELD TREATMENT-VAIRY"] = {["tincture"] = {"fur"}},
     ["FIELD DIV.-BARRY"] = {["division"] = "divided fesswise"},
 	["FIELD DIV.-BENDY"] = {["division"] = "divided bendwise"},
 	["FIELD DIV.-BENDY*3"] = {["division"] = "divided bendwise sinister"},
@@ -199,8 +200,23 @@ local arrangement_lookup = {
 }
 
 local charge_lookup = {
-    ["FO"] = {"FP"},
-    ["PO"] = {"FP"}
+    ["FO"] = {["charges"] = "FP", ["count"] = 0},
+    ["PO"] = {["charges"] = "FP", ["count"] = 0},
+    ["FIELD TREATMENT-MASCULY"] = {["charges"] = "MASCLE AND RUSTRE", ["count"] = max_charge_count},
+	["FIELD TREATMENT-SEME (9OTHER)"] = {["count"] = max_charge_count},
+	["FIELD TREATMENT-SEME (CRUSILLY)"] = {["charges"] = "CRAC", ["count"] = max_charge_count},
+	["FIELD TREATMENT-SEME (DE-LYS)"] = {["charges"] = "FDL", ["count"] = max_charge_count},
+	["FIELD TREATMENT-SEME (ESTENCELY)"] = {["charges"] = "SPARKS", ["count"] = max_charge_count},
+	["FIELD TREATMENT-SEME (GOUTTY)"] = {["charges"] = "GOUTE", ["count"] = max_charge_count},
+	["FIELD TREATMENT-SEME (MULLETTY)"] = {["charges"] = "STAR", ["count"] = max_charge_count},
+	["FIELD TREATMENT-SEME (ROUNDELS)"] = {["charges"] = "ROUNDEL", ["count"] = max_charge_count},
+    ["SUN-DEMI"] = {["charges"] = "STAR"},
+    ["CALTRAP"] = {["charges"] = "STAR"}
+}
+
+local charge_tincture_lookup = {
+    ["CHARGE TREATMENT-MASONED"] = {["tincture"] = {"masoned"}},
+    ["CHARGE TREATMENT-SEME (ERMINED)"] = {["tincture"] = {"fur"}},
 }
 
 function p.process_oanda(args)
@@ -223,7 +239,12 @@ function p.process_oanda(args)
                     table.insert(record_primary_numbers, 0)
                 elseif item_code == "FIELD" then
                     local division = string.match(heading, ":(divided[^:]*):") or string.match(heading, ":(divided[^:]*)$") or string.match(heading, ":(solid):") or string.match(heading, ":(solid)$")
-                    table.insert(record_field_divisions, division)
+                    if division then
+                        table.insert(record_field_divisions, division)
+                    else
+                        table.insert(record_field_divisions, "divided")
+                        table.insert(record_field_divisions, "solid")
+                    end
 
                     local tincture1 = string.match(heading, ":~ ([^:]*):") or string.match(heading, ":~ ([^:]*)$")
                     if tincture_class[tincture1] then
@@ -268,8 +289,9 @@ function p.process_oanda(args)
                         end
                     end
                     if primary_info then
-                        if charge_lookup[item_code] then
-                            for k, c in ipairs(charge_lookup[item_code]) do
+                        if charge_lookup[item_code] and charge_lookup[item_code]["charges"] then
+                            local charge_list = type(charge_lookup[item_code]["charges"]) == "table" and charge_lookup[item_code]["charges"] or {charge_lookup[item_code]["charges"]}
+                            for k, c in ipairs(charge_list) do
                                 table.insert(record_primary_charges, c)
                             end
                         else
@@ -278,8 +300,14 @@ function p.process_oanda(args)
 
                         local group_n = string.match(primary_info, "g(%d+)pn?a")
                         group_n = tonumber(group_n)
-                        local charge_n = string.match(heading, ":%d+:") or string.match(heading, ":%d+$")
+                        local charge_n = string.match(heading, ":(%d+):") or string.match(heading, ":(%d+)$")
                         charge_n = tonumber(charge_n)
+                        if not charge_n and string.match(heading, ":(sem[ey]):") or string.match(heading, ":(sem[ey])$") then
+                            charge_n = max_charge_count
+                        end
+                        if not charge_n and charge_lookup[item_code] then
+                            charge_n = charge_lookup[item_code]["count"]
+                        end
 
                         if primary_info == "spa" or primary_info == "spna" or primary_info == "sole primary" then
                             table.insert(record_primary_numbers, 1)
