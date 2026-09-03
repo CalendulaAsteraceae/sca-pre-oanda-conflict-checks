@@ -362,7 +362,7 @@ Format:
     field = {
         primary_number = {
             primary_charge = {
-                {['letter'] = letter, ['name'] = name, ['blazon'] = blazon},
+                {["name"] = name, ["date"] = date, ...},
                 ...
             },
             ...
