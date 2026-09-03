@@ -502,16 +502,19 @@ function p.potential_conflicts(args)
         for n, na in pairs(fa) do
             for charge, ca in pairs(na) do
                 if #ca > 1 then
-                    local has_letter = true
+                    local letter_items = {}
+                    local other_items = {}
                     if letter_date then
-                        has_letter = false
                         for i, record in ipairs(ca) do
                             if record["date"] and record["date"]["year"] == letter_date["year"] and record["date"]["month"] == letter_date["month"] then
-                                has_letter = true
+                                table.insert(letter_items, record)
+                            else
+                                table.insert(other_items, record)
                             end
                         end
                     end
-                    if has_letter then
+                    -- TODO: check letter items for field conflicts and [some other kind of conflict], only include items which have conflicts with a letter item
+                    if #letter_items > 0 then
                         conflicts[field] = conflicts[field] or {}
                         conflicts[field][n] = conflicts[field][n] or {}
                         conflicts[field][n][charge] = ca
