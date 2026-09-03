@@ -124,6 +124,29 @@ local field_tincture_lookup = {
 	["FIELD TREATMENT-VAIRY"] = true
 }
 
+local field_division_lookup = {
+    ["FIELD DIV.-BARRY"] = true,
+	["FIELD DIV.-BENDY"] = true,
+	["FIELD DIV.-BENDY*3"] = true,
+	["FIELD DIV.-CHECKY"] = true,
+	["FIELD DIV.-CHEVRONELLY"] = true,
+	["GYRONNY"] = true,
+	["FIELD DIV.-LOZENGY OR FUSILY"] = true,
+	["FIELD DIV.9OTHER"] = true,
+	["FIELD DIV.-PALY"] = true,
+	["PB"] = true,
+	["PBS"] = true,
+	["PC"] = true,
+	["PCI"] = true,
+	["PFESS"] = true,
+	["PPALE"] = true,
+	["FIELD DIV.-PER PALL"] = true,
+	["FIELD DIV.-PER PALL*7"] = true,
+	["PSALT"] = true,
+	["QLY"] = true,
+	["FIELD DIV.-VETU"] = true
+}
+
 local arrangement_lookup = {
     ["ARRANGEMENT9BEAST&MONSTER,ADDORSED"] = true,
     ["COMBAT"] = true,
@@ -175,6 +198,8 @@ function p.process_oanda(args)
                     table.insert(record_primary_numbers, "FP")
                     table.insert(record_primary_numbers, 0)
                 elseif field_tincture_lookup[item_code] then
+                    --
+                elseif field_division_lookup[item_code] then
                     --
                 elseif arrangement_lookup[item_code] then
                     --
