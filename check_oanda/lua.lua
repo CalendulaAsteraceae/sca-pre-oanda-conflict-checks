@@ -96,22 +96,43 @@ local type_lookup = {
 	["W"] = "heraldic will"
 }
 
+local tincture_class_lookup = {
+    ["argent"] = {"light"},
+    ["azure"] = {"dark"},
+    ["brown"] = {"dark"},
+    ["counterermine"] = {"fur", "dark"},
+    ["ermine"] = {"fur", "light"},
+    ["erminois"] = {"fur", "light"},
+    ["gules"] = {"dark"},
+    ["multicolor dark"] = {"multicolor", "dark"},
+    ["multicolor light"] = {"multicolor", "light"},
+    ["multicolor neutral"] = {"mutlicolor", "neutral"},
+    ["or"] = {"light"},
+    ["pean"] = {"fur", "dark"},
+    ["proper"] = {"light", "dark", "neutral", "multicolor", "fur"},
+    ["purpure"] = {"dark"},
+    ["sable"] = {"dark"},
+    ["tinctureless"] = ["proper"] = {"light", "dark", "neutral", "multicolor", "fur"},
+    ["vair"] = {"fur", "multicolor", "neutral"},
+    ["vert"] = {"dark"}
+}
+
 local field_lookup = {
     ["AR"] = {["tincture"] = {"argent"}, ["division"] = "solid"},
     ["AZ"] = {["tincture"] = {"azure"}, ["division"] = "solid"},
-    ["BC"] = {["tincture"] = {"bleu celeste"}, ["division"] = "solid"},
-    ["BR"] = {["tincture"] = {"brunatre"}, ["division"] = "solid"},
-    ["CEN"] = {["tincture"] = {"cendree"}, ["division"] = "solid"},
-    ["CE"] = {["tincture"] = {"fur"}, ["division"] = "solid"},
-    ["ER"] = {["tincture"] = {"fur"}, ["division"] = "solid"},
+    ["BC"] = {["tincture"] = {"azure"}, ["division"] = "solid"},
+    ["BR"] = {["tincture"] = {"brown"}, ["division"] = "solid"},
+    ["CEN"] = {["tincture"] = {"argent", "sable"}, ["division"] = "solid"},
+    ["CE"] = {["tincture"] = {"counterermine"}, ["division"] = "solid"},
+    ["ER"] = {["tincture"] = {"erminois"}, ["division"] = "solid"},
     ["ES"] = {["tincture"] = {"fur"}, ["division"] = "solid"},
     ["GU"] = {["tincture"] = {"gules"}, ["division"] = "solid"},
-    ["KH"] = {["tincture"] = {"khaki"}, ["division"] = "solid"},
+    ["KH"] = {["tincture"] = {"brown"}, ["division"] = "solid"},
     ["OR"] = {["tincture"] = {"or"}, ["division"] = "solid"},
-    ["PE"] = {["tincture"] = {"fur"}, ["division"] = "solid"},
+    ["PE"] = {["tincture"] = {"pean"}, ["division"] = "solid"},
     ["PU"] = {["tincture"] = {"purpure"}, ["division"] = "solid"},
     ["SA"] = {["tincture"] = {"sable"}, ["division"] = "solid"},
-    ["TE"] = {["tincture"] = {"tenne"}, ["division"] = "solid"},
+    ["TE"] = {["tincture"] = {"or", "gules", "brown"}, ["division"] = "solid"},
     ["VT"] = {["tincture"] = {"vert"}, ["division"] = "solid"},
     ["FIELD TREATMENT-SEME (ERMINED)"] = {["tincture"] = {"fur"}},
 	["FIELD TREATMENT-HONEYCOMBED"] = {["tincture"] = {"honeycombed"}},
@@ -121,7 +142,7 @@ local field_lookup = {
 	["FIELD TREATMENT-PLUMMETTY"] = {["tincture"] = {"plummetty", "fur"}},
 	["FIELD TREATMENT-POTENTY"] = {["tincture"] = {"fur"}},
 	["FIELD TREATMENT-SCALY"] = {["tincture"] = {"scaly"}},
-	["FIELD TREATMENT-VAIRY"] = {["tincture"] = {"fur"}},
+	["FIELD TREATMENT-VAIRY"] = {["tincture"] = {"vair"}},
     ["FIELD DIV.-BARRY"] = {["division"] = "divided fesswise"},
 	["FIELD DIV.-BENDY"] = {["division"] = "divided bendwise"},
 	["FIELD DIV.-BENDY*3"] = {["division"] = "divided bendwise sinister"},
@@ -180,27 +201,27 @@ function p.process_oanda(args)
     local armory_of_interest = {}
     for i, record in ipairs(oanda) do
         if record["armory"] and #(record["armory"]) > 0 then
-            local record_fields = {}
+            local record_field_divisions = {}
             local record_primary_charges = {}
             local record_primary_numbers = {}
             
             for j, heading in ipairs(record["armory"]) do
                 local item_code = string.match(heading, "^([^:]+):")
                 if item_code == "NO" then
-                    table.insert(record_fields, "NO")
+                    table.insert(record_field_divisions, "NO")
                 elseif item_code == "FO" or item_code == "PO" then
                     table.insert(record_primary_numbers, "FP")
                     table.insert(record_primary_numbers, 0)
                 elseif item_code == "FIELD" then
                     local division = string.match(heading, ":(divided[^:]*):") or string.match(heading, ":(divided[^:]*)$") or string.match(heading, ":(solid):") or string.match(heading, ":(solid)$")
-                    table.insert(record_fields, division)
+                    table.insert(record_field_divisions, division)
                 elseif field_lookup[item_code] then
                     if field_lookup[item_code]["division"] and type(field_lookup[item_code]["division"]) == "table" then
                         for i, division in ipairs(field_lookup[item_code]["division"]) do
-                            table.insert(record_fields, division)
+                            table.insert(record_field_divisions, division)
                         end
                     elseif field_lookup[item_code]["division"] then
-                        table.insert(record_fields, field_lookup[item_code]["division"])
+                        table.insert(record_field_divisions, field_lookup[item_code]["division"])
                     end
                 elseif arrangement_lookup[item_code] then
                     --
@@ -258,7 +279,7 @@ function p.process_oanda(args)
                 ["blazon"] = record["blazon"],
                 ["notes"] = record["notes"],
                 ["armory"] = {
-                    ["fields"] = remove_duplicates(record_fields),
+                    ["field_divisions"] = remove_duplicates(record_field_divisions),
                     ["primary_charges"] = remove_duplicates(record_primary_charges),
                     ["primary_numbers"] = remove_duplicates(record_primary_numbers)
                 }
@@ -321,8 +342,8 @@ function p.grouped_armory(args)
     -- create grouped armory table
     local grouped_armory = {}
     for i, record in ipairs(processed_oanda) do
-        local record_fields = record["fields"] and #(record["fields"]) > 0 and record["fields"] or {"NO"}
-        for j, field in ipairs(record_fields) do
+        local record_field_divisions = record["field_divisions"] and #(record["field_divisions"]) > 0 and record["field_divisions"] or {"NO"}
+        for j, field in ipairs(record_field_divisions) do
             grouped_armory[field] = grouped_armory[field] or {}
             local primary_numbers = record["primary_numbers"] and #(record["primary_numbers"]) > 0 and record["primary_numbers"] or default_primary_numbers
             for k, num in ipairs(primary_numbers) do
