@@ -99,7 +99,8 @@ local type_lookup = {
 local tincture_class = {
     ["light"] = true,
     ["dark"] = true,
-    ["neutral"] = true
+    ["neutral"] = true,
+    ["tinctureless"] = true
 }
 
 local tincture_class_lookup = {
@@ -249,6 +250,43 @@ local charge_tincture_lookup = {
     ["CHARGE TREATMENT-SEME (ERMINED)"] = {["tincture"] = {"fur"}},
 }
 
+function item_tinctures(heading)
+    local tinctures = {}
+    local tincture1 = string.match(heading, ":~ ([^:]*):") or string.match(heading, ":~ ([^:]*)$")
+    local tincture2 = string.match(heading, ":~and ([^:]*):") or string.match(heading, ":~and ([^:]*)$")
+
+    for k, tincturen in ipairs({tincture1, tincture2}) do
+        if tincture_class[tincturen] then
+            for tincture, classes in pairs(tincture_class_lookup) do
+                if classes[tincturen] then
+                    table.insert(tinctures, {["tincture"] = tincture, ["divided"] = true})
+                end
+            end
+        elseif tincture_class_lookup[tincturen] then
+            table.insert(tinctures, {["tincture"] = tincturen, ["divided"] = true})
+        end
+    end
+
+    for class, data in pairs(tincture_class) do
+        if string.match(heading, ":(" .. class .. "):") or string.match(heading, ":(" .. class .. ")$") then
+            for tincture, classes in pairs(tincture_class_lookup) do
+                if class == "tinctureless" then
+                    table.insert(tinctures, {["tincture"] = tincture, ["divided"] = true})
+                end
+                if class == "tinctureless" or classes[class] then
+                    table.insert(tinctures, {["tincture"] = tincture, ["divided"] = false})
+                end
+            end
+        end
+    end
+
+    for tincture, data in pairs(tincture_class_lookup) do
+        table.insert(tinctures, {["tincture"] = tincture, ["divided"] = false})
+    end
+
+    return remove_duplicates(tinctures)
+end
+
 function p.process_oanda(args)
     args = args or {}
 
@@ -259,6 +297,7 @@ function p.process_oanda(args)
             local record_field_tinctures = {}
             local record_primary_charges = {}
             local record_primary_numbers = {}
+            local record_primary_tinctures = {}
             
             for j, heading in ipairs(record["armory"]) do
                 local item_code = string.match(heading, "^([^:]+):")
@@ -276,20 +315,10 @@ function p.process_oanda(args)
                         table.insert(record_field_divisions, "solid")
                     end
 
-                    local tincture1 = string.match(heading, ":~ ([^:]*):") or string.match(heading, ":~ ([^:]*)$")
-                    local tincture2 = string.match(heading, ":~and ([^:]*):") or string.match(heading, ":~and ([^:]*)$")
-                    for k, tincturen in ipairs({tincture1, tincture2}) do
-                        if tincture_class[tincturen] then
-                            for tincture, classes in pairs(tincture_class_lookup) do
-                                if classes[tincturen] then
-                                    record_field_tinctures[division] = record_field_tinctures[division] or {}
-                                    table.insert(record_field_tinctures[division], tincture)
-                                end
-                            end
-                        elseif tincture_class_lookup[tincturen] then
-                            record_field_tinctures[division] = record_field_tinctures[division] or {}
-                            table.insert(record_field_tinctures[division], tincturen)
-                        end
+                    for i, tincture_data in ipairs(item_tinctures(heading)) do
+                        local div = division or (tincture_data["divided"] and "divided") or "solid"
+                        record_field_tinctures[div] = record_field_tinctures[div] or {}
+                        table.insert(record_field_tinctures[div], tincture_data["tincture"])
                     end
                 elseif field_lookup[item_code] then
                     local divisions = type(field_lookup[item_code]["division"]) == "table" and field_lookup[item_code]["division"] or {field_lookup[item_code]["division"]}
@@ -309,10 +338,8 @@ function p.process_oanda(args)
                     --
                 else
                     local primary_info = string.match(heading, ":(spn?a):") or string.match(heading, ":(spn?a)$") or string.match(heading, ":(g%d*pn?a):") or string.match(heading, ":(g%d*pn?a)$") or string.match(heading, ":(primary):") or string.match(heading, ":(primary)$") or string.match(heading, ":(%w+ primary):") or string.match(heading, ":(%w+ primary)$")
-                    if not primary_info then
-                        if not (string.match(heading, ":(second):") or string.match(heading, ":(second)$") or string.match(heading, ":(held):") or string.match(heading, ":(held)$") or string.match(heading, ":(maintained):") or string.match(heading, ":(maintained)$") or string.match(heading, ":(sustained):") or string.match(heading, ":(sustained)$") or string.match(heading, ":(seme on field):") or string.match(heading, ":(seme on field)$") or string.match(heading, ":(tertiary):") or string.match(heading, ":(tertiary)$") or string.match(heading, ":(debruising):") or string.match(heading, ":(debruising)$") or string.match(heading, ":(overall):") or string.match(heading, ":(overall)$")) then
-                            primary_info = "primary"
-                        end
+                    if not primary_info and (not (string.match(heading, ":(second):") or string.match(heading, ":(second)$") or string.match(heading, ":(held):") or string.match(heading, ":(held)$") or string.match(heading, ":(maintained):") or string.match(heading, ":(maintained)$") or string.match(heading, ":(sustained):") or string.match(heading, ":(sustained)$") or string.match(heading, ":(seme on field):") or string.match(heading, ":(seme on field)$") or string.match(heading, ":(tertiary):") or string.match(heading, ":(tertiary)$") or string.match(heading, ":(debruising):") or string.match(heading, ":(debruising)$") or string.match(heading, ":(overall):") or string.match(heading, ":(overall)$"))) then
+                        primary_info = "primary"
                     end
                     if primary_info then
                         if charge_lookup[item_code] and charge_lookup[item_code]["charges"] then
@@ -350,7 +377,7 @@ function p.process_oanda(args)
                                     table.insert(record_primary_numbers, k)
                                 end
                             end
-                        elseif primary_info then
+                        else
                             if charge_n and charge_n >= max_charge_count then
                                 table.insert(record_primary_numbers, max_charge_count)
                             elseif charge_n then
@@ -358,6 +385,10 @@ function p.process_oanda(args)
                                     table.insert(record_primary_numbers, k)
                                 end
                             end
+                        end
+
+                        for i, tincture_data in ipairs(item_tinctures(heading)) do
+                            table.insert(record_primary_tinctures, tincture_data["tincture"])
                         end
                     end
                 end
@@ -523,7 +554,7 @@ function p.potential_conflicts(args)
                             end
                         end
                     end
-                    -- TODO: check letter items for field conflicts and [some other kind of conflict], only include items which have conflicts with a letter item
+                    -- TODO: check letter items for conflicts with field tincture and charge tincture, only include items which have conflicts with a letter item
                     if #letter_items > 0 then
                         conflicts[field] = conflicts[field] or {}
                         conflicts[field][n] = conflicts[field][n] or {}
