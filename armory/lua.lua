@@ -3617,7 +3617,7 @@ return {
 				['blazon'] = "Per chevron ployé per pale azure and sable and argent, a comet throughout gyronny Or and gules",
 				['field'] = {'chevronwise', 'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {'COMET', 'STAR, 'PILE*7'}
+				['primary_charge'] = {'COMET', 'STAR', 'PILE*7'}
 			},
 			{
 				['name'] = "Hagan Ruadh",
