@@ -2936,8 +2936,8 @@ return {
 			{
 				['name'] = "Rose Atherton",
 				['blazon'] = "Azure semy of crayfish argent, a lizard rampant maintaining a knife Or",
-				['field'] = {},
-				['primary_number'] = {},
+				['field'] = {'solid'},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
@@ -2965,28 +2965,28 @@ return {
 				['name'] = "Tir Rígh, Principality of",
 				['blazon'] = "(Fieldless) Upon a compass star azure a pen argent",
 				['field'] = {'NO'},
-				['primary_number'] = {},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
 				['name'] = "Wen Yuhe",
 				['blazon'] = "Vert, six dragons embowed in annulo, bodies interlaced and each vorant of the tail of the next",
 				['field'] = {'solid'},
-				['primary_number'] = {},
+				['primary_number'] = {6},
 				['primary_charge'] = {}
 			},
 			{
 				['name'] = "Yin Yun",
 				['blazon'] = "Purpure a monster composed of the head and wings of an owl displayed and the torso and hind legs of a bear statant argent",
-				['field'] = {},
-				['primary_number'] = {},
+				['field'] = {'solid'},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
 				['name'] = "Absolon of Hereford",
 				['blazon'] = "(Fieldless) Two tridents in saltire surmounted by a halberd argent",
 				['field'] = {'NO'},
-				['primary_number'] = {},
+				['primary_number'] = {3},
 				['primary_charge'] = {}
 			},
 			{
@@ -3076,8 +3076,8 @@ return {
 			{
 				['name'] = "Hrefna Gunnars dottir",
 				['blazon'] = "Per pall arrondi gules, sable and Or, in bend sinister a moth argent and a raven striking sable",
-				['field'] = {},
-				['primary_number'] = {},
+				['field'] = {'pallwise'},
+				['primary_number'] = {2},
 				['primary_charge'] = {}
 			},
 			{
@@ -3104,8 +3104,8 @@ return {
 			{
 				['name'] = "Kristof Fugger von Augsburg",
 				['blazon'] = "Lozengy argent and vert, on a card pique sable a rapier argent piercing the card pique",
-				['field'] = {},
-				['primary_number'] = {},
+				['field'] = {'gridlike not checky'},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
@@ -3118,9 +3118,9 @@ return {
 			{
 				['name'] = "Muirenn ingen Nath-í",
 				['blazon'] = "Pily Or and gules",
-				['field'] = {},
-				['primary_number'] = {},
-				['primary_charge'] = {}
+				['field'] = {'other', 'fesswise'},
+				['primary_number'] = {0, 6},
+				['primary_charge'] = {'FP', 'PILE', 'PILE*7'}
 			},
 			{
 				['name'] = "Muirgel ingen Ragnaill Mag Uidhir",
@@ -3133,21 +3133,21 @@ return {
 				['name'] = "Rúna sjón",
 				['blazon'] = "Purpure, in pale a crescent and a crescent pendant argent",
 				['field'] = {'solid'},
-				['primary_number'] = {},
+				['primary_number'] = {2},
 				['primary_charge'] = {}
 			},
 			{
 				['name'] = "Sigvarðr Ævarsson",
 				['blazon'] = "Per bend azure and sable, in bend sinister a celtic cross argent and a tree eradicated Or",
 				['field'] = {'bendwise'},
-				['primary_number'] = {},
+				['primary_number'] = {2},
 				['primary_charge'] = {}
 			},
 			{
 				['name'] = "Skialda-Ævarr",
 				['blazon'] = "Per saltire sable and gules, in pale two fishhooks in saltire and a barbel haurient embowed argent",
 				['field'] = {'saltirewise'},
-				['primary_number'] = {},
+				['primary_number'] = {3},
 				['primary_charge'] = {}
 			},
 			{
@@ -3182,14 +3182,14 @@ return {
 				['name'] = "Nicholas of Sentinels' Keep",
 				['blazon'] = "Vert, in bend sinister an owl dexter leg raised argent and a cogwheel Or",
 				['field'] = {'solid'},
-				['primary_number'] = {},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
 				['name'] = "Sabine Quirini",
 				['blazon'] = "Argent, on a bend indented between two rabbits courant gules, an artichoke Or",
 				['field'] = {'solid'},
-				['primary_number'] = {},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
@@ -3217,7 +3217,7 @@ return {
 				['name'] = "Grimald the Faithful",
 				['blazon'] = "Per bend sinister azure and sable, within an open-doored lantern Or a flame proper",
 				['field'] = {'bendwise sinister'},
-				['primary_number'] = {},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
@@ -3266,7 +3266,7 @@ return {
 				['name'] = "Elaine Wroth",
 				['blazon'] = "(Fieldless) Conjoined in bend five maple leaves bendwise inverted gules",
 				['field'] = {'NO'},
-				['primary_number'] = {},
+				['primary_number'] = {5},
 				['primary_charge'] = {}
 			},
 			{
@@ -3279,8 +3279,8 @@ return {
 			{
 				['name'] = "Grissel inghean Dhaibidh",
 				['blazon'] = "Azure semy of flowering dogwood blossoms argent, a white-faced opossum salient to sinister proper maintaining in its tail a knife bendwise argent handled sable",
-				['field'] = {},
-				['primary_number'] = {},
+				['field'] = {'solid'},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
@@ -3364,7 +3364,7 @@ return {
 				['name'] = "Magnus Murlin",
 				['blazon'] = "Vert, in bend a sun and a wolf's head erased argent.",
 				['field'] = {'solid'},
-				['primary_number'] = {},
+				['primary_number'] = {2},
 				['primary_charge'] = {}
 			},
 			{
@@ -3385,7 +3385,7 @@ return {
 				['name'] = "Julia di Lisano",
 				['blazon'] = "Per bend sinister purpure and sable, on a bend sinister between two ravens contourny argent three decrescents palewise sable",
 				['field'] = {'bendwise sinister'},
-				['primary_number'] = {},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
@@ -3399,7 +3399,7 @@ return {
 				['name'] = "Khulan Khutughtu",
 				['blazon'] = "Gules, on a chess knight argent a spear azure",
 				['field'] = {'solid'},
-				['primary_number'] = {},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
@@ -3413,7 +3413,7 @@ return {
 				['name'] = "Lily Dulac",
 				['blazon'] = "Purpure, in bend a decrescent argent charged with three roundels one and two azure, and a lily argent",
 				['field'] = {'solid'},
-				['primary_number'] = {},
+				['primary_number'] = {2},
 				['primary_charge'] = {}
 			},
 			{
@@ -3440,8 +3440,8 @@ return {
 			{
 				['name'] = "Stigandi Tyrfingsson",
 				['blazon'] = "Per pall Or, azure, and gules, a triskelion of armored legs argent",
-				['field'] = {},
-				['primary_number'] = {},
+				['field'] = {'pallwise'},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
@@ -3454,8 +3454,8 @@ return {
 			{
 				['name'] = "Ezechiel Corbin",
 				['blazon'] = "Lozengy gules and argent, a raven rising dexter maintaining an hourglass, both sable.",
-				['field'] = {},
-				['primary_number'] = {},
+				['field'] = {'gridlike not checky'},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
@@ -3482,15 +3482,15 @@ return {
 			{
 				['name'] = "Avigail bat Rebecca",
 				['blazon'] = "Barry of four sable and Or, a open book proper and in base a pen fesswise argent",
-				['field'] = {},
-				['primary_number'] = {},
+				['field'] = {'fesswise'},
+				['primary_number'] = {1, 2},
 				['primary_charge'] = {}
 			},
 			{
 				['name'] = "Cellach na Graifne",
 				['blazon'] = "Purpure, on a closed book argent a triquetra vert",
 				['field'] = {'solid'},
-				['primary_number'] = {},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
@@ -3504,7 +3504,7 @@ return {
 				['name'] = "Kay Leigh Mac Whyte",
 				['blazon'] = "Purpure, on a pale argent two buckets purpure",
 				['field'] = {'solid'},
-				['primary_number'] = {},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
@@ -3579,10 +3579,10 @@ return {
 			},
 			{
 				['name'] = "Ulfr þurs",
-				['blazon'] = "Ulfr þurs",
-				['field'] = {},
-				['primary_number'] = {},
-				['primary_charge'] = {}
+				['blazon'] = "Per saltire azure and or, a raven displayed sable",
+				['field'] = {'saltirewise'},
+				['primary_number'] = {1},
+				['primary_charge'] = {'BIRD'}
 			},
 			{
 				['name'] = "Ulrich Guotman",
@@ -3595,7 +3595,7 @@ return {
 				['name'] = "Ashkan Akhtar-zade Dimashqi",
 				['blazon'] = "Azure, on a bezant between three clouds argent an East Asian dragon's head contourny issuant from the lower edge azure",
 				['field'] = {'solid'},
-				['primary_number'] = {},
+				['primary_number'] = {1},
 				['primary_charge'] = {}
 			},
 			{
@@ -3665,7 +3665,7 @@ return {
 				['name'] = "Winifred Abbey",
 				['blazon'] = "(Fieldless) In saltire an oak leaf Or and a feather azure",
 				['field'] = {'NO'},
-				['primary_number'] = {},
+				['primary_number'] = {2},
 				['primary_charge'] = {}
 			}
 		}
