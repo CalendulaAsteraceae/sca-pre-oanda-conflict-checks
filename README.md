@@ -78,7 +78,9 @@ All the data should be manually checked, but these replacements will speed thing
 8. `(\['blazon'\] = "Checky[^\n]+",\n\t+\['field'\] = )\{\}` to `$1{'checky'}`
 9. `(\['blazon'\] = "[^\n,]+, a[^\n]+",\n\t+\['field'\] = \{[^\n]+\},\n\t+\['primary_number'\] = )\{\}` to `$1{1}`
 10. `(\['blazon'\] = "[^\n,]+, two[^\n]+",\n\t+\['field'\] = \{[^\n]+\},\n\t+\['primary_number'\] = )\{\}` to `$1{2}`
-11. `(\['blazon'\] = "\(Fieldless\) a[^\n]+",\n\t+\['field'\] = \{[^\n]+\},\n\t+\['primary_number'\] = )\{\}` to `$1{1}`
+11. `(\['blazon'\] = "[^\n,]+, three[^\n]+",\n\t+\['field'\] = \{[^\n]+\},\n\t+\['primary_number'\] = )\{\}` to `$1{3}`
+12. `(\['blazon'\] = "\(Fieldless\) a[^\n]+",\n\t+\['field'\] = \{[^\n]+\},\n\t+\['primary_number'\] = )\{\}` to `$1{1}`
+13. `(\['blazon'\] = "\(Fieldless\) on a[^\n]+",\n\t+\['field'\] = \{[^\n]+\},\n\t+\['primary_number'\] = )\{\}` to `$1{1}`
 
 ## O&A filtering
 
