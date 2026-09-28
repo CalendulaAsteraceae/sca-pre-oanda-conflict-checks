@@ -66,7 +66,7 @@ Add to [armory/lua.lua](armory/lua.lua) with the year and month as keys, like so
 }
 ```
 
-Fields are `solid`, `NO`, and directions of division which are features of `FIELD` in the OA& (e.g. `bendwise`). Number of primary charges are integers; the code will group submissions into 0, 1, 2, 3, and 4+. Primary charges are based on codes in the O&A, but with more grouping by SCs (e.g. a tyger will just be coded as a `CAT`, a demi-sun or a caltrop as `STAR`, a tree as `TREE`).
+Fields are `solid`, `NO`, and directions of division which are features of `FIELD` in the OA& (e.g. `bendwise`). Number of primary charges are integers; the code will group submissions into 0, 1, 2, 3, and 4+. Primary charges are based on codes in the O&A, but with more grouping by SCs (e.g. a panther will just be coded as a `CAT`, a demi-sun or a caltrop as `STAR`, a tree as `TREE`, a feather or pen as `FEATHER`).
 
 All the data should be manually checked, but these replacements will speed things up a bit:
 1. `(\['blazon'\] = "\(Fieldless\)[^\n]+",\n\t+\['field'\] = )\{\}` to `$1{'NO'}`
