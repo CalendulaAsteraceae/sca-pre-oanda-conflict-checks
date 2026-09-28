@@ -28,6 +28,8 @@ To check with date limits:
 * `check_armory.print_potential_conflicts({max_date = {2026, 5}})`
 * `check_armory.print_potential_conflicts({min_date = {2026, 5}, max_date = {2026, 8}})`
 
+Save the results as a text file, go through the groupings, comment on potential conflicts and near misses.
+
 ### Filling out the armory data
 
 Go to the appropriate tracking month, like [https://oscar.sca.org/index.php?action=213&id=251](https://oscar.sca.org/index.php?action=213&id=251)
