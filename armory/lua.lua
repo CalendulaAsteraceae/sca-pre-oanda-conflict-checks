@@ -3118,7 +3118,7 @@ return {
 			{
 				['name'] = "Muirenn ingen Nath-í",
 				['blazon'] = "Pily Or and gules",
-				['field'] = {'other', 'fesswise'},
+				['field'] = {'other', 'fesswise', 'solid'},
 				['primary_number'] = {0, 6},
 				['primary_charge'] = {'FP', 'PILE', 'PILE*7'}
 			},
