@@ -3449,7 +3449,7 @@ return {
 				['blazon'] = "Vert, a triquetra interlaced with an annulet in an orle Or.",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'TRIQUETRA', 'ANNULET', 'ORLE'}
 			},
 			{
 				['name'] = "Ezechiel Corbin",
@@ -3477,7 +3477,7 @@ return {
 				['blazon'] = "Vert, on a pile between two pens Or in pale a heart sustained at the base by a fist fesswise gules",
 				['field'] = {'solid', 'chevronwise'},
 				['primary_number'] = {1, 3, 4},
-				['primary_charge'] = {}
+				['primary_charge'] = {'PILE', 'HEART', }
 			},
 			{
 				['name'] = "Avigail bat Rebecca",
