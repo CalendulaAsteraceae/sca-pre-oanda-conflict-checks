@@ -1746,7 +1746,7 @@ return {
 				['blazon'] = "(Fieldless) Four quatrefoil knots conjoined two and two, those in bend purpure sinister Or.",
 				['field'] = {'NO'},
 				['primary_number'] = {4},
-				['primary_charge'] = {'KNOT'}
+				['primary_charge'] = {'KNOT AND ROPE'}
 			},
 			{
 				['name'] = "Eulalia Piebakere",
@@ -1864,8 +1864,8 @@ return {
 				['name'] = "Justin of Atenveldt",
 				['blazon'] = "Or, in saltire a pen and a comet vert, on a bordure nebuly azure three bezants Or",
 				['field'] = {'solid'},
-				['primary_number'] = {1},
-				['primary_charge'] = {'FEATHER'}
+				['primary_number'] = {2},
+				['primary_charge'] = {'FEATHER', 'COMET', 'STAR'}
 			},
 			{
 				['name'] = "Perceval of Atenveldt",
@@ -2754,7 +2754,7 @@ return {
 				['blazon'] = "Sable, a mascle knot between two pallets cooped Or.",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 3},
-				['primary_charge'] = {'KNOT', 'PALE', 'BILLET AND DELF'}
+				['primary_charge'] = {'KNOT AND ROPE', 'PALE', 'BILLET AND DELF'}
 			},
 			{
 				['name'] = "Lora de Estwode",
@@ -3113,7 +3113,7 @@ return {
 				['blazon'] = "Per bend sinister azure and vert, a Bowen cross between three hedgehogs argent",
 				['field'] = {'bendwise sinister'},
 				['primary_number'] = {1, 4},
-				['primary_charge'] = {'CRAC', 'KNOT'}
+				['primary_charge'] = {'CRAC', 'KNOT AND ROPE'}
 			},
 			{
 				['name'] = "Muirenn ingen Nath-í",
@@ -3449,7 +3449,7 @@ return {
 				['blazon'] = "Vert, a triquetra interlaced with an annulet in an orle Or.",
 				['field'] = {'solid'},
 				['primary_number'] = {1, 2},
-				['primary_charge'] = {'TRIQUETRA', 'ANNULET', 'ORLE'}
+				['primary_charge'] = {'TRIQUETRA', 'ANNULET', 'KNOT'}
 			},
 			{
 				['name'] = "Ezechiel Corbin",
