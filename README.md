@@ -47,7 +47,7 @@ Use regex to format: `([^\n]+)\n([^\n]+)\n` to
 			},
 
 ```
-Check if any of the blazons have quotation marks which need to be escaped.
+Check if any of the blazons have quotation marks which need to be escaped: `".*".*"`.
 
 Add to [armory/lua.lua](armory/lua.lua) with the year and month as keys, like so:
 ```
