@@ -3675,7 +3675,7 @@ return {
 				['blazon'] = "(Fieldless) On an anvil sable, a quill pen fesswise nib to dexter argent nibbed OR.",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'ANVIL'}
 			},
 			{
 				['name'] = "Agneta de Staunton",
@@ -3689,28 +3689,28 @@ return {
 				['blazon'] = "Quarterly sable and argent, a triquetra counterchanged",
 				['field'] = {'quarterly'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'TRIQUETRA'}
 			},
 			{
 				['name'] = "Blackstone Mountain, Barony of",
 				['blazon'] = "(Fieldless) On a wine amphora per fess indented argent and sable, in fess three saltorels couped sable.",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BOTTLE AND FLASK'}
 			},
 			{
 				['name'] = "Blackstone Mountain, Barony of",
 				['blazon'] = "(Fieldless) On a glove aversant sable, a rose argent seeded Or, barbed vert",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'HAND AND GAUNTLET'}
 			},
 			{
 				['name'] = "Blackstone Mountain, Barony of",
 				['blazon'] = "(Fieldless) A human figure statant to Dexter with the head of a moth and winged of bat wings sable, maintaining two rapiers Or.",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'MONSTER-HUMANOID'}
 			},
 			{
 				['name'] = "Blackstone Mountain, Barony of",
@@ -3724,7 +3724,7 @@ return {
 				['blazon'] = "(Fieldless) a human figure statant to Dexter with the head of a moth and winged of bat wings sable, maintaining two rapiers argent",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'MONSTER-HUMANOID'}
 			},
 			{
 				['name'] = "Blackstone Mountain, Barony of",
@@ -3752,7 +3752,7 @@ return {
 				['blazon'] = "Vert, in saltire a pen Or and a rapier inverted argent",
 				['field'] = {'solid'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FEATHER', 'SWORD'}
 			},
 			{
 				['name'] = "Finghin Mac Cormacc",
@@ -3801,7 +3801,7 @@ return {
 				['blazon'] = "Vert, an adder erect argent marked sable between in bend sinister two fraise, a bordure company argent and azure.",
 				['field'] = {'solid'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'REPTILE-SNAKE'}
 			},
 			{
 				['name'] = "Tristyn of Gryffyns Keep",
@@ -3829,14 +3829,14 @@ return {
 				['blazon'] = "(Fieldless) A winged trident gules",
 				['field'] = {'NO'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'TRIDENT'}
 			},
 			{
 				['name'] = "Beatrix Funteyn",
 				['blazon'] = "(Fieldless) A sword inverted bendwise sinister proper entwined of a rose vine Or with roses argent seeded and barbed Or.",
 				['field'] = {'NO'},
 				['primary_number'] = {1, 2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'PLANT-VINE', 'SWORD'}
 			},
 			{
 				['name'] = "Hamundr Dagrunarson",
@@ -3857,21 +3857,21 @@ return {
 				['blazon'] = "Per bend sinister rayonny sable and argent goutty de sang, a human jawbone argent.",
 				['field'] = {'bendwise sinister'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BONE'}
 			},
 			{
 				['name'] = "Cecilia Baptista d'Arzenta",
 				['blazon'] = "(Fieldless) A rapier proper bendwise sinister transfixing a breadloaf Or",
 				['field'] = {'NO'},
-				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_number'] = {1, 2},
+				['primary_charge'] = {'SWORD', 'FOODSTUFF'}
 			},
 			{
 				['name'] = "Cecilia Baptista d'Arzenta",
 				['blazon'] = "(Fieldless) In saltire a wooden spoon and a rapier proper",
 				['field'] = {'NO'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'FORK AND SPOON', 'SWORD'}
 			},
 			{
 				['name'] = "Mary Odinsdóttir",
@@ -3927,7 +3927,7 @@ return {
 				['blazon'] = "Per fess argent and purpure a rainbow proper clouded azure and a unicorn passant argent",
 				['field'] = {'fesswise'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'RAINBOW', 'BEAST-HORSE', 'BEAST-GOAT AND SHEEP'}
 			},
 			{
 				['name'] = "Azai Momo",
@@ -3941,14 +3941,14 @@ return {
 				['blazon'] = "Per pale argent and sable, a roost cock dexter forleg raised counterchanged",
 				['field'] = {'palewise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'BIRD'}
 			},
 			{
 				['name'] = "Felicity the Fool",
 				['blazon'] = "Per pale lozengy argent and vert and lozengy Or and purpure, a fox rampant guardant proper attired of a jester's hat azure",
 				['field'] = {'palewise'},
 				['primary_number'] = {1},
-				['primary_charge'] = {}
+				['primary_charge'] = {'DOG'}
 			},
 			{
 				['name'] = "Kate Lyn Lovelace",
@@ -3969,7 +3969,7 @@ return {
 				['blazon'] = "Azure, in fess a saguaro cactus and a tortoise rampant argent, a chief rayonny Or",
 				['field'] = {'solid'},
 				['primary_number'] = {2},
-				['primary_charge'] = {}
+				['primary_charge'] = {'REPTILE-TURTLE', 'PLANT-CACTUS'}
 			},
 			{
 				['name'] = "Elaine Wroth",
