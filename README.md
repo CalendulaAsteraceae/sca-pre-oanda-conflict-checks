@@ -85,7 +85,7 @@ All the data should be manually checked, but these replacements will speed thing
 13. `(\['blazon'\] = "\(Fieldless\) a[^\n]+",\n\t+\['field'\] = \{[^\n]+\},\n\t+\['primary_number'\] = )\{\}` to `$1{1}`
 14. `(\['blazon'\] = "\(Fieldless\) on a[^\n]+",\n\t+\['field'\] = \{[^\n]+\},\n\t+\['primary_number'\] = )\{\}` to `$1{1}`
 15. `\['primary_number'\] = \{\}`
-16. `\['blazon'\] = ".*",\n\s+\['field'\] = \{.+\},\n\s+\['primary_number'\] = \{.+\},\n\s+\['primary_charge'\] = \{\}`
+16. `(\['blazon'\] = ".*",\n\s+\['field'\] = \{.+\},\n\s+\['primary_number'\] = \{.+\},\n\s+\['primary_charge'\] = )\{\}`
 
 ## O&A filtering
 
