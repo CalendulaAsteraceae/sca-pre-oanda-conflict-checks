@@ -4255,7 +4255,7 @@ return {
 				['name'] = "Elena Bell",
 				['blazon'] = "Per pale embattled argent and purpure, a bear rampant proper and a bear rampant to sinister argent",
 				['field'] = {'palewise'},
-				['primary_number'] = {1},
+				['primary_number'] = {2},
 				['primary_charge'] = {'BEAST-BEAR'}
 			},
 			{
